@@ -10,26 +10,32 @@ import UIKit
 
 class InvoiceDetailViewController: UIViewController {
 
+
+  @IBOutlet weak var invoiceDescription: UILabel!
+  @IBOutlet weak var emailButton: UIButton!
+  @IBOutlet weak var status: UILabel!
+  @IBOutlet weak var createdAt: UILabel!
+  @IBOutlet weak var amount: UILabel!
+  
+  var invoice : Invoice!
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+      self.invoiceDescription.text = invoice.name
+      self.amount.text = invoice.amount.stringValue
+      //self.createdAt.text = invoice.createdAt.
+      if invoice.paid == true{
+        self.status.text = "Paid"
+        emailButton.enabled = false
+      }else{
+        self.status.text = "Pending"
+      }
 
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+  @IBAction func emailButtonPressed(sender: AnyObject) {
+    
+  }
 
 }
