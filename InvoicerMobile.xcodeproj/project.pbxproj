@@ -144,6 +144,7 @@
 		4F95F7E01AE57AC9002FA8A7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				4F95F7EB1AE57BF0002FA8A7 /* OAuthService.swift */,
 				4F95F7EF1AE57C24002FA8A7 /* Invoice.swift */,
 				4FF7FF2E1AE59BF700823696 /* EmailService.swift */,
 			);
@@ -290,7 +291,6 @@
 				4F95F7E41AE57B1F002FA8A7 /* LoginViewController.swift in Sources */,
 				4F95F7F21AE58015002FA8A7 /* PayViewController.swift in Sources */,
 				4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */,
-				ADA580091AE5952A0034D871 /* StripeKeys.swift in Sources */,
 				4F95F7C31AE57A90002FA8A7 /* ViewController.swift in Sources */,
 				4F95F7E61AE57B2F002FA8A7 /* InvoiceViewController.swift in Sources */,
 				4F95F7F01AE57C24002FA8A7 /* Invoice.swift in Sources */,
