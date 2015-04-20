@@ -21,6 +21,10 @@
 		4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7ED1AE57C14002FA8A7 /* InvoiceCell.swift */; };
 		4F95F7F01AE57C24002FA8A7 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7EF1AE57C24002FA8A7 /* Invoice.swift */; };
 		4F95F7F21AE58015002FA8A7 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7F11AE58015002FA8A7 /* PayViewController.swift */; };
+		4F95F7F71AE5887F002FA8A7 /* stripe-ios-master in Resources */ = {isa = PBXBuildFile; fileRef = 4F95F7F61AE5887F002FA8A7 /* stripe-ios-master */; };
+		4F95F7FE1AE58916002FA8A7 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F95F7FC1AE588D5002FA8A7 /* Security.framework */; };
+		4F95F7FF1AE5891E002FA8A7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F95F7FA1AE588C8002FA8A7 /* PassKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		4F95F8001AE58924002FA8A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F95F7F81AE588BF002FA8A7 /* Foundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +56,10 @@
 		4F95F7ED1AE57C14002FA8A7 /* InvoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceCell.swift; sourceTree = "<group>"; };
 		4F95F7EF1AE57C24002FA8A7 /* Invoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
 		4F95F7F11AE58015002FA8A7 /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+		4F95F7F61AE5887F002FA8A7 /* stripe-ios-master */ = {isa = PBXFileReference; lastKnownFileType = folder; name = "stripe-ios-master"; path = "../../3rdPartyFrameworks/stripe-ios-master"; sourceTree = "<group>"; };
+		4F95F7F81AE588BF002FA8A7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		4F95F7FA1AE588C8002FA8A7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		4F95F7FC1AE588D5002FA8A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +67,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F95F8001AE58924002FA8A7 /* Foundation.framework in Frameworks */,
+				4F95F7FF1AE5891E002FA8A7 /* PassKit.framework in Frameworks */,
+				4F95F7FE1AE58916002FA8A7 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +89,7 @@
 				4F95F7BD1AE57A90002FA8A7 /* InvoicerMobile */,
 				4F95F7D31AE57A90002FA8A7 /* InvoicerMobileTests */,
 				4F95F7BC1AE57A90002FA8A7 /* Products */,
+				4F95F7F51AE58868002FA8A7 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -158,6 +170,18 @@
 				4F95F7C91AE57A90002FA8A7 /* LaunchScreen.xib */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		4F95F7F51AE58868002FA8A7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F95F7FC1AE588D5002FA8A7 /* Security.framework */,
+				4F95F7FA1AE588C8002FA8A7 /* PassKit.framework */,
+				4F95F7F81AE588BF002FA8A7 /* Foundation.framework */,
+				4F95F7F61AE5887F002FA8A7 /* stripe-ios-master */,
+			);
+			name = Frameworks;
+			path = InvoicerMobile;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -241,6 +265,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4F95F7C61AE57A90002FA8A7 /* Main.storyboard in Resources */,
+				4F95F7F71AE5887F002FA8A7 /* stripe-ios-master in Resources */,
 				4F95F7CB1AE57A90002FA8A7 /* LaunchScreen.xib in Resources */,
 				4F95F7C81AE57A90002FA8A7 /* Images.xcassets in Resources */,
 			);
@@ -467,6 +492,7 @@
 				4F95F7DC1AE57A90002FA8A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F95F7DD1AE57A90002FA8A7 /* Build configuration list for PBXNativeTarget "InvoicerMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +501,7 @@
 				4F95F7DF1AE57A90002FA8A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
