@@ -3,33 +3,32 @@
 //  InvoicerMobile
 //
 //  Created by Jisoo Hong on 2015. 4. 20..
+//  Written by Brandon Roberts 4/20/15
 //  Copyright (c) 2015년 JHK. All rights reserved.
 //
 
 import UIKit
 
-class InvoiceViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+class InvoiceViewController: UIViewController, UITableViewDataSource {
+  
+  @IBOutlet var tableView: UITableView!
+  
+  var invoices = [Invoice]()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    self.tableView.delegate = self
+    self.tableView.dataSource = self
+  
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    self.invoices.count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = self.tableView.dequeueReusableCellWithIdentifier(<#identifier: String#>)
+  }
+  
 }
