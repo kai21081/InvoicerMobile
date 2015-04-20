@@ -9,7 +9,7 @@
 
 import UIKit
 
-class InvoiceViewController: UIViewController, UITableViewDataSource {
+class InvoiceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
   
   @IBOutlet var tableView: UITableView!
   
@@ -24,11 +24,32 @@ class InvoiceViewController: UIViewController, UITableViewDataSource {
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    self.invoices.count
+    return self.invoices.count
   }
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = self.tableView.dequeueReusableCellWithIdentifier(<#identifier: String#>)
+
+    let cell = self.tableView.dequeueReusableCellWithIdentifier("InvoiceCell") as! InvoiceCell
+    let displayedInvoice = self.invoices[indexPath.row]
+    
+    // Clear out the stored values just in case
+    cell.nameLabel.text = nil
+    cell.amountLabel.text = nil
+    cell.imageView?.image = nil
+    
+    // Set the displayed values
+    cell.nameLabel.text = displayedInvoice.name
+    cell.amountLabel.text = displayedInvoice.amount.stringValue
+    cell.imageView?.image = UIImage(named: "\(displayedInvoice.paid)")
+
+    return cell
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "ShowInvoiceDetail" {
+      let nextVC = segue.destinationViewController as! InvoiceDetailViewController
+      // TODO: Interface with InvoiceDetail
+    }
   }
   
 }
