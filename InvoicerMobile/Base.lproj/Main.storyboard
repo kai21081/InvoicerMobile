@@ -83,7 +83,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="Wcq-nx-L31" kind="show" id="eez-CG-jpa"/>
+                                            <segue destination="Wcq-nx-L31" kind="show" identifier="ShowInvoiceDetail" id="eez-CG-jpa"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -113,7 +113,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nic-ZY-NS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1691" y="314"/>
+            <point key="canvasLocation" x="1849" y="314"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="9aH-sO-IgN">
