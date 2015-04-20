@@ -467,6 +467,7 @@
 				4F95F7DC1AE57A90002FA8A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4F95F7DD1AE57A90002FA8A7 /* Build configuration list for PBXNativeTarget "InvoicerMobileTests" */ = {
 			isa = XCConfigurationList;
@@ -475,6 +476,7 @@
 				4F95F7DF1AE57A90002FA8A7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
