@@ -1,0 +1,482 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F95F7C11AE57A90002FA8A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7C01AE57A90002FA8A7 /* AppDelegate.swift */; };
+		4F95F7C31AE57A90002FA8A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7C21AE57A90002FA8A7 /* ViewController.swift */; };
+		4F95F7C61AE57A90002FA8A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F95F7C41AE57A90002FA8A7 /* Main.storyboard */; };
+		4F95F7C81AE57A90002FA8A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F95F7C71AE57A90002FA8A7 /* Images.xcassets */; };
+		4F95F7CB1AE57A90002FA8A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F95F7C91AE57A90002FA8A7 /* LaunchScreen.xib */; };
+		4F95F7D71AE57A90002FA8A7 /* InvoicerMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7D61AE57A90002FA8A7 /* InvoicerMobileTests.swift */; };
+		4F95F7E41AE57B1F002FA8A7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7E31AE57B1F002FA8A7 /* LoginViewController.swift */; };
+		4F95F7E61AE57B2F002FA8A7 /* InvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7E51AE57B2F002FA8A7 /* InvoiceViewController.swift */; };
+		4F95F7E81AE57BBA002FA8A7 /* InvoiceDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7E71AE57BBA002FA8A7 /* InvoiceDetailViewController.swift */; };
+		4F95F7EA1AE57BCB002FA8A7 /* InvoiceAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7E91AE57BCB002FA8A7 /* InvoiceAddViewController.swift */; };
+		4F95F7EC1AE57BF0002FA8A7 /* OAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7EB1AE57BF0002FA8A7 /* OAuthService.swift */; };
+		4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7ED1AE57C14002FA8A7 /* InvoiceCell.swift */; };
+		4F95F7F01AE57C24002FA8A7 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7EF1AE57C24002FA8A7 /* Invoice.swift */; };
+		4F95F7F21AE58015002FA8A7 /* PayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7F11AE58015002FA8A7 /* PayViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4F95F7D11AE57A90002FA8A7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4F95F7B31AE57A8F002FA8A7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4F95F7BA1AE57A90002FA8A7;
+			remoteInfo = InvoicerMobile;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4F95F7BB1AE57A90002FA8A7 /* InvoicerMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvoicerMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F95F7BF1AE57A90002FA8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F95F7C01AE57A90002FA8A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4F95F7C21AE57A90002FA8A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4F95F7C51AE57A90002FA8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F95F7C71AE57A90002FA8A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4F95F7CA1AE57A90002FA8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		4F95F7D01AE57A90002FA8A7 /* InvoicerMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InvoicerMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F95F7D51AE57A90002FA8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4F95F7D61AE57A90002FA8A7 /* InvoicerMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicerMobileTests.swift; sourceTree = "<group>"; };
+		4F95F7E31AE57B1F002FA8A7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		4F95F7E51AE57B2F002FA8A7 /* InvoiceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceViewController.swift; sourceTree = "<group>"; };
+		4F95F7E71AE57BBA002FA8A7 /* InvoiceDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceDetailViewController.swift; sourceTree = "<group>"; };
+		4F95F7E91AE57BCB002FA8A7 /* InvoiceAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceAddViewController.swift; sourceTree = "<group>"; };
+		4F95F7EB1AE57BF0002FA8A7 /* OAuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuthService.swift; sourceTree = "<group>"; };
+		4F95F7ED1AE57C14002FA8A7 /* InvoiceCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceCell.swift; sourceTree = "<group>"; };
+		4F95F7EF1AE57C24002FA8A7 /* Invoice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
+		4F95F7F11AE58015002FA8A7 /* PayViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PayViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F95F7B81AE57A90002FA8A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F95F7CD1AE57A90002FA8A7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F95F7B21AE57A8F002FA8A7 = {
+			isa = PBXGroup;
+			children = (
+				4F95F7BD1AE57A90002FA8A7 /* InvoicerMobile */,
+				4F95F7D31AE57A90002FA8A7 /* InvoicerMobileTests */,
+				4F95F7BC1AE57A90002FA8A7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4F95F7BC1AE57A90002FA8A7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F95F7BB1AE57A90002FA8A7 /* InvoicerMobile.app */,
+				4F95F7D01AE57A90002FA8A7 /* InvoicerMobileTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F95F7BD1AE57A90002FA8A7 /* InvoicerMobile */ = {
+			isa = PBXGroup;
+			children = (
+				4F95F7C01AE57A90002FA8A7 /* AppDelegate.swift */,
+				4F95F7E21AE57ADA002FA8A7 /* View */,
+				4F95F7E11AE57AD2002FA8A7 /* Controller */,
+				4F95F7E01AE57AC9002FA8A7 /* Model */,
+				4F95F7BE1AE57A90002FA8A7 /* Supporting Files */,
+			);
+			path = InvoicerMobile;
+			sourceTree = "<group>";
+		};
+		4F95F7BE1AE57A90002FA8A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F95F7BF1AE57A90002FA8A7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F95F7D31AE57A90002FA8A7 /* InvoicerMobileTests */ = {
+			isa = PBXGroup;
+			children = (
+				4F95F7D61AE57A90002FA8A7 /* InvoicerMobileTests.swift */,
+				4F95F7D41AE57A90002FA8A7 /* Supporting Files */,
+			);
+			path = InvoicerMobileTests;
+			sourceTree = "<group>";
+		};
+		4F95F7D41AE57A90002FA8A7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4F95F7D51AE57A90002FA8A7 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4F95F7E01AE57AC9002FA8A7 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4F95F7EB1AE57BF0002FA8A7 /* OAuthService.swift */,
+				4F95F7EF1AE57C24002FA8A7 /* Invoice.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		4F95F7E11AE57AD2002FA8A7 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4F95F7C21AE57A90002FA8A7 /* ViewController.swift */,
+				4F95F7E31AE57B1F002FA8A7 /* LoginViewController.swift */,
+				4F95F7E51AE57B2F002FA8A7 /* InvoiceViewController.swift */,
+				4F95F7E71AE57BBA002FA8A7 /* InvoiceDetailViewController.swift */,
+				4F95F7E91AE57BCB002FA8A7 /* InvoiceAddViewController.swift */,
+				4F95F7F11AE58015002FA8A7 /* PayViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		4F95F7E21AE57ADA002FA8A7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4F95F7C71AE57A90002FA8A7 /* Images.xcassets */,
+				4F95F7C41AE57A90002FA8A7 /* Main.storyboard */,
+				4F95F7ED1AE57C14002FA8A7 /* InvoiceCell.swift */,
+				4F95F7C91AE57A90002FA8A7 /* LaunchScreen.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F95F7BA1AE57A90002FA8A7 /* InvoicerMobile */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F95F7DA1AE57A90002FA8A7 /* Build configuration list for PBXNativeTarget "InvoicerMobile" */;
+			buildPhases = (
+				4F95F7B71AE57A90002FA8A7 /* Sources */,
+				4F95F7B81AE57A90002FA8A7 /* Frameworks */,
+				4F95F7B91AE57A90002FA8A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = InvoicerMobile;
+			productName = InvoicerMobile;
+			productReference = 4F95F7BB1AE57A90002FA8A7 /* InvoicerMobile.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4F95F7CF1AE57A90002FA8A7 /* InvoicerMobileTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F95F7DD1AE57A90002FA8A7 /* Build configuration list for PBXNativeTarget "InvoicerMobileTests" */;
+			buildPhases = (
+				4F95F7CC1AE57A90002FA8A7 /* Sources */,
+				4F95F7CD1AE57A90002FA8A7 /* Frameworks */,
+				4F95F7CE1AE57A90002FA8A7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4F95F7D21AE57A90002FA8A7 /* PBXTargetDependency */,
+			);
+			name = InvoicerMobileTests;
+			productName = InvoicerMobileTests;
+			productReference = 4F95F7D01AE57A90002FA8A7 /* InvoicerMobileTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F95F7B31AE57A8F002FA8A7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = JHK;
+				TargetAttributes = {
+					4F95F7BA1AE57A90002FA8A7 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					4F95F7CF1AE57A90002FA8A7 = {
+						CreatedOnToolsVersion = 6.3;
+						TestTargetID = 4F95F7BA1AE57A90002FA8A7;
+					};
+				};
+			};
+			buildConfigurationList = 4F95F7B61AE57A8F002FA8A7 /* Build configuration list for PBXProject "InvoicerMobile" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F95F7B21AE57A8F002FA8A7;
+			productRefGroup = 4F95F7BC1AE57A90002FA8A7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F95F7BA1AE57A90002FA8A7 /* InvoicerMobile */,
+				4F95F7CF1AE57A90002FA8A7 /* InvoicerMobileTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F95F7B91AE57A90002FA8A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F95F7C61AE57A90002FA8A7 /* Main.storyboard in Resources */,
+				4F95F7CB1AE57A90002FA8A7 /* LaunchScreen.xib in Resources */,
+				4F95F7C81AE57A90002FA8A7 /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F95F7CE1AE57A90002FA8A7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F95F7B71AE57A90002FA8A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F95F7E41AE57B1F002FA8A7 /* LoginViewController.swift in Sources */,
+				4F95F7F21AE58015002FA8A7 /* PayViewController.swift in Sources */,
+				4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */,
+				4F95F7C31AE57A90002FA8A7 /* ViewController.swift in Sources */,
+				4F95F7E61AE57B2F002FA8A7 /* InvoiceViewController.swift in Sources */,
+				4F95F7F01AE57C24002FA8A7 /* Invoice.swift in Sources */,
+				4F95F7E81AE57BBA002FA8A7 /* InvoiceDetailViewController.swift in Sources */,
+				4F95F7EA1AE57BCB002FA8A7 /* InvoiceAddViewController.swift in Sources */,
+				4F95F7EC1AE57BF0002FA8A7 /* OAuthService.swift in Sources */,
+				4F95F7C11AE57A90002FA8A7 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4F95F7CC1AE57A90002FA8A7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F95F7D71AE57A90002FA8A7 /* InvoicerMobileTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4F95F7D21AE57A90002FA8A7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4F95F7BA1AE57A90002FA8A7 /* InvoicerMobile */;
+			targetProxy = 4F95F7D11AE57A90002FA8A7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4F95F7C41AE57A90002FA8A7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F95F7C51AE57A90002FA8A7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4F95F7C91AE57A90002FA8A7 /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F95F7CA1AE57A90002FA8A7 /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F95F7D81AE57A90002FA8A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F95F7D91AE57A90002FA8A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F95F7DB1AE57A90002FA8A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = InvoicerMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4F95F7DC1AE57A90002FA8A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = InvoicerMobile/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4F95F7DE1AE57A90002FA8A7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = InvoicerMobileTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InvoicerMobile.app/InvoicerMobile";
+			};
+			name = Debug;
+		};
+		4F95F7DF1AE57A90002FA8A7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = InvoicerMobileTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InvoicerMobile.app/InvoicerMobile";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F95F7B61AE57A8F002FA8A7 /* Build configuration list for PBXProject "InvoicerMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F95F7D81AE57A90002FA8A7 /* Debug */,
+				4F95F7D91AE57A90002FA8A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F95F7DA1AE57A90002FA8A7 /* Build configuration list for PBXNativeTarget "InvoicerMobile" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F95F7DB1AE57A90002FA8A7 /* Debug */,
+				4F95F7DC1AE57A90002FA8A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		4F95F7DD1AE57A90002FA8A7 /* Build configuration list for PBXNativeTarget "InvoicerMobileTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F95F7DE1AE57A90002FA8A7 /* Debug */,
+				4F95F7DF1AE57A90002FA8A7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F95F7B31AE57A8F002FA8A7 /* Project object */;
+}
