@@ -167,9 +167,9 @@
 		4F95F7E21AE57ADA002FA8A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4F95F7C71AE57A90002FA8A7 /* Images.xcassets */,
 				4F95F7C41AE57A90002FA8A7 /* Main.storyboard */,
 				4F95F7ED1AE57C14002FA8A7 /* InvoiceCell.swift */,
+				4F95F7C71AE57A90002FA8A7 /* Images.xcassets */,
 				4F95F7C91AE57A90002FA8A7 /* LaunchScreen.xib */,
 			);
 			name = View;
@@ -290,6 +290,7 @@
 			files = (
 				4F95F7E41AE57B1F002FA8A7 /* LoginViewController.swift in Sources */,
 				4F95F7F21AE58015002FA8A7 /* PayViewController.swift in Sources */,
+				ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */,
 				4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */,
 				4F95F7C31AE57A90002FA8A7 /* ViewController.swift in Sources */,
 				4F95F7E61AE57B2F002FA8A7 /* InvoiceViewController.swift in Sources */,
