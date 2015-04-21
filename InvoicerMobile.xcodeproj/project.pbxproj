@@ -25,6 +25,7 @@
 		4F95F7FF1AE5891E002FA8A7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F95F7FA1AE588C8002FA8A7 /* PassKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4F95F8001AE58924002FA8A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F95F7F81AE588BF002FA8A7 /* Foundation.framework */; };
 		4F95F8021AE58B87002FA8A7 /* stripe-ios-master in Resources */ = {isa = PBXBuildFile; fileRef = 4F95F8011AE58B87002FA8A7 /* stripe-ios-master */; };
+		AD09FC881AE6CAB20073CD71 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09FC871AE6CAB20073CD71 /* WebViewController.swift */; };
 		ADA580091AE5952A0034D871 /* StripeKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA580081AE5952A0034D871 /* StripeKeys.swift */; };
 		ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */; };
 		ADA5800D1AE5C3EB0034D871 /* server.js in Resources */ = {isa = PBXBuildFile; fileRef = ADA5800C1AE5C3EB0034D871 /* server.js */; };
@@ -64,6 +65,7 @@
 		4F95F7FA1AE588C8002FA8A7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		4F95F7FC1AE588D5002FA8A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4F95F8011AE58B87002FA8A7 /* stripe-ios-master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "stripe-ios-master"; sourceTree = "<group>"; };
+		AD09FC871AE6CAB20073CD71 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		ADA580081AE5952A0034D871 /* StripeKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeKeys.swift; sourceTree = "<group>"; };
 		ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceJSONParser.swift; sourceTree = "<group>"; };
 		ADA5800C1AE5C3EB0034D871 /* server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = server.js; sourceTree = "<group>"; };
@@ -165,11 +167,11 @@
 			children = (
 				4F95F7C21AE57A90002FA8A7 /* ViewController.swift */,
 				4F95F7E31AE57B1F002FA8A7 /* LoginViewController.swift */,
-				CED4DF011AE5D18100B5CCA1 /* WebViewController.swift */,
 				4F95F7E51AE57B2F002FA8A7 /* InvoiceViewController.swift */,
 				4F95F7E71AE57BBA002FA8A7 /* InvoiceDetailViewController.swift */,
 				4F95F7E91AE57BCB002FA8A7 /* InvoiceAddViewController.swift */,
 				4F95F7F11AE58015002FA8A7 /* PayViewController.swift */,
+				AD09FC871AE6CAB20073CD71 /* WebViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -308,9 +310,9 @@
 				4F95F7C31AE57A90002FA8A7 /* ViewController.swift in Sources */,
 				4F95F7E61AE57B2F002FA8A7 /* InvoiceViewController.swift in Sources */,
 				4F95F7F01AE57C24002FA8A7 /* Invoice.swift in Sources */,
-				CED4DF021AE5D18100B5CCA1 /* WebViewController.swift in Sources */,
 				4F95F7E81AE57BBA002FA8A7 /* InvoiceDetailViewController.swift in Sources */,
 				4F95F7EA1AE57BCB002FA8A7 /* InvoiceAddViewController.swift in Sources */,
+				AD09FC881AE6CAB20073CD71 /* WebViewController.swift in Sources */,
 				4F95F7EC1AE57BF0002FA8A7 /* OAuthService.swift in Sources */,
 				4F95F7C11AE57A90002FA8A7 /* AppDelegate.swift in Sources */,
 			);
