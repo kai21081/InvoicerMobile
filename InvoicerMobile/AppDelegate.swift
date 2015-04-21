@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       rootViewController = self.window?.rootViewController as? LoginViewController,
       storyboard = rootViewController.storyboard
     {
-      let invoiceVC = storyboard.instantiateViewControllerWithIdentifier("InvoiceViewController") as! InvoiceViewController
+      let invoiceVC = storyboard.instantiateViewControllerWithIdentifier("InvoiceNavController") as! UINavigationController
       window?.rootViewController = invoiceVC
     }
     return true
