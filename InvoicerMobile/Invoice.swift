@@ -9,12 +9,13 @@
 
 import Foundation
 
-struct Invoice {
+class Invoice {
   var id : String!
   var name : String!
   var amount : NSNumber!
   var createdAt : NSDate!
   var paid : Bool!
+  var paymentDate : NSDate?
   
   init(id: String, name: String, amount: NSNumber, createdAt: NSDate, paid: Bool) {
     self.id = id
