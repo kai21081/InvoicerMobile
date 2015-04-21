@@ -166,6 +166,7 @@
 				ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */,
 				ADA580101AE6ADA20034D871 /* StripeService.swift */,
 				CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */,
+				AD09FC891AE6CE7E0073CD71 /* StripeKeys.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -322,6 +323,7 @@
 				CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */,
 				4F95F7EA1AE57BCB002FA8A7 /* InvoiceAddViewController.swift in Sources */,
 				CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */,
+				AD09FC881AE6CAB20073CD71 /* WebViewController.swift in Sources */,
 				4F95F7EC1AE57BF0002FA8A7 /* OAuthService.swift in Sources */,
 				4F5F4BC01AE6CC6D005A1287 /* EmailService.swift in Sources */,
 				AD09FC8A1AE6CE7E0073CD71 /* StripeKeys.swift in Sources */,

@@ -128,6 +128,8 @@
                                 <segue destination="W9j-YG-2f2" kind="presentation" id="pc6-KF-0KR"/>
                             </connections>
                         </barButtonItem>
+                    <navigationItem key="navigationItem" title="Invoices" id="EZ1-A5-8hL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dQT-d6-dur"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9a9-k5-iAE" id="6ED-nz-M22"/>
