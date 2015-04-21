@@ -23,16 +23,16 @@ class InvoiceDetailViewController: UIViewController {
         super.viewDidLoad()
       self.invoiceDescription.text = invoice.name
       self.amount.text = invoice.amount.stringValue
-      //self.createdAt.text = invoice.createdAt.
+      var dateFormat = NSDateFormatter()
+      dateFormat.dateFormat = "MM/dd/yyyy"
+      self.createdAt.text = dateFormat.stringFromDate(invoice.createdAt)
       if invoice.paid == true{
         self.status.text = "Paid"
         emailButton.enabled = false
       }else{
         self.status.text = "Pending"
       }
-
-    }
-    
+  }
 
   @IBAction func emailButtonPressed(sender: AnyObject) {
     
