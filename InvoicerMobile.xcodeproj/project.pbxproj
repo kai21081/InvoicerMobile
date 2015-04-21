@@ -149,6 +149,10 @@
 				4F95F7EB1AE57BF0002FA8A7 /* OAuthService.swift */,
 				CE3D17CE1AE5943C00061F95 /* StripeKeys.swift */,
 				4F95F7EF1AE57C24002FA8A7 /* Invoice.swift */,
+				4F95F7EB1AE57BF0002FA8A7 /* OAuthService.swift */,
+				ADA580081AE5952A0034D871 /* StripeKeys.swift */,
+				ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */,
+				ADA580101AE6ADA20034D871 /* StripeService.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -170,9 +174,9 @@
 		4F95F7E21AE57ADA002FA8A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4F95F7C71AE57A90002FA8A7 /* Images.xcassets */,
 				4F95F7C41AE57A90002FA8A7 /* Main.storyboard */,
 				4F95F7ED1AE57C14002FA8A7 /* InvoiceCell.swift */,
+				4F95F7C71AE57A90002FA8A7 /* Images.xcassets */,
 				4F95F7C91AE57A90002FA8A7 /* LaunchScreen.xib */,
 			);
 			name = View;
@@ -274,6 +278,7 @@
 				4F95F8021AE58B87002FA8A7 /* stripe-ios-master in Resources */,
 				4F95F7CB1AE57A90002FA8A7 /* LaunchScreen.xib in Resources */,
 				4F95F7C81AE57A90002FA8A7 /* Images.xcassets in Resources */,
+				ADA5800D1AE5C3EB0034D871 /* server.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -293,6 +298,7 @@
 			files = (
 				4F95F7E41AE57B1F002FA8A7 /* LoginViewController.swift in Sources */,
 				4F95F7F21AE58015002FA8A7 /* PayViewController.swift in Sources */,
+				ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */,
 				4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */,
 				CE3D17CF1AE5943C00061F95 /* StripeKeys.swift in Sources */,
 				4F95F7C31AE57A90002FA8A7 /* ViewController.swift in Sources */,

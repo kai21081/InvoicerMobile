@@ -3,33 +3,64 @@
 //  InvoicerMobile
 //
 //  Created by Jisoo Hong on 2015. 4. 20..
+//  Written by Brandon Roberts 4/20/15
 //  Copyright (c) 2015년 JHK. All rights reserved.
 //
 
 import UIKit
 
-class InvoiceViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+class InvoiceViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+  
+  @IBOutlet var tableView: UITableView!
+  
+  var invoices = [Invoice]() {
+    didSet {
+      self.tableView.reloadData()
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+  }
+  let stripeService = StripeService()
+  
+  override func viewDidLoad() {
+    super.viewDidLoad()
     
+    self.tableView.delegate = self
+    self.tableView.dataSource = self
+    
+    self.stripeService.fetchInvoicesForCompany("test", completionHandler: { (returnedInvoices) -> Void in
+      if returnedInvoices != nil {
+        self.invoices = returnedInvoices!
+      }
+    })
+  
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return self.invoices.count
+  }
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
-    /*
-    // MARK: - Navigation
+    let cell = self.tableView.dequeueReusableCellWithIdentifier("InvoiceCell") as! InvoiceCell
+    let displayedInvoice = self.invoices[indexPath.row]
+    
+    // Clear out the stored values just in case
+    cell.nameLabel.text = nil
+    cell.amountLabel.text = nil
+    cell.imageView?.image = nil
+    
+    // Set the displayed values
+    cell.nameLabel.text = displayedInvoice.name
+    cell.amountLabel.text = displayedInvoice.amount.stringValue
+    cell.imageView?.image = UIImage(named: "\(displayedInvoice.paid)")
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    return cell
+  }
+  
+  override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    if segue.identifier == "ShowInvoiceDetail" {
+      let nextVC = segue.destinationViewController as! InvoiceDetailViewController
+      // TODO: Interface with InvoiceDetail
     }
-    */
-
+  }
+  
 }
