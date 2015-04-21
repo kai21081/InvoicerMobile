@@ -13,13 +13,24 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   
   @IBOutlet var tableView: UITableView!
   
-  var invoices = [Invoice]()
+  var invoices = [Invoice]() {
+    didSet {
+      self.tableView.reloadData()
+    }
+  }
+  let stripeService = StripeService()
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
     self.tableView.delegate = self
     self.tableView.dataSource = self
+    
+    self.stripeService.fetchInvoicesForCompany("test", completionHandler: { (returnedInvoices) -> Void in
+      if returnedInvoices != nil {
+        self.invoices = returnedInvoices!
+      }
+    })
   
   }
   
