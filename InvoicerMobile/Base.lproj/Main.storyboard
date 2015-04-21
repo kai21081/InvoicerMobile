@@ -52,7 +52,7 @@
             </objects>
             <point key="canvasLocation" x="302" y="314"/>
         </scene>
-        <!--Invoice View Controller-->
+        <!--Invoices-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController storyboardIdentifier="InvoiceViewController" id="BYZ-38-t0r" customClass="InvoiceViewController" customModule="InvoicerMobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9a9-k5-iAE">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="82" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="9a9-k5-iAE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -114,8 +114,14 @@
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="9a9-k5-iAE" secondAttribute="trailing" constant="-16" id="Jr7-bD-TWb"/>
+                            <constraint firstItem="9a9-k5-iAE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="ZVX-0Z-KGU"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9a9-k5-iAE" secondAttribute="bottom" id="lHr-Uw-x0v"/>
+                            <constraint firstItem="9a9-k5-iAE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="mtH-9T-1gv"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EZ1-A5-8hL">
+                    <navigationItem key="navigationItem" title="Invoices" id="EZ1-A5-8hL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dQT-d6-dur"/>
                     </navigationItem>
                     <connections>
@@ -126,7 +132,7 @@
             </objects>
             <point key="canvasLocation" x="929" y="-379"/>
         </scene>
-        <!--Invoice Detail View Controller-->
+        <!--Invoice-->
         <scene sceneID="jx1-6i-y4B">
             <objects>
                 <viewController id="Wcq-nx-L31" customClass="InvoiceDetailViewController" customModule="InvoicerMobile" customModuleProvider="target" sceneMemberID="viewController">
@@ -212,6 +218,7 @@
                         </constraints>
                     </view>
                     <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Invoice" id="Sqz-cB-zMV"/>
                     <connections>
                         <outlet property="amount" destination="PZG-Lb-YxT" id="xSV-Q1-XC9"/>
                         <outlet property="createdAt" destination="OjP-zR-rtK" id="okW-bd-A6d"/>
@@ -227,7 +234,7 @@
         <!--Navigation Controller-->
         <scene sceneID="9aH-sO-IgN">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Rlm-sI-f6I" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="InvoiceNavController" automaticallyAdjustsScrollViewInsets="NO" id="Rlm-sI-f6I" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RdY-wt-ogb">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
