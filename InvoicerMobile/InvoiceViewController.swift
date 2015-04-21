@@ -34,6 +34,9 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   
   }
   
+  //MARK:
+  //MARK: UITableViewDataSource and Delegate
+  
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     return self.invoices.count
   }
@@ -56,10 +59,19 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
     return cell
   }
   
+  func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+  }
+  
+  //MARK:
+  //MARK: Segue
+  
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "ShowInvoiceDetail" {
       let nextVC = segue.destinationViewController as! InvoiceDetailViewController
       // TODO: Interface with InvoiceDetail
+      let row = self.tableView.indexPathForSelectedRow()?.row
+      nextVC.invoice = invoices[row!]
     }
   }
   
