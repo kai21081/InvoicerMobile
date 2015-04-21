@@ -29,6 +29,7 @@
 		ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */; };
 		ADA5800D1AE5C3EB0034D871 /* server.js in Resources */ = {isa = PBXBuildFile; fileRef = ADA5800C1AE5C3EB0034D871 /* server.js */; };
 		ADA580111AE6ADA20034D871 /* StripeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA580101AE6ADA20034D871 /* StripeService.swift */; };
+		CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */; };
 		CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceJSONParser.swift; sourceTree = "<group>"; };
 		ADA5800C1AE5C3EB0034D871 /* server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = server.js; sourceTree = "<group>"; };
 		ADA580101AE6ADA20034D871 /* StripeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeService.swift; sourceTree = "<group>"; };
+		CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceReService.swift; sourceTree = "<group>"; };
 		CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveTextFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -158,6 +160,7 @@
 				ADA580081AE5952A0034D871 /* StripeKeys.swift */,
 				ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */,
 				ADA580101AE6ADA20034D871 /* StripeService.swift */,
+				CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 				4F95F7E81AE57BBA002FA8A7 /* InvoiceDetailViewController.swift in Sources */,
 				CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */,
 				4F95F7EA1AE57BCB002FA8A7 /* InvoiceAddViewController.swift in Sources */,
+				CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */,
 				4F95F7EC1AE57BF0002FA8A7 /* OAuthService.swift in Sources */,
 				4F95F7C11AE57A90002FA8A7 /* AppDelegate.swift in Sources */,
 			);
