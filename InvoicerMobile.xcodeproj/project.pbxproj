@@ -25,6 +25,8 @@
 		4F95F7FF1AE5891E002FA8A7 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F95F7FA1AE588C8002FA8A7 /* PassKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		4F95F8001AE58924002FA8A7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F95F7F81AE588BF002FA8A7 /* Foundation.framework */; };
 		4F95F8021AE58B87002FA8A7 /* stripe-ios-master in Resources */ = {isa = PBXBuildFile; fileRef = 4F95F8011AE58B87002FA8A7 /* stripe-ios-master */; };
+		CE3D17CF1AE5943C00061F95 /* StripeKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3D17CE1AE5943C00061F95 /* StripeKeys.swift */; };
+		CED4DF021AE5D18100B5CCA1 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4DF011AE5D18100B5CCA1 /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +62,8 @@
 		4F95F7FA1AE588C8002FA8A7 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		4F95F7FC1AE588D5002FA8A7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		4F95F8011AE58B87002FA8A7 /* stripe-ios-master */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "stripe-ios-master"; sourceTree = "<group>"; };
+		CE3D17CE1AE5943C00061F95 /* StripeKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeKeys.swift; sourceTree = "<group>"; };
+		CED4DF011AE5D18100B5CCA1 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				4F95F7EB1AE57BF0002FA8A7 /* OAuthService.swift */,
+				CE3D17CE1AE5943C00061F95 /* StripeKeys.swift */,
 				4F95F7EF1AE57C24002FA8A7 /* Invoice.swift */,
 			);
 			name = Model;
@@ -153,6 +158,7 @@
 			children = (
 				4F95F7C21AE57A90002FA8A7 /* ViewController.swift */,
 				4F95F7E31AE57B1F002FA8A7 /* LoginViewController.swift */,
+				CED4DF011AE5D18100B5CCA1 /* WebViewController.swift */,
 				4F95F7E51AE57B2F002FA8A7 /* InvoiceViewController.swift */,
 				4F95F7E71AE57BBA002FA8A7 /* InvoiceDetailViewController.swift */,
 				4F95F7E91AE57BCB002FA8A7 /* InvoiceAddViewController.swift */,
@@ -288,9 +294,11 @@
 				4F95F7E41AE57B1F002FA8A7 /* LoginViewController.swift in Sources */,
 				4F95F7F21AE58015002FA8A7 /* PayViewController.swift in Sources */,
 				4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */,
+				CE3D17CF1AE5943C00061F95 /* StripeKeys.swift in Sources */,
 				4F95F7C31AE57A90002FA8A7 /* ViewController.swift in Sources */,
 				4F95F7E61AE57B2F002FA8A7 /* InvoiceViewController.swift in Sources */,
 				4F95F7F01AE57C24002FA8A7 /* Invoice.swift in Sources */,
+				CED4DF021AE5D18100B5CCA1 /* WebViewController.swift in Sources */,
 				4F95F7E81AE57BBA002FA8A7 /* InvoiceDetailViewController.swift in Sources */,
 				4F95F7EA1AE57BCB002FA8A7 /* InvoiceAddViewController.swift in Sources */,
 				4F95F7EC1AE57BF0002FA8A7 /* OAuthService.swift in Sources */,
