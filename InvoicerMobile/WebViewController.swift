@@ -3,7 +3,7 @@
 //  InvoicerMobile
 //
 //  Created by User on 4/20/15.
-//  Copyright (c) 2015 JHK. All rights reserved.
+//  Copyright (c) 2015 Craig Chaillie. All rights reserved.
 //
 
 import WebKit
@@ -19,10 +19,16 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     self.view.addSubview(self.webView)
     self.webView.setTranslatesAutoresizingMaskIntoConstraints(false)
     constrainView(self.webView, toContainer: self.view)
-    let oAuthService = OAuthService()
-    let request = oAuthService.requestOAuthURL()
+    
     self.webView.navigationDelegate = self
+    let request = stripeAuthenticationURL()
     self.webView.loadRequest(request)
+  }
+  
+  func stripeAuthenticationURL() -> NSURLRequest{
+    let oAuthUrlString = "https://connect.stripe.com/oauth/authorize"
+    let requestURLString = oAuthUrlString + "?client_id=" + kStripeClientID + "&response_type=code"
+    return NSURLRequest(URL: NSURL(string: requestURLString)!)
   }
   
   func constrainView(child: UIView, toContainer container: UIView) {
