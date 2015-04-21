@@ -29,6 +29,7 @@
 		ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */; };
 		ADA5800D1AE5C3EB0034D871 /* server.js in Resources */ = {isa = PBXBuildFile; fileRef = ADA5800C1AE5C3EB0034D871 /* server.js */; };
 		ADA580111AE6ADA20034D871 /* StripeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA580101AE6ADA20034D871 /* StripeService.swift */; };
+		CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceJSONParser.swift; sourceTree = "<group>"; };
 		ADA5800C1AE5C3EB0034D871 /* server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = server.js; sourceTree = "<group>"; };
 		ADA580101AE6ADA20034D871 /* StripeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeService.swift; sourceTree = "<group>"; };
+		CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveTextFieldViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -165,10 +167,10 @@
 			children = (
 				4F95F7C21AE57A90002FA8A7 /* ViewController.swift */,
 				4F95F7E31AE57B1F002FA8A7 /* LoginViewController.swift */,
-				CED4DF011AE5D18100B5CCA1 /* WebViewController.swift */,
 				4F95F7E51AE57B2F002FA8A7 /* InvoiceViewController.swift */,
 				4F95F7E71AE57BBA002FA8A7 /* InvoiceDetailViewController.swift */,
 				4F95F7E91AE57BCB002FA8A7 /* InvoiceAddViewController.swift */,
+				CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */,
 				4F95F7F11AE58015002FA8A7 /* PayViewController.swift */,
 			);
 			name = Controller;
@@ -308,8 +310,8 @@
 				4F95F7C31AE57A90002FA8A7 /* ViewController.swift in Sources */,
 				4F95F7E61AE57B2F002FA8A7 /* InvoiceViewController.swift in Sources */,
 				4F95F7F01AE57C24002FA8A7 /* Invoice.swift in Sources */,
-				CED4DF021AE5D18100B5CCA1 /* WebViewController.swift in Sources */,
 				4F95F7E81AE57BBA002FA8A7 /* InvoiceDetailViewController.swift in Sources */,
+				CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */,
 				4F95F7EA1AE57BCB002FA8A7 /* InvoiceAddViewController.swift in Sources */,
 				4F95F7EC1AE57BF0002FA8A7 /* OAuthService.swift in Sources */,
 				4F95F7C11AE57A90002FA8A7 /* AppDelegate.swift in Sources */,
