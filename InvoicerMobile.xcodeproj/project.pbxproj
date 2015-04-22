@@ -341,11 +341,8 @@
 				4F95F7E81AE57BBA002FA8A7 /* InvoiceDetailViewController.swift in Sources */,
 				CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */,
 				4F95F7EA1AE57BCB002FA8A7 /* InvoiceAddViewController.swift in Sources */,
-<<<<<<< HEAD
 				AD0E80411AE6F3CC000A193F /* ViewGradients.swift in Sources */,
-=======
 				CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */,
->>>>>>> master
 				AD09FC881AE6CAB20073CD71 /* WebViewController.swift in Sources */,
 				4F95F7EC1AE57BF0002FA8A7 /* OAuthService.swift in Sources */,
 				4F5F4BC01AE6CC6D005A1287 /* EmailService.swift in Sources */,
