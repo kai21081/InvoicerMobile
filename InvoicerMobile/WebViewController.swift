@@ -51,7 +51,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let window = appDelegate.window
     
-    let invoiceVC = self.storyboard?.instantiateViewControllerWithIdentifier("InvoiceViewController") as! InvoiceViewController
+    let invoiceVC = self.storyboard?.instantiateViewControllerWithIdentifier("InvoiceNavController") as! UINavigationController
     UIView.transitionFromView(self.view, toView: invoiceVC.view, duration: viewTransitionAnimationDuration, options: transitionAnimationStyle, completion: { (finished) -> Void in
       window?.rootViewController = invoiceVC
     })

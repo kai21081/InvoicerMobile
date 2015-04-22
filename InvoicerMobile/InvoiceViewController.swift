@@ -23,6 +23,11 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   override func viewDidLoad() {
     super.viewDidLoad()
     
+//    self.view.layer.insertSublayer(ViewGradients.pinkAwesomeGradientLayerOfSize(self.view.layer.frame.size), atIndex: 0)
+//        self.view.layer.insertSublayer(ViewGradients.oceanBlueGradientLayerOfSize(self.view.layer.frame.size), atIndex: 0)
+//    self.view.layer.insertSublayer(ViewGradients.purpleGradientLayerOfSize(self.view.layer.frame.size), atIndex: 0)
+    self.view.layer.insertSublayer(ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size), atIndex: 0)
+    
     self.tableView.delegate = self
     self.tableView.dataSource = self
     
@@ -53,7 +58,7 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
     
     // Set the displayed values
     cell.nameLabel.text = displayedInvoice.name
-    cell.amountLabel.text = displayedInvoice.amount.stringValue
+    cell.amountLabel.text = displayedInvoice.amount.stringCurrencyValue()
     cell.imageView?.image = UIImage(named: "\(displayedInvoice.paid)")
 
     return cell
@@ -74,5 +79,10 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
       nextVC.invoice = invoices[row!]
     }
   }
+  
+  //MARK:
+  //MARK: Private methods
+  
+
   
 }
