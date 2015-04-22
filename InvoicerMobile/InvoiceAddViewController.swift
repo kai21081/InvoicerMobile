@@ -13,6 +13,7 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   let invoiceReDescriptionRegex = NSRegularExpression(pattern: "[^0-9a-zA-Z\n*%$#!?,_ -]", options: nil, error: nil)
   let emailRegex = NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}", options: nil, error: nil)
   
+  @IBOutlet weak var errorLabel: UILabel!
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var descriptionField: UITextField!
   @IBOutlet weak var recipientEmailField: UITextField!
@@ -20,12 +21,11 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    self.errorLabel.hidden = true
     self.nameField.delegate = self
     self.amountField.delegate = self
     self.descriptionField.delegate = self
     self.recipientEmailField.delegate = self
-    
-    // Do any additional setup after loading the view.
   }
   
   @IBAction func createInvoicePressed(sender: UIButton) {
@@ -47,12 +47,15 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
           let nf = NSNumberFormatter()
           if let validNumber = nf.numberFromString(amount) {
             let jsonInvoice = invoiceToJSON(name, description: description, amount: amount, recipient: recipientEmail)
-            InvoiceReService.postInvoice(jsonInvoice, completionHandler: { (data, error) -> () in
-              if error != nil {
-                println(error)
+            InvoiceReService.postInvoice(jsonInvoice, completionHandler: { [weak self] (data, error) -> () in
+              if error != nil && self != nil {
+                println(error!)
+                self!.errorLabel.text = "Error:, \(error!)"
+                self!.errorLabel.hidden = false
               }
-              else {
+              else if self != nil {
                 println("Successfully Created and uploaded to InvoiceRe")
+                self!.clearTextFields()
               }
             })
           } else {
@@ -66,6 +69,15 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   @IBAction func leavePage(sender: UIButton) {
     if let vc = self.presentingViewController {
       self.dismissViewControllerAnimated(true, completion: nil)
+    }
+  }
+  
+  func clearTextFields() {
+    for subview in self.view.subviews {
+      if (subview.isKindOfClass(UITextField))  {
+        var textField = subview as! UITextField
+        textField.text = ""
+      }
     }
   }
   
@@ -88,7 +100,7 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   
   
   
-  // following stolen from http://stackoverflow.com/questions/26180888/what-are-best-practices-for-validating-email-addresses-in-swift
+  // following regex stolen from http://stackoverflow.com/questions/26180888/what-are-best-practices-for-validating-email-addresses-in-swift
   
   func validateEmail(candidate: String) -> Bool {
     let emailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
@@ -108,8 +120,7 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     return data!
   }
   
-  func shake(viewToShake: UIView)
-  {
+  func shake(viewToShake: UIView)  {
     let duration = 0.25
     UIView.animateWithDuration(duration, delay: 0.0, usingSpringWithDamping: 0.0, initialSpringVelocity: 10.0, options: UIViewAnimationOptions.BeginFromCurrentState, animations: { () -> Void in
       viewToShake.transform = CGAffineTransformMakeTranslation(3, 0);
@@ -119,6 +130,8 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     })
   }
   
-  
+  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    self.errorLabel.hidden = true
+  }
   
 }

@@ -24,7 +24,9 @@ class InvoiceReService {
     let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
       if error != nil {
         //println("Error: InvoiceReService unable to perform request. \(error)")
-        completionHandler(nil, error.description)
+        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+          completionHandler(nil, error.description)
+        })
       }
       else if let httpResponse = response as? NSHTTPURLResponse {
         switch httpResponse.statusCode {
@@ -34,7 +36,9 @@ class InvoiceReService {
             completionHandler(data, error.description)
           })
         default:
-          completionHandler(nil, "\(httpResponse.statusCode)")
+          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            completionHandler(nil, "\(httpResponse.statusCode)")
+          })
         }
       }
     })

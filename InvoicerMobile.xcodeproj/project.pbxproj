@@ -36,6 +36,7 @@
 		ADA5800D1AE5C3EB0034D871 /* server.js in Resources */ = {isa = PBXBuildFile; fileRef = ADA5800C1AE5C3EB0034D871 /* server.js */; };
 		CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */; };
 		CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */; };
+		CEDBA5021AE81BA70009BBBC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDBA5011AE81BA70009BBBC /* logo.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +83,7 @@
 		ADA580101AE6ADA20034D871 /* StripeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeService.swift; sourceTree = "<group>"; };
 		CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceReService.swift; sourceTree = "<group>"; };
 		CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveTextFieldViewController.swift; sourceTree = "<group>"; };
+		CEDBA5011AE81BA70009BBBC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 		4F95F7BE1AE57A90002FA8A7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				CEDBA5011AE81BA70009BBBC /* logo.png */,
 				4F95F7BF1AE57A90002FA8A7 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -307,6 +310,7 @@
 			files = (
 				4F95F7C61AE57A90002FA8A7 /* Main.storyboard in Resources */,
 				4F95F8021AE58B87002FA8A7 /* stripe-ios-master in Resources */,
+				CEDBA5021AE81BA70009BBBC /* logo.png in Resources */,
 				4F95F7CB1AE57A90002FA8A7 /* LaunchScreen.xib in Resources */,
 				4F95F7C81AE57A90002FA8A7 /* Images.xcassets in Resources */,
 				ADA5800D1AE5C3EB0034D871 /* server.js in Resources */,

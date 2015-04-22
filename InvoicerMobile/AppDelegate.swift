@@ -14,6 +14,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+    
+    //Push Notification Registration
+    let types: UIUserNotificationType = UIUserNotificationType.Badge |
+      UIUserNotificationType.Sound | UIUserNotificationType.Alert
+    let notificationSettings = UIUserNotificationSettings(forTypes: types, categories: nil)
+    UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+    UIApplication.sharedApplication().registerForRemoteNotifications()
+
+    //bypass login if Stripe Token present
     if let
       stripeToken = NSUserDefaults.standardUserDefaults().objectForKey(kUserDefaultsStripeTokenKey) as? String,
       rootViewController = self.window?.rootViewController as? LoginViewController,
@@ -23,6 +32,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       window?.rootViewController = invoiceVC
     }
     return true
+  }
+  
+  func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+    if let token = NSString(data: deviceToken, encoding: NSASCIIStringEncoding) {
+      NSUserDefaults.standardUserDefaults().setObject(token, forKey: kUserDefaultsPushNotificationTokenKey)
+    }
   }
   
   func applicationWillResignActive(application: UIApplication) {
