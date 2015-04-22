@@ -45,6 +45,12 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   
   }
   
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    
+    self.gradientBackgroundLayer.frame = self.view.frame
+  }
+  
   //MARK:
   //MARK: UITableViewDataSource and Delegate
   

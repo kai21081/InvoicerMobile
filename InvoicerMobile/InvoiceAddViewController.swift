@@ -10,6 +10,8 @@ import UIKit
 
 class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDelegate {
   
+  var backgroundGradientLayer : CAGradientLayer!
+  
   let invoiceReDescriptionRegex = NSRegularExpression(pattern: "[^0-9a-zA-Z\n*%$#!?,_ -]", options: nil, error: nil)
   let emailRegex = NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}", options: nil, error: nil)
   
@@ -26,9 +28,18 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     self.amountField.delegate = self
     self.descriptionField.delegate = self
     self.recipientEmailField.delegate = self
+    
+    self.backgroundGradientLayer = ViewGradients.lightBlueGradientLayerOfSize(self.view.layer.frame.size)
+    self.view.layer.insertSublayer(self.backgroundGradientLayer, atIndex: 0)
   }
   
-  @IBAction func createInvoicePressed(sender: UIButton) {
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    
+    self.backgroundGradientLayer.frame = self.view.frame
+  }
+  
+  @IBAction func createInvoicePressed(sender: AnyObject) {
     if let
       name = self.nameField.text,
       amount = self.amountField.text,
@@ -54,7 +65,7 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
                 self!.errorLabel.hidden = false
               }
               else if self != nil {
-                println("Successfully Created and uploaded to InvoiceRe")
+                println("Successfully created and uploaded to InvoiceRe")
                 self!.clearTextFields()
               }
             })
@@ -66,7 +77,7 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   }
   
 
-  @IBAction func leavePage(sender: UIButton) {
+  @IBAction func leavePage(sender: AnyObject) {
     if let vc = self.presentingViewController {
       self.dismissViewControllerAnimated(true, completion: nil)
     }

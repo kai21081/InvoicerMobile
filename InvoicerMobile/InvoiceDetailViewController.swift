@@ -10,6 +10,7 @@ import UIKit
 
 class InvoiceDetailViewController: UIViewController {
 
+  var gradientBackgroundLayer : CAGradientLayer!
 
   @IBOutlet var navBar: UINavigationItem!
   @IBOutlet weak var invoiceDescription: UILabel!
@@ -22,10 +23,7 @@ class InvoiceDetailViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
-      
-      let customTextColor = UIColor.whiteColor()
-      UILabel.appearance().textColor = customTextColor
-      
+            
       self.invoiceDescription.text = invoice.name
 
       self.navBar.title = invoice.name
@@ -43,8 +41,16 @@ class InvoiceDetailViewController: UIViewController {
         self.status.text = "Pending"
       }
       
-      self.view.layer.insertSublayer(ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size), atIndex: 0)
+      self.gradientBackgroundLayer = ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size)
+      
+      self.view.layer.insertSublayer(self.gradientBackgroundLayer, atIndex: 0)
 
+  }
+  
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    
+    self.gradientBackgroundLayer.frame = self.view.frame
   }
 
   @IBAction func emailButtonPressed(sender: AnyObject) {
