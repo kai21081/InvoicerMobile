@@ -57,6 +57,29 @@ class ViewGradients {
 
   }
   
+  class func lightBlueGradientLayerOfSize(size: CGSize) -> CAGradientLayer {
+    
+    let uiColor1 = UIColor(
+      red: 209 / alphaMaxValue,
+      green: 238 / alphaMaxValue,
+      blue: 252 / alphaMaxValue,
+      alpha: 1
+    )
+    
+    let uiColor2 = UIColor(
+      red: 190 / alphaMaxValue,
+      green: 220 / alphaMaxValue,
+      blue: 252 / alphaMaxValue,
+      alpha: 1.0
+    )
+    
+    let colors = [uiColor1.CGColor, uiColor2.CGColor]
+    let locations = [NSNumber(float: 0), NSNumber(float: 1)]
+    
+    return self.gradientLayerOfSize(size, colors: colors, locations: locations)
+    
+  }
+  
   class func oceanBlueGradientLayerOfSize(size: CGSize) -> CAGradientLayer {
     let uiColor1 = UIColor(
       red: 26 / alphaMaxValue,
@@ -122,6 +145,27 @@ class ViewGradients {
   
   }
   
+  class func greenGradientLayerOfSize(size: CGSize) -> CAGradientLayer {
+    let uiColor1 = UIColor(
+      red: 76 / alphaMaxValue,
+      green: 217 / alphaMaxValue,
+      blue: 100 / alphaMaxValue,
+      alpha: 1
+    )
+    
+    let uiColor2 = UIColor(
+      red: 100 / alphaMaxValue,
+      green: 231 / alphaMaxValue,
+      blue: 134 / alphaMaxValue,
+      alpha: 1.0
+    )
+    
+    let colors = [uiColor1.CGColor, uiColor2.CGColor]
+    let locations = [NSNumber(float: 0), NSNumber(float: 1)]
+    
+    return self.gradientLayerOfSize(size, colors: colors, locations: locations)
+  }
+  
   private class func gradientLayerOfSize(size: CGSize, colors: [CGColor!], locations: [NSNumber]) -> CAGradientLayer {
     let gradientLayer = CAGradientLayer()
     gradientLayer.frame.size = size
@@ -131,5 +175,4 @@ class ViewGradients {
     return gradientLayer
   }
   
-
 }

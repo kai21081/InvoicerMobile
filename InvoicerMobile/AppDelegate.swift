@@ -31,6 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       let invoiceVC = storyboard.instantiateViewControllerWithIdentifier("InvoiceNavController") as! UINavigationController
       window?.rootViewController = invoiceVC
     }
+    
+    // Change appearance of all labels in the app to use a custom color
+//    UILabel.appearance().textColor = UIColor.whiteColor()
+    
+    
     return true
   }
   

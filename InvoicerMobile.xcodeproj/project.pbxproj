@@ -10,7 +10,6 @@
 		4F5F4BBC1AE6C9F4005A1287 /* StripeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA580101AE6ADA20034D871 /* StripeService.swift */; };
 		4F5F4BC01AE6CC6D005A1287 /* EmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F4BBF1AE6CC6D005A1287 /* EmailService.swift */; };
 		4F95F7C11AE57A90002FA8A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7C01AE57A90002FA8A7 /* AppDelegate.swift */; };
-		4F95F7C31AE57A90002FA8A7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7C21AE57A90002FA8A7 /* ViewController.swift */; };
 		4F95F7C61AE57A90002FA8A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F95F7C41AE57A90002FA8A7 /* Main.storyboard */; };
 		4F95F7C81AE57A90002FA8A7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F95F7C71AE57A90002FA8A7 /* Images.xcassets */; };
 		4F95F7CB1AE57A90002FA8A7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F95F7C91AE57A90002FA8A7 /* LaunchScreen.xib */; };
@@ -54,7 +53,6 @@
 		4F95F7BB1AE57A90002FA8A7 /* InvoicerMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvoicerMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F95F7BF1AE57A90002FA8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4F95F7C01AE57A90002FA8A7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		4F95F7C21AE57A90002FA8A7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		4F95F7C51AE57A90002FA8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4F95F7C71AE57A90002FA8A7 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4F95F7CA1AE57A90002FA8A7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -183,7 +181,6 @@
 		4F95F7E11AE57AD2002FA8A7 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				4F95F7C21AE57A90002FA8A7 /* ViewController.swift */,
 				4F95F7E31AE57B1F002FA8A7 /* LoginViewController.swift */,
 				4F95F7E51AE57B2F002FA8A7 /* InvoiceViewController.swift */,
 				4F95F7E71AE57BBA002FA8A7 /* InvoiceDetailViewController.swift */,
@@ -338,7 +335,6 @@
 				ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */,
 				4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */,
 				4F5F4BBC1AE6C9F4005A1287 /* StripeService.swift in Sources */,
-				4F95F7C31AE57A90002FA8A7 /* ViewController.swift in Sources */,
 				4F95F7E61AE57B2F002FA8A7 /* InvoiceViewController.swift in Sources */,
 				4F95F7F01AE57C24002FA8A7 /* Invoice.swift in Sources */,
 				4F95F7E81AE57BBA002FA8A7 /* InvoiceDetailViewController.swift in Sources */,
