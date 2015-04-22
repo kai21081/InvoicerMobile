@@ -10,6 +10,7 @@ import UIKit
 
 class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDelegate {
   
+  var defaultAlertColor: UIColor = UIColor.redColor()
   let invoiceReDescriptionRegex = NSRegularExpression(pattern: "[^0-9a-zA-Z\n*%$#!?,_ -]", options: nil, error: nil)
   let emailRegex = NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}", options: nil, error: nil)
   
@@ -50,11 +51,10 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
             InvoiceReService.postInvoice(jsonInvoice, completionHandler: { [weak self] (data, error) -> () in
               if error != nil && self != nil {
                 println(error!)
-                self!.errorLabel.text = "Error:, \(error!)"
-                self!.errorLabel.hidden = false
+                self!.displayAlert("Error: \(error!)", color: nil)
               }
               else if self != nil {
-                println("Successfully Created and uploaded to InvoiceRe")
+                self!.displayAlert("Invoice Successfully Created", color: UIColor.greenColor())
                 self!.clearTextFields()
               }
             })
@@ -72,6 +72,8 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     }
   }
   
+  //MARK: UI helper methods
+  
   func clearTextFields() {
     for subview in self.view.subviews {
       if (subview.isKindOfClass(UITextField))  {
@@ -79,6 +81,16 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
         textField.text = ""
       }
     }
+  }
+  
+  func displayAlert(text: String, color: UIColor?) {
+    if color == nil {
+      self.errorLabel.textColor = self.defaultAlertColor
+    }  else {
+      self.errorLabel.textColor = color
+    }
+    self.errorLabel.text = "  " + text + "  "
+    self.errorLabel.hidden = false
   }
   
   // MARK: TextFieldDelegate
@@ -131,6 +143,7 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   }
   
   override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
+    super.touchesBegan(touches, withEvent: event)
     self.errorLabel.hidden = true
   }
   

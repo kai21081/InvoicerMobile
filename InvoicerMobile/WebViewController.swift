@@ -11,6 +11,7 @@ import WebKit
 class WebViewController: UIViewController, WKNavigationDelegate {
   
   var webView: WKWebView!
+  let oAuthService = OAuthService()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -19,18 +20,41 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     self.view.addSubview(self.webView)
     self.webView.setTranslatesAutoresizingMaskIntoConstraints(false)
     constrainView(self.webView, toContainer: self.view)
-    
     self.webView.navigationDelegate = self
-    let request = stripeAuthenticationURL()
+    let request = self.oAuthService.stripeAuthenticationCodeRequest()
     self.webView.loadRequest(request)
   }
   
-  func stripeAuthenticationURL() -> NSURLRequest{
-    let oAuthUrlString = "https://connect.stripe.com/oauth/authorize"
-    let requestURLString = oAuthUrlString + "?client_id=" + kStripeClientID + "&response_type=code"
-    return NSURLRequest(URL: NSURL(string: requestURLString)!)
+  
+  //MARK: WKWebview Navigation Delegate
+  
+  func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
+    let url = navigationAction.request.URL
+    if let redirectString = url?.absoluteString {
+      if redirectString.rangeOfString(kURLSchema) != nil {
+        let code = self.oAuthService.parseCodeFromStripeURL(url)
+        if code != "" && code != nil {
+          self.oAuthService.fetchOAuthTokenUsingCode(code!, completionHandler: { (token, error) -> () in
+            NSOperationQueue.mainQueue().addOperationWithBlock({ [weak self] () -> Void in
+              if token != nil && self != nil {
+                NSUserDefaults.standardUserDefaults().setObject(token, forKey: kUserDefaultsStripeTokenKey)
+                NSUserDefaults.standardUserDefaults().synchronize()
+                self!.transitionToInvoiceViewController()
+              } else {
+                println(error)
+              }
+            })
+          })
+        }
+      }
+    }
+    decisionHandler(WKNavigationActionPolicy.Allow)
   }
   
+  
+    
+  
+
   func constrainView(child: UIView, toContainer container: UIView) {
     var top = NSLayoutConstraint(item: child, attribute: NSLayoutAttribute.Top, relatedBy: .Equal, toItem: container, attribute: NSLayoutAttribute.TopMargin, multiplier: 1.0, constant: 0)
     container.addConstraint(top)
@@ -42,6 +66,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     var right = NSLayoutConstraint(item: child, attribute: .TrailingMargin, relatedBy: .Equal, toItem: container, attribute: .Trailing, multiplier: 1.0, constant: 0)
     container.addConstraint(right)
   }
+
   
   func transitionToInvoiceViewController() {
     
@@ -51,34 +76,10 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let window = appDelegate.window
     
-    let invoiceVC = self.storyboard?.instantiateViewControllerWithIdentifier("InvoiceViewController") as! InvoiceViewController
+    let invoiceVC = self.storyboard?.instantiateViewControllerWithIdentifier("InvoiceNavController") as! UINavigationController
     UIView.transitionFromView(self.view, toView: invoiceVC.view, duration: viewTransitionAnimationDuration, options: transitionAnimationStyle, completion: { (finished) -> Void in
       window?.rootViewController = invoiceVC
     })
   }
   
-  //MARK: WKWebview Navigation Delegate
-  
-  func webView(webView: WKWebView, decidePolicyForNavigationAction navigationAction: WKNavigationAction, decisionHandler: (WKNavigationActionPolicy) -> Void) {
-    let url = navigationAction.request.URL
-    if let redirectString = url?.absoluteString {
-      if redirectString.rangeOfString(kURLSchema) != nil {
-        if let
-          query = url!.query,
-          range = query.rangeOfString("code=") {
-            let code = query.substringFromIndex(range.endIndex)
-            println(code)
-            if code != "" {
-              NSUserDefaults.standardUserDefaults().setObject(code, forKey: kUserDefaultsStripeTokenKey)
-              transitionToInvoiceViewController()
-            }
-        }
-        
-        
-      }
-    }
-    decisionHandler(WKNavigationActionPolicy.Allow)
-    
-  }
-
 }
