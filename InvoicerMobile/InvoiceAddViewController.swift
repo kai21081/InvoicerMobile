@@ -27,9 +27,18 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     self.amountField.delegate = self
     self.descriptionField.delegate = self
     self.recipientEmailField.delegate = self
+    
+    self.backgroundGradientLayer = ViewGradients.lightBlueGradientLayerOfSize(self.view.layer.frame.size)
+    self.view.layer.insertSublayer(self.backgroundGradientLayer, atIndex: 0)
   }
   
-  @IBAction func createInvoicePressed(sender: UIButton) {
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    
+    self.backgroundGradientLayer.frame = self.view.frame
+  }
+  
+  @IBAction func createInvoicePressed(sender: AnyObject) {
     if let
       name = self.nameField.text,
       amount = self.amountField.text,
@@ -66,7 +75,7 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   }
   
 
-  @IBAction func leavePage(sender: UIButton) {
+  @IBAction func leavePage(sender: AnyObject) {
     if let vc = self.presentingViewController {
       self.dismissViewControllerAnimated(true, completion: nil)
     }

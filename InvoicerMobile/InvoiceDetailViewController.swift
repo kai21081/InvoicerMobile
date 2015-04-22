@@ -10,7 +10,9 @@ import UIKit
 
 class InvoiceDetailViewController: UIViewController {
 
+  var gradientBackgroundLayer : CAGradientLayer!
 
+  @IBOutlet var navBar: UINavigationItem!
   @IBOutlet weak var invoiceDescription: UILabel!
   @IBOutlet weak var emailButton: UIButton!
   @IBOutlet weak var status: UILabel!
@@ -21,17 +23,34 @@ class InvoiceDetailViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+            
       self.invoiceDescription.text = invoice.name
-      self.amount.text = invoice.amount.stringValue
+
+      self.navBar.title = invoice.name
+      
+      self.amount.text = invoice.amount.stringCurrencyValue()
+      
       var dateFormat = NSDateFormatter()
       dateFormat.dateFormat = "MM/dd/yyyy"
       self.createdAt.text = dateFormat.stringFromDate(invoice.createdAt)
-      if invoice.paid == true{
+      
+      if invoice.paid == true {
         self.status.text = "Paid"
-        emailButton.enabled = false
-      }else{
+        emailButton.hidden = true
+      } else {
         self.status.text = "Pending"
       }
+      
+      self.gradientBackgroundLayer = ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size)
+      
+      self.view.layer.insertSublayer(self.gradientBackgroundLayer, atIndex: 0)
+
+  }
+  
+  override func viewWillLayoutSubviews() {
+    super.viewWillLayoutSubviews()
+    
+    self.gradientBackgroundLayer.frame = self.view.frame
   }
 
   @IBAction func emailButtonPressed(sender: AnyObject) {
