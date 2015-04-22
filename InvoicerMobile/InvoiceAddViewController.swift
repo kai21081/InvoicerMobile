@@ -24,8 +24,6 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     self.amountField.delegate = self
     self.descriptionField.delegate = self
     self.recipientEmailField.delegate = self
-    
-    // Do any additional setup after loading the view.
   }
   
   @IBAction func createInvoicePressed(sender: UIButton) {
