@@ -29,10 +29,9 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    self.gradientBackgroundLayer = ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size)
-//    self.view.layer.insertSublayer(ViewGradients.pinkAwesomeGradientLayerOfSize(self.view.layer.frame.size), atIndex: 0)
-//        self.view.layer.insertSublayer(ViewGradients.oceanBlueGradientLayerOfSize(self.view.layer.frame.size), atIndex: 0)
-//    self.view.layer.insertSublayer(ViewGradients.purpleGradientLayerOfSize(self.view.layer.frame.size), atIndex: 0)
+//    self.gradientBackgroundLayer = ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size)
+    self.gradientBackgroundLayer = ViewGradients.pinkAwesomeGradientLayerOfSize(self.view.layer.frame.size)
+    
     self.view.layer.insertSublayer(self.gradientBackgroundLayer, atIndex: 0)
     
     self.tableView.delegate = self
@@ -65,14 +64,17 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   }
   
   func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+
+    // Changes text label and background of section header to match background gradient
     let sectionHeaderView = view as! UITableViewHeaderFooterView
     sectionHeaderView.textLabel.textColor = UIColor.whiteColor()
+    
     let backgroundView = UIView(frame: sectionHeaderView.frame)
     let gradientLastColor = self.gradientBackgroundLayer.colors.last as! CGColorRef
-    println(gradientLastColor)
     backgroundView.backgroundColor = UIColor(CGColor: gradientLastColor)
     
     sectionHeaderView.backgroundView = backgroundView
+  
   }
   
   func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -96,7 +98,7 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
     case 1:
       displayedInvoice = self.paidInvoices[indexPath.row]
     default:
-      displayedInvoice = Invoice(id: "", name: "", amount: NSNumber(), createdAt: NSDate(), paid: false)
+      displayedInvoice = Invoice(id: "", name: "", amount: NSNumber(), createdAt: NSDate(), paid: true)
     }
 
     let cell = self.tableView.dequeueReusableCellWithIdentifier("InvoiceCell") as! InvoiceCell

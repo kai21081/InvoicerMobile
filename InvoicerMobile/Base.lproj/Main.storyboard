@@ -70,7 +70,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvoiceCell" rowHeight="82" id="Yd8-cF-nIR" customClass="InvoiceCell" customModule="InvoicerMobile" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="InvoiceCell" rowHeight="82" id="Yd8-cF-nIR" customClass="InvoiceCell" customModule="InvoicerMobile" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yd8-cF-nIR" id="kNv-g9-b4k">
@@ -86,28 +86,18 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InvoiceTag" translatesAutoresizingMaskIntoConstraints="NO" id="UVd-Um-Qra">
-                                                    <rect key="frame" x="542" y="16" width="50" height="50"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" constant="50" id="6Cg-el-1tI"/>
-                                                        <constraint firstAttribute="width" constant="50" id="NnG-MO-Vb1"/>
-                                                    </constraints>
-                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="Si2-au-vm8" firstAttribute="top" secondItem="3nF-FZ-Knt" secondAttribute="bottom" constant="8" id="1gB-ks-qIw"/>
                                                 <constraint firstItem="3nF-FZ-Knt" firstAttribute="leading" secondItem="kNv-g9-b4k" secondAttribute="leadingMargin" id="6Kl-OQ-Y7S"/>
-                                                <constraint firstItem="UVd-Um-Qra" firstAttribute="trailing" secondItem="kNv-g9-b4k" secondAttribute="trailingMargin" id="BMR-JE-yYq"/>
                                                 <constraint firstItem="3nF-FZ-Knt" firstAttribute="top" secondItem="kNv-g9-b4k" secondAttribute="topMargin" id="DrF-Jw-EEK"/>
-                                                <constraint firstAttribute="centerY" secondItem="UVd-Um-Qra" secondAttribute="centerY" id="X9p-kE-l9F"/>
                                                 <constraint firstItem="3nF-FZ-Knt" firstAttribute="leading" secondItem="Si2-au-vm8" secondAttribute="leading" id="yQo-vI-eaZ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="amountLabel" destination="Si2-au-vm8" id="1z2-7p-fQ1"/>
-                                            <outlet property="invoicePaidIndicatorView" destination="UVd-Um-Qra" id="aAy-uv-u8t"/>
                                             <outlet property="nameLabel" destination="3nF-FZ-Knt" id="u8v-sR-i4D"/>
                                             <segue destination="Wcq-nx-L31" kind="show" identifier="ShowInvoiceDetail" id="eez-CG-jpa"/>
                                         </connections>
@@ -156,7 +146,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAB-Sk-Ors">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAB-Sk-Ors">
                                 <rect key="frame" x="16" y="101" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -168,8 +158,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qek-fr-fOw">
-                                <rect key="frame" x="16" y="130" width="66" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created On:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qek-fr-fOw">
+                                <rect key="frame" x="16" y="130" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -193,8 +183,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bP-SA-mj1">
-                                <rect key="frame" x="251" y="550" width="99" height="30"/>
-                                <state key="normal" title="Email Invoicee">
+                                <rect key="frame" x="221" y="550" width="159" height="30"/>
+                                <state key="normal" title="Send Email To Invoicee">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -388,7 +378,4 @@
             <point key="canvasLocation" x="227" y="-379"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="InvoiceTag" width="35" height="35"/>
-    </resources>
 </document>
