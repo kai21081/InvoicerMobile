@@ -34,7 +34,6 @@
 		AD0E80451AE80AD6000A193F /* NSNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0E80441AE80AD6000A193F /* NSNumberExtension.swift */; };
 		ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */; };
 		ADA5800D1AE5C3EB0034D871 /* server.js in Resources */ = {isa = PBXBuildFile; fileRef = ADA5800C1AE5C3EB0034D871 /* server.js */; };
-		ADA580111AE6ADA20034D871 /* StripeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA580101AE6ADA20034D871 /* StripeService.swift */; };
 		CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */; };
 		CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */; };
 /* End PBXBuildFile section */

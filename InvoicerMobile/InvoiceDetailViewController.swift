@@ -22,7 +22,7 @@ class InvoiceDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
       self.invoiceDescription.text = invoice.name
-      self.amount.text = invoice.amount.stringValue
+      self.amount.text = invoice.amount.stringCurrencyValue()
       var dateFormat = NSDateFormatter()
       dateFormat.dateFormat = "MM/dd/yyyy"
       self.createdAt.text = dateFormat.stringFromDate(invoice.createdAt)
