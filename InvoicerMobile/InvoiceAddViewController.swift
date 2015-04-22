@@ -10,7 +10,8 @@ import UIKit
 
 class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDelegate {
   
-  var defaultAlertColor: UIColor = UIColor.redColor()
+  var backgroundGradientLayer : CAGradientLayer!
+  
   let invoiceReDescriptionRegex = NSRegularExpression(pattern: "[^0-9a-zA-Z\n*%$#!?,_ -]", options: nil, error: nil)
   let emailRegex = NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}", options: nil, error: nil)
   
