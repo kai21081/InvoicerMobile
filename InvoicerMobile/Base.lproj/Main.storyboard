@@ -150,7 +150,7 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dZ-vm-qQa">
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dZ-vm-qQa">
                                 <rect key="frame" x="16" y="72" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -193,8 +193,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9bP-SA-mj1">
-                                <rect key="frame" x="277" y="562" width="46" height="30"/>
-                                <state key="normal" title="Button">
+                                <rect key="frame" x="251" y="550" width="99" height="30"/>
+                                <state key="normal" title="Email Invoicee">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -204,7 +204,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="6l5-CR-NCk" firstAttribute="top" secondItem="9bP-SA-mj1" secondAttribute="bottom" constant="8" id="0d9-sC-fZY"/>
+                            <constraint firstItem="6l5-CR-NCk" firstAttribute="top" secondItem="9bP-SA-mj1" secondAttribute="bottom" constant="20" id="0d9-sC-fZY"/>
                             <constraint firstItem="PZG-Lb-YxT" firstAttribute="trailing" secondItem="1yc-rH-7j4" secondAttribute="trailingMargin" id="3RY-Uf-vgS"/>
                             <constraint firstItem="2dZ-vm-qQa" firstAttribute="leading" secondItem="pv5-wp-FOS" secondAttribute="leading" id="5W4-1E-coP"/>
                             <constraint firstItem="2dZ-vm-qQa" firstAttribute="leading" secondItem="qek-fr-fOw" secondAttribute="leading" id="CAW-Wd-Qjg"/>
@@ -232,6 +232,7 @@
                         <outlet property="createdAt" destination="OjP-zR-rtK" id="okW-bd-A6d"/>
                         <outlet property="emailButton" destination="9bP-SA-mj1" id="ztP-y3-jtK"/>
                         <outlet property="invoiceDescription" destination="2dZ-vm-qQa" id="6by-NJ-LLr"/>
+                        <outlet property="navBar" destination="Sqz-cB-zMV" id="lap-8h-N3m"/>
                         <outlet property="status" destination="VWN-iv-1ig" id="tMO-1J-ud1"/>
                     </connections>
                 </viewController>
