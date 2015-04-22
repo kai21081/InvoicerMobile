@@ -22,16 +22,24 @@ class InvoiceDetailViewController: UIViewController {
   
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      let customTextColor = UIColor.whiteColor()
+      UILabel.appearance().textColor = customTextColor
+      
       self.invoiceDescription.text = invoice.name
+
       self.navBar.title = invoice.name
+      
       self.amount.text = invoice.amount.stringCurrencyValue()
+      
       var dateFormat = NSDateFormatter()
       dateFormat.dateFormat = "MM/dd/yyyy"
       self.createdAt.text = dateFormat.stringFromDate(invoice.createdAt)
-      if invoice.paid == true{
+      
+      if invoice.paid == true {
         self.status.text = "Paid"
         emailButton.hidden = true
-      }else{
+      } else {
         self.status.text = "Pending"
       }
       

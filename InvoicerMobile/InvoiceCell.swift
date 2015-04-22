@@ -13,7 +13,7 @@ class InvoiceCell: UITableViewCell {
   
   @IBOutlet var nameLabel: UILabel!
   @IBOutlet var amountLabel: UILabel!
-  @IBOutlet var invoicePaidIndicatorView: UIImageView!
+//  @IBOutlet var invoicePaidIndicatorView: UIImageView!
 
   
   override func awakeFromNib() {
@@ -22,7 +22,7 @@ class InvoiceCell: UITableViewCell {
     // Clear label text from storyboard
     self.nameLabel.text = nil
     self.amountLabel.text = nil
-    self.invoicePaidIndicatorView.image = nil
+//    self.invoicePaidIndicatorView.image = nil
     
     // Make color changes
     let white = UIColor.whiteColor()
