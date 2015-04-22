@@ -123,14 +123,12 @@
                             <constraint firstItem="9a9-k5-iAE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="mtH-9T-1gv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="EZ1-A5-8hL">
+                    <navigationItem key="navigationItem" title="Invoices" id="EZ1-A5-8hL">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="dQT-d6-dur">
                             <connections>
                                 <segue destination="W9j-YG-2f2" kind="presentation" id="pc6-KF-0KR"/>
                             </connections>
                         </barButtonItem>
-                    <navigationItem key="navigationItem" title="Invoices" id="EZ1-A5-8hL">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="dQT-d6-dur"/>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9a9-k5-iAE" id="6ED-nz-M22"/>
