@@ -37,7 +37,7 @@ class ViewGradients {
   
   class func blueGradientLayerOfSize(size: CGSize) -> CAGradientLayer {
     let uiColor1 = UIColor(
-      red: 52 / alphaMaxValue,
+      red: 100 / alphaMaxValue,
       green: 170 / alphaMaxValue,
       blue: 220 / alphaMaxValue,
       alpha: 1
