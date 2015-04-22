@@ -3,6 +3,7 @@
 //  InvoicerMobile
 //
 //  Created by Jisoo Hong on 2015. 4. 20..
+//  Written by Brandon Roberts 4/20/15
 //  Copyright (c) 2015년 JHK. All rights reserved.
 //
 
@@ -23,6 +24,10 @@ class InvoiceCell: UITableViewCell {
     self.amountLabel.text = nil
     self.invoicePaidIndicatorView.image = nil
     
+    // Make color changes
+    let white = UIColor.whiteColor()
+    self.nameLabel.textColor = white
+    self.amountLabel.textColor = white
   }
   
   override func setSelected(selected: Bool, animated: Bool) {
