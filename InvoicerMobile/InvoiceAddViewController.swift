@@ -71,7 +71,9 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
                 self!.presentViewController(errorAlert, animated: true, completion: nil)
               }
               else if self != nil {
-                self!.displayAlert("Invoice Successfully Created", color: UIColor.greenColor())
+                var completedAlert = UIAlertController(title: "Awesomesauce", message: "Invoice Successfully Created", preferredStyle: UIAlertControllerStyle.Alert)
+                completedAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self!.presentViewController(completedAlert, animated: true, completion: nil)
                 self!.clearTextFields()
               }
               
@@ -112,16 +114,6 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
         textField.text = ""
       }
     }
-  }
-  
-  func displayAlert(text: String, color: UIColor?) {
-    if color == nil {
-      self.errorLabel.textColor = self.defaultAlertColor
-    }  else {
-      self.errorLabel.textColor = color
-    }
-    self.errorLabel.text = "  " + text + "  "
-    self.errorLabel.hidden = false
   }
   
   // MARK: TextFieldDelegate
