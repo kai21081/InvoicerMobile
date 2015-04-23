@@ -64,13 +64,14 @@ class InvoiceReService {
       let jsonData = NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions.allZeros, error: nil)
       
       let request = NSMutableURLRequest(URL: tokenPostURL!)
+      request.HTTPMethod = "PATCH"
       request.HTTPBody = jsonData
       request.setValue(stripeID, forHTTPHeaderField: "stripe-user-id")
       request.setValue("\(jsonData?.length)", forHTTPHeaderField: "Content-Length")
       request.setValue("application/json", forHTTPHeaderField: "Content-Type")
       
       let requestTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
-        
+        // Not doing anything anyway
       })
       requestTask.resume()
     }
