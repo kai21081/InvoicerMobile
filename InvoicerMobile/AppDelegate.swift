@@ -10,7 +10,7 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+  
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
@@ -24,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //bypass login if Stripe Token present
     if let
-      stripeToken = NSUserDefaults.standardUserDefaults().objectForKey(kUserDefaultsStripeTokenKey) as? String,
+      stripeToken = AppUserDefaultsService.sharedService.stripeToken,
       rootViewController = self.window?.rootViewController as? LoginViewController,
       storyboard = rootViewController.storyboard
     {
@@ -41,7 +41,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
     if let token = NSString(data: deviceToken, encoding: NSASCIIStringEncoding) {
-      NSUserDefaults.standardUserDefaults().setObject(token, forKey: kUserDefaultsPushNotificationTokenKey)
+      AppUserDefaultsService.sharedService.pushNotificationToken = token as String
     }
   }
   

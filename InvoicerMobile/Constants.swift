@@ -7,3 +7,6 @@
 //
 
 import Foundation
+
+let kURLSchema = "com.invoicer.codefellows.students"
+
