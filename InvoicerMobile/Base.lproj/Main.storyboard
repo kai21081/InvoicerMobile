@@ -276,7 +276,7 @@
                                     <constraint firstAttribute="height" constant="30" id="cvd-JK-up0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="BnL-Qx-VoR"/>
