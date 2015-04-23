@@ -24,7 +24,7 @@ class InvoiceReService {
      // request.setValue(token, forHTTPHeaderField: "stripe-access-token")
       request.setValue(stripeID, forHTTPHeaderField: "stripe-user-id")
       request.setValue("\(jsonData.length)", forHTTPHeaderField: "Content-Length")
-      //request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
+      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
       
       let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
         if error != nil {
@@ -38,7 +38,7 @@ class InvoiceReService {
           case 201:
             //println("Invoice Successfully Created!")
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-              completionHandler(data, error.description)
+              completionHandler(data, nil)
             })
           default:
             NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
