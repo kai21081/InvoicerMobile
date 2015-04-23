@@ -41,6 +41,10 @@ class WebViewController: UIViewController, WKNavigationDelegate {
                 NSUserDefaults.standardUserDefaults().synchronize()
                 self!.transitionToInvoiceViewController()
               } else {
+                
+                
+                // implement something to display error
+                
                 println(error)
               }
             })
@@ -51,8 +55,6 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     decisionHandler(WKNavigationActionPolicy.Allow)
   }
   
-  
-    
   
 
   func constrainView(child: UIView, toContainer container: UIView) {

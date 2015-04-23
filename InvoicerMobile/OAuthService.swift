@@ -67,18 +67,13 @@ class OAuthService {
         default:
           completionHandler(nil, "Unknown Server Error in retrieving token")
         }
-        if error != nil {
-          completionHandler(nil, error.description)
-        }
+      }
+      if error != nil {
+        completionHandler(nil, error.description)
       }
     })
     dataTask.resume()
   }
-  
-  
-  
-  
-  
   
   
 }
