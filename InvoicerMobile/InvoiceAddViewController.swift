@@ -118,15 +118,15 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     }
   }
   
-  func displayAlert(text: String, color: UIColor?) {
-    if color == nil {
-      self.errorLabel.textColor = UIColor.redColor()
-    }  else {
-      self.errorLabel.textColor = color
-    }
-    self.errorLabel.text = "  " + text + "  "
-    self.errorLabel.hidden = false
-  }
+//  func displayAlert(text: String, color: UIColor?) {
+//    if color == nil {
+//      self.errorLabel.textColor = UIColor.redColor()
+//    }  else {
+//      self.errorLabel.textColor = color
+//    }
+//    self.errorLabel.text = "  " + text + "  "
+//    self.errorLabel.hidden = false
+//  }
   
   // MARK: TextFieldDelegate
   

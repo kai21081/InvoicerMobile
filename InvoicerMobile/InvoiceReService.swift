@@ -14,14 +14,15 @@ class InvoiceReService {
   class func postInvoice(jsonData: NSData, completionHandler:(AnyObject?, String?) -> ()) {
     let invoiceReInvoicePostURLString = "https://www.invoice.re/api/v1/invoices"
     
-    if let token = NSUserDefaults.standardUserDefaults().objectForKey(kUserDefaultsStripeTokenKey) as? String {
+    if let stripeID = NSUserDefaults.standardUserDefaults().objectForKey(kUserDefaultsStripeUserIdKey) as? String {
       
       let request = NSMutableURLRequest(URL: NSURL(string: invoiceReInvoicePostURLString)!)
       request.HTTPMethod = "POST"
       request.HTTPBody = jsonData
       request.setValue("application/json", forHTTPHeaderField: "Accept")
       
-      request.setValue(token, forHTTPHeaderField: "stripe-access-token")
+     // request.setValue(token, forHTTPHeaderField: "stripe-access-token")
+      request.setValue(stripeID, forHTTPHeaderField: "stripe-user-id")
       request.setValue("\(jsonData.length)", forHTTPHeaderField: "Content-Length")
       //request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
       
