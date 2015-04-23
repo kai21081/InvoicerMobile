@@ -13,7 +13,7 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   
   @IBOutlet var tableView: UITableView!
   
-  let stripeService = StripeService()
+  let invoiceReService = InvoiceReService()
   var gradientBackgroundLayer : CAGradientLayer!
   
   var allInvoices = [Invoice]() {
@@ -37,7 +37,9 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
     self.tableView.delegate = self
     self.tableView.dataSource = self
     
-    self.stripeService.fetchInvoicesForCompany("test", completionHandler: { (returnedInvoices) -> Void in
+    let stripeUserID = NSUserDefaults.standardUserDefaults().valueForKey(kUserDefaultsStripeUserIdKey) as! String
+    
+    self.invoiceReService.fetchInvoicesForCompany(stripeUserID, completionHandler: { (returnedInvoices) -> Void in
       if returnedInvoices != nil {
         self.allInvoices = returnedInvoices!
       }
