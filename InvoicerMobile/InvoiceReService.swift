@@ -14,7 +14,7 @@ class InvoiceReService {
   class func postInvoice(jsonData: NSData, completionHandler:(AnyObject?, String?) -> ()) {
     let invoiceReInvoicePostURLString = "https://www.invoice.re/api/v1/invoices"
     
-    if let stripeID = NSUserDefaults.standardUserDefaults().objectForKey(kUserDefaultsStripeUserIdKey) as? String {
+    if let stripeID = AppUserDefaultsService.sharedService.stripeUserID {
       
       let request = NSMutableURLRequest(URL: NSURL(string: invoiceReInvoicePostURLString)!)
       request.HTTPMethod = "POST"

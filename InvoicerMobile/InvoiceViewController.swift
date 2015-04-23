@@ -38,14 +38,17 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
     self.tableView.delegate = self
     self.tableView.dataSource = self
     
-    let stripeUserID = NSUserDefaults.standardUserDefaults().valueForKey(kUserDefaultsStripeUserIdKey) as! String
+    if let stripeUserID = AppUserDefaultsService.sharedService.stripeUserID {
+      
+      self.invoiceService.fetchInvoicesForCompany(stripeUserID, completionHandler: { (returnedInvoices) -> Void in
+        
+        if returnedInvoices != nil {
+          self.allInvoices = returnedInvoices!
+        }
+      })
+      
+    }
     
-    self.invoiceService.fetchInvoicesForCompany(stripeUserID, completionHandler: { (returnedInvoices) -> Void in
-
-      if returnedInvoices != nil {
-        self.allInvoices = returnedInvoices!
-      }
-    })
   
   }
   
