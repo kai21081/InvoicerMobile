@@ -15,7 +15,6 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   let invoiceReDescriptionRegex = NSRegularExpression(pattern: "[^0-9a-zA-Z\n*%$#!?,_ -]", options: nil, error: nil)
   let emailRegex = NSRegularExpression(pattern: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}", options: nil, error: nil)
   
-  @IBOutlet weak var errorLabel: UILabel!
   @IBOutlet weak var nameField: UITextField!
   @IBOutlet weak var descriptionField: UITextField!
   @IBOutlet weak var recipientEmailField: UITextField!
@@ -23,7 +22,6 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   
   override func viewDidLoad() {
     super.viewDidLoad()
-    self.errorLabel.hidden = true
     self.nameField.delegate = self
     self.amountField.delegate = self
     self.descriptionField.delegate = self
@@ -48,25 +46,36 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
         if name == "" {
           shake(self.nameField)
         }
-        else if description == "" {
-          shake(self.descriptionField)
-        }
         else if !validateEmail(recipientEmail) {
           shake(self.recipientEmailField)
         }
+        else if amount == "" {
+          shake(self.amountField)
+        }
+        else if description == "" {
+          shake(self.descriptionField)
+        }
         else {
+          
           let nf = NSNumberFormatter()
           if let validNumber = nf.numberFromString(amount) {
+            
+            self.enterSendingMode()
+            
             let jsonInvoice = invoiceToJSON(name, description: description, amount: amount, recipient: recipientEmail)
             InvoiceReService.postInvoice(jsonInvoice, completionHandler: { [weak self] (data, error) -> () in
               if error != nil && self != nil {
-                println(error!)
-                self!.displayAlert("Error: \(error!)", color: nil)
+                
+                var errorAlert = UIAlertController(title: "Error", message: "An error occurred: \n\(error!)", preferredStyle: UIAlertControllerStyle.Alert)
+                errorAlert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil))
+                self!.presentViewController(errorAlert, animated: true, completion: nil)
               }
               else if self != nil {
                 self!.displayAlert("Invoice Successfully Created", color: UIColor.greenColor())
                 self!.clearTextFields()
               }
+              
+              self?.exitSendingMode()
             })
           } else {
             shake(self.amountField)
@@ -82,6 +91,18 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     }
   }
   
+  private func enterSendingMode() {
+    let barSpinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
+    barSpinner.color = UIColor.blueColor()
+//    barSpinner.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: barSpinner)
+  }
+  
+  private func exitSendingMode() {
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "createInvoicePressed:")
+  }
+    
+
   //MARK: UI helper methods
   
   func clearTextFields() {
@@ -151,10 +172,4 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
         viewToShake.transform = CGAffineTransformMakeTranslation(0, 0);
     })
   }
-  
-  override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-    super.touchesBegan(touches, withEvent: event)
-    self.errorLabel.hidden = true
-  }
-  
 }
