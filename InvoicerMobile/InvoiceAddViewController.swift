@@ -29,6 +29,8 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     
     self.backgroundGradientLayer = ViewGradients.lightBlueGradientLayerOfSize(self.view.layer.frame.size)
     self.view.layer.insertSublayer(self.backgroundGradientLayer, atIndex: 0)
+       let token = NSUserDefaults.standardUserDefaults().objectForKey(kUserDefaultsStripeTokenKey) as! String
+    println(token)
   }
   
   override func viewWillLayoutSubviews() {
@@ -115,6 +117,16 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
       }
     }
   }
+  
+//  func displayAlert(text: String, color: UIColor?) {
+//    if color == nil {
+//      self.errorLabel.textColor = UIColor.redColor()
+//    }  else {
+//      self.errorLabel.textColor = color
+//    }
+//    self.errorLabel.text = "  " + text + "  "
+//    self.errorLabel.hidden = false
+//  }
   
   // MARK: TextFieldDelegate
   

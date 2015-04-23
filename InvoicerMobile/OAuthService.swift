@@ -30,7 +30,7 @@ class OAuthService {
     }
   }
   
-  func fetchOAuthTokenUsingCode(code: String, completionHandler:(String?, String?) ->()) {
+  func fetchOAuthTokenUsingCode(code: String, completionHandler:(Bool, String?) ->()) {
     
     let urlString = kStripeBaseTokenString
     let request = NSMutableURLRequest(URL:NSURL(string: urlString)!)
@@ -49,36 +49,40 @@ class OAuthService {
         case 200...299:
           if data != nil {
             if let jsonDictionary = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String : AnyObject] {
-              if let token = jsonDictionary["access_token"] as? String {
-                completionHandler(token, nil)
+              if let
+                token = jsonDictionary["access_token"] as? String,
+                userId = jsonDictionary["stripe_user_id"] as? String 
+              {
+                
+                println("ID: \(userId)")
+                
+                NSUserDefaults.standardUserDefaults().setObject(token, forKey: kUserDefaultsStripeTokenKey)
+                NSUserDefaults.standardUserDefaults().setObject(userId, forKey: kUserDefaultsStripeUserIdKey)
+                NSUserDefaults.standardUserDefaults().synchronize()
+                completionHandler(true, nil)
               }
             }
           }
         case 400:
-          completionHandler(nil, "Error: 400-Bad Request")
+          completionHandler(false, "Error: 400-Bad Request")
         case 401:
-          completionHandler(nil, "Error: 401-Unauthorized")
+          completionHandler(false, "Error: 401-Unauthorized")
         case 402:
-          completionHandler(nil, "Error: 402-Request failed")
+          completionHandler(false, "Error: 402-Request failed")
         case 404:
-          completionHandler(nil, "Error: 404-Requested Token does not exist")
+          completionHandler(false, "Error: 404-Requested Token does not exist")
         case 500...599:
-          completionHandler(nil, "Error: Stripe server error.  Try again later")
+          completionHandler(false, "Error: Stripe server error.  Try again later")
         default:
-          completionHandler(nil, "Unknown Server Error in retrieving token")
+          completionHandler(false, "Unknown Server Error in retrieving token")
         }
-        if error != nil {
-          completionHandler(nil, error.description)
-        }
+      }
+      if error != nil {
+        completionHandler(false, error.description)
       }
     })
     dataTask.resume()
   }
-  
-  
-  
-  
-  
   
   
 }
