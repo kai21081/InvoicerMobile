@@ -51,12 +51,31 @@ class InvoiceReService {
     }
   }
   
-  let localHostString = "http://127.0.0.1:3000/"
-  let invoiceReApiPrefixString = "https://www.invoice.re/api/v1/"
+  class func postAPNSToken(token: String) {
+    //TODO: Still being implemented
+    let invoiceReApiPrefixString = "https://www.invoice.re/api/v1/"
+    let invoiceReApiPostfixString = ""
+    
+    let tokenPostURL = NSURL(string: invoiceReApiPrefixString + invoiceReApiPostfixString)
+    
+    let request = NSMutableURLRequest(URL: tokenPostURL!)
+    
+    let requestTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+      
+    })
+    requestTask.resume()
+
+    
+    
+    
+  }
   
-  func fetchInvoicesForCompany(companyID : String, completionHandler: ([Invoice]?)->Void) {
+  
+  class func fetchInvoicesForCompany(companyID : String, completionHandler: ([Invoice]?)->Void) {
     //    let query = "?KEYS=VALUES"
     //    let url = NSURL(string: localHost + query)
+    let localHostString = "http://127.0.0.1:3000/"
+    let invoiceReApiPrefixString = "https://www.invoice.re/api/v1/"
     
     let companyInvoiceURL = NSURL(string: invoiceReApiPrefixString + "invoices")
     

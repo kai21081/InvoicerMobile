@@ -147,18 +147,19 @@ class ViewGradients {
   
   class func greenGradientLayerOfSize(size: CGSize) -> CAGradientLayer {
     let uiColor1 = UIColor(
+      red: 100 / alphaMaxValue,
+      green: 231 / alphaMaxValue,
+      blue: 134 / alphaMaxValue,
+      alpha: 1.0
+    )
+    
+    let uiColor2 = UIColor(
       red: 76 / alphaMaxValue,
       green: 217 / alphaMaxValue,
       blue: 100 / alphaMaxValue,
       alpha: 1
     )
     
-    let uiColor2 = UIColor(
-      red: 100 / alphaMaxValue,
-      green: 231 / alphaMaxValue,
-      blue: 134 / alphaMaxValue,
-      alpha: 1.0
-    )
     
     let colors = [uiColor1.CGColor, uiColor2.CGColor]
     let locations = [NSNumber(float: 0), NSNumber(float: 1)]

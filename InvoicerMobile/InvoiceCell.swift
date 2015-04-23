@@ -24,10 +24,10 @@ class InvoiceCell: UITableViewCell {
     self.amountLabel.text = nil
 //    self.invoicePaidIndicatorView.image = nil
     
-    // Make color changes
-    let white = UIColor.whiteColor()
-    self.nameLabel.textColor = white
-    self.amountLabel.textColor = white
+//    // Make color changes
+//    let white = UIColor.whiteColor()
+//    self.nameLabel.textColor = white
+//    self.amountLabel.textColor = white
   }
   
   override func setSelected(selected: Bool, animated: Bool) {
