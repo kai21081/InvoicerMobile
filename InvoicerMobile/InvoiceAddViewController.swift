@@ -71,7 +71,7 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
                 self!.presentViewController(errorAlert, animated: true, completion: nil)
               }
               else if self != nil {
-                println("Successfully created and uploaded to InvoiceRe")
+                self!.displayAlert("Invoice Successfully Created", color: UIColor.greenColor())
                 self!.clearTextFields()
               }
               
@@ -102,6 +102,8 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "createInvoicePressed:")
   }
     
+
+  //MARK: UI helper methods
   
   func clearTextFields() {
     for subview in self.view.subviews {
@@ -110,6 +112,16 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
         textField.text = ""
       }
     }
+  }
+  
+  func displayAlert(text: String, color: UIColor?) {
+    if color == nil {
+      self.errorLabel.textColor = self.defaultAlertColor
+    }  else {
+      self.errorLabel.textColor = color
+    }
+    self.errorLabel.text = "  " + text + "  "
+    self.errorLabel.hidden = false
   }
   
   // MARK: TextFieldDelegate
@@ -160,5 +172,4 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
         viewToShake.transform = CGAffineTransformMakeTranslation(0, 0);
     })
   }
-  
 }
