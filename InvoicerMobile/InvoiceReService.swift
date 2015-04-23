@@ -60,10 +60,8 @@ class InvoiceReService {
     
     let companyInvoiceURL = NSURL(string: invoiceReApiPrefixString + "invoices")
     
-    let token = NSUserDefaults.standardUserDefaults().valueForKey(kUserDefaultsStripeTokenKey) as! String
-    
     let request = NSMutableURLRequest(URL: companyInvoiceURL!)
-    //    request.setValue(token, forHTTPHeaderField: "stripe-access-token")
+        request.setValue(companyID, forHTTPHeaderField: "stripe-user-id")
     
     let requestTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
       if error == nil {
