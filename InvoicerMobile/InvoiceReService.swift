@@ -52,28 +52,33 @@ class InvoiceReService {
   }
   
   class func postAPNSToken(token: String) {
-    //TODO: Still being implemented
+
     let invoiceReApiPrefixString = "https://www.invoice.re/api/v1/"
-    let invoiceReApiPostfixString = ""
+    let invoiceReApiPostfixString = "account"
     
     let tokenPostURL = NSURL(string: invoiceReApiPrefixString + invoiceReApiPostfixString)
     
-    let request = NSMutableURLRequest(URL: tokenPostURL!)
-    
-    let requestTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+    if let stripeID = AppUserDefaultsService.sharedService.stripeUserID {
       
-    })
-    requestTask.resume()
-
-    
-    
-    
+      let json = ["company" : ["apns_device_token" : token]]
+      let jsonData = NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions.allZeros, error: nil)
+      
+      let request = NSMutableURLRequest(URL: tokenPostURL!)
+      request.HTTPBody = jsonData
+      request.setValue(stripeID, forHTTPHeaderField: "stripe-user-id")
+      request.setValue("\(jsonData?.length)", forHTTPHeaderField: "Content-Length")
+      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+      
+      let requestTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+        
+      })
+      requestTask.resume()
+    }
   }
   
   
   class func fetchInvoicesForCompany(companyID : String, completionHandler: ([Invoice]?)->Void) {
-    //    let query = "?KEYS=VALUES"
-    //    let url = NSURL(string: localHost + query)
+    
     let localHostString = "http://127.0.0.1:3000/"
     let invoiceReApiPrefixString = "https://www.invoice.re/api/v1/"
     
