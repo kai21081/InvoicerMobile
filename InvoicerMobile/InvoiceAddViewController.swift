@@ -30,7 +30,6 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     self.backgroundGradientLayer = ViewGradients.lightBlueGradientLayerOfSize(self.view.layer.frame.size)
     self.view.layer.insertSublayer(self.backgroundGradientLayer, atIndex: 0)
        let token = NSUserDefaults.standardUserDefaults().objectForKey(kUserDefaultsStripeTokenKey) as! String
-    println(token)
   }
   
   override func viewWillLayoutSubviews() {
