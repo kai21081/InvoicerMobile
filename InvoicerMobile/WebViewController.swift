@@ -34,13 +34,15 @@ class WebViewController: UIViewController, WKNavigationDelegate {
       if redirectString.rangeOfString(kURLSchema) != nil {
         let code = self.oAuthService.parseCodeFromStripeURL(url)
         if code != "" && code != nil {
-          self.oAuthService.fetchOAuthTokenUsingCode(code!, completionHandler: { (token, error) -> () in
+          self.oAuthService.fetchOAuthTokenUsingCode(code!, completionHandler: { (wasSuccessful, error) -> () in
             NSOperationQueue.mainQueue().addOperationWithBlock({ [weak self] () -> Void in
-              if token != nil && self != nil {
-                NSUserDefaults.standardUserDefaults().setObject(token, forKey: kUserDefaultsStripeTokenKey)
-                NSUserDefaults.standardUserDefaults().synchronize()
+              if wasSuccessful && self != nil {
                 self!.transitionToInvoiceViewController()
               } else {
+                
+                
+                // implement something to display error
+                
                 println(error)
               }
             })
@@ -51,8 +53,6 @@ class WebViewController: UIViewController, WKNavigationDelegate {
     decisionHandler(WKNavigationActionPolicy.Allow)
   }
   
-  
-    
   
 
   func constrainView(child: UIView, toContainer container: UIView) {

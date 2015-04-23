@@ -62,17 +62,16 @@ class AdaptiveTextFieldViewController: UIViewController {
     
     var targetPointOffset: CGFloat = targetTextFieldLowerPoint.y - convertedTextFieldLowerPoint.y
     var adjustedViewFrameCenter: CGPoint = CGPointMake(self.view.center.x, self.view.center.y + targetPointOffset)
-    
-    UIView.animateWithDuration(0.2, animations:  {
-      if adjustedViewFrameCenter.y < self.view.center.y {
+
+    if adjustedViewFrameCenter.y < self.view.center.y {
+      UIView.animateWithDuration(0.2, animations:  {
         self.view.center = adjustedViewFrameCenter
-      }
-    })
+      })
+    }
   }
   
   func returnViewToInitialFrame() {
     var initialViewRect: CGRect = CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height)
-    
     if (!CGRectEqualToRect(initialViewRect, self.view.frame))  {
       UIView.animateWithDuration(0.2, animations: {
         self.view.frame = initialViewRect
@@ -94,7 +93,6 @@ class AdaptiveTextFieldViewController: UIViewController {
   
   func textFieldDidBeginEditing(textField: UITextField)  {
     self.activeTextField = textField
-    
     if(self.keyboardIsShowing)  {
       self.arrangeViewOffsetFromKeyboard()
     }
