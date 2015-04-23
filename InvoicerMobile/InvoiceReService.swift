@@ -14,7 +14,7 @@ class InvoiceReService {
   class func postInvoice(jsonData: NSData, completionHandler:(AnyObject?, String?) -> ()) {
     let invoiceReInvoicePostURLString = "https://www.invoice.re/api/v1/invoices"
     
-    if let stripeID = NSUserDefaults.standardUserDefaults().objectForKey(kUserDefaultsStripeUserIdKey) as? String {
+    if let stripeID = AppUserDefaultsService.sharedService.stripeUserID {
       
       let request = NSMutableURLRequest(URL: NSURL(string: invoiceReInvoicePostURLString)!)
       request.HTTPMethod = "POST"
@@ -60,10 +60,8 @@ class InvoiceReService {
     
     let companyInvoiceURL = NSURL(string: invoiceReApiPrefixString + "invoices")
     
-    let token = NSUserDefaults.standardUserDefaults().valueForKey(kUserDefaultsStripeTokenKey) as! String
-    
     let request = NSMutableURLRequest(URL: companyInvoiceURL!)
-    //    request.setValue(token, forHTTPHeaderField: "stripe-access-token")
+        request.setValue(companyID, forHTTPHeaderField: "stripe-user-id")
     
     let requestTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
       if error == nil {

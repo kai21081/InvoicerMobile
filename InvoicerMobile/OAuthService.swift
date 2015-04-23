@@ -56,9 +56,9 @@ class OAuthService {
                 
                 println("ID: \(userId)")
                 
-                NSUserDefaults.standardUserDefaults().setObject(token, forKey: kUserDefaultsStripeTokenKey)
-                NSUserDefaults.standardUserDefaults().setObject(userId, forKey: kUserDefaultsStripeUserIdKey)
-                NSUserDefaults.standardUserDefaults().synchronize()
+                AppUserDefaultsService.sharedService.stripeToken = token
+                AppUserDefaultsService.sharedService.stripeUserID = userId
+                
                 completionHandler(true, nil)
               }
             }
