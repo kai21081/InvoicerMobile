@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
     if let token = NSString(data: deviceToken, encoding: NSASCIIStringEncoding) {
       AppUserDefaultsService.sharedService.pushNotificationToken = token as String
+      InvoiceReService.postAPNSToken(token as String)
     }
   }
   

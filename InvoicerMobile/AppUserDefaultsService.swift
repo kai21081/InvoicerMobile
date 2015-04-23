@@ -18,7 +18,6 @@ class AppUserDefaultsService {
   private let kUserDefaultsStripeTokenKey = "StripeToken"
   private let kUserDefaultsStripeUserIdKey = "StripeUserID"
   private let kUserDefaultsPushNotificationTokenKey = "NotificationToken"
-
   
   //MARK:
   //MARK: Variables with get/set
