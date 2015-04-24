@@ -111,8 +111,8 @@ class InvoiceReService {
       requestTask.resume()
     }
   }
-  
-  
+
+
   class func fetchInvoicesForCompany(companyID : String, completionHandler: ([Invoice]?)->Void) {
     
     let localHostString = "http://127.0.0.1:3000/"
