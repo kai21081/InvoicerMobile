@@ -131,7 +131,6 @@
 			children = (
 				4F95F7C01AE57A90002FA8A7 /* AppDelegate.swift */,
 				AD0389E81AE984BA0093562B /* AppUserDefaultsService.swift */,
-				AD0389EA1AE98C3D0093562B /* Constants.swift */,
 				AD0E80461AE80AE8000A193F /* Extensions */,
 				4F95F7E21AE57ADA002FA8A7 /* View */,
 				4F95F7E11AE57AD2002FA8A7 /* Controller */,
@@ -177,6 +176,7 @@
 				ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */,
 				CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */,
 				AD09FC891AE6CE7E0073CD71 /* StripeKeys.swift */,
+				AD0389EA1AE98C3D0093562B /* Constants.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -277,6 +277,7 @@
 				TargetAttributes = {
 					4F95F7BA1AE57A90002FA8A7 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = WHUH8MR63N;
 					};
 					4F95F7CF1AE57A90002FA8A7 = {
 						CreatedOnToolsVersion = 6.3;
@@ -409,7 +410,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Craig Chaillie (936A98ZD9C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Craig Chaillie (936A98ZD9C)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -454,7 +456,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Craig Chaillie (936A98ZD9C)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Craig Chaillie (936A98ZD9C)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -479,9 +482,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = InvoicerMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -489,9 +495,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = InvoicerMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};

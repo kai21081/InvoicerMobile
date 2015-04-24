@@ -51,14 +51,40 @@ class InvoiceJSONParser {
               theInvoice.paymentDate = paymentDate
               invoicesToReturn.append(theInvoice)
           }
-          
-          
         }
-        
     }
-    
-    
-    
     return invoicesToReturn
   }
+  
+  class func invoiceFromJSON(data: NSData) -> Invoice? {
+    var invoice: Invoice?
+    var error : NSError?
+    if let invoiceData = NSJSONSerialization.JSONObjectWithData(data, options: nil, error: nil) as? [String: AnyObject] {
+      if let
+        invoiceInfo = invoiceData["invoice"] as? [String: AnyObject],
+        id = invoiceInfo["id"] as? NSNumber,
+        name = invoiceInfo["name"] as? String,
+        amount = invoiceInfo["amount"] as? String,
+        creationDate = invoiceInfo["created_at"] as? String {
+          
+          let dateFormatter = NSDateFormatter()
+          dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+          let numberFormatter = NSNumberFormatter()
+          numberFormatter.numberStyle = NSNumberFormatterStyle.DecimalStyle
+          
+          invoice = Invoice(id: "\(id)", name: name, amount: numberFormatter.numberFromString(amount)!, createdAt: dateFormatter.dateFromString(creationDate)!, paid: false)
+          
+          if let
+            paymentInfo = invoiceInfo["payment"] as? [String: AnyObject],
+            paymentDate = paymentInfo["created_at"] as? String
+          {
+            invoice!.paymentDate = dateFormatter.dateFromString(paymentDate)!
+            invoice!.paid = true
+          }
+      }
+    }
+    return invoice
+  }
+  
+  
 }

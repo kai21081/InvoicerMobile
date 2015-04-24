@@ -10,6 +10,7 @@ import UIKit
 
 class LoginViewController: UIViewController {
   
+  @IBOutlet var loginButton: UIButton!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -17,6 +18,8 @@ class LoginViewController: UIViewController {
     
     let gradientBackground = ViewGradients.oceanBlueGradientLayerOfSize(self.view.layer.frame.size)
     self.view.layer.insertSublayer(gradientBackground, atIndex: 0)
+    
+    self.loginButton.tintColor = UIColor.whiteColor()
   }
   
   

@@ -33,6 +33,9 @@
                             <constraint firstAttribute="centerY" secondItem="Xbu-lG-rrB" secondAttribute="centerY" id="eVp-w4-khN"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="Xbu-lG-rrB" id="bQY-uE-6Ip"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMJ-nI-0Bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -134,7 +137,7 @@
         <!--Invoice-->
         <scene sceneID="jx1-6i-y4B">
             <objects>
-                <viewController id="Wcq-nx-L31" customClass="InvoiceDetailViewController" customModule="InvoicerMobile" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="InvoiceDetailViewController" id="Wcq-nx-L31" customClass="InvoiceDetailViewController" customModule="InvoicerMobile" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qa6-GQ-sHc"/>
                         <viewControllerLayoutGuide type="bottom" id="6l5-CR-NCk"/>
