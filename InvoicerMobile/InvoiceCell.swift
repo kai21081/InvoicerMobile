@@ -11,9 +11,10 @@ import UIKit
 
 class InvoiceCell: UITableViewCell {
   
+  var cellHasShown = false
+  
   @IBOutlet var nameLabel: UILabel!
   @IBOutlet var amountLabel: UILabel!
-//  @IBOutlet var invoicePaidIndicatorView: UIImageView!
 
   
   override func awakeFromNib() {
@@ -22,18 +23,12 @@ class InvoiceCell: UITableViewCell {
     // Clear label text from storyboard
     self.nameLabel.text = nil
     self.amountLabel.text = nil
-//    self.invoicePaidIndicatorView.image = nil
     
-//    // Make color changes
-//    let white = UIColor.whiteColor()
-//    self.nameLabel.textColor = white
-//    self.amountLabel.textColor = white
-  }
-  
-  override func setSelected(selected: Bool, animated: Bool) {
-    super.setSelected(selected, animated: animated)
-    
-    // Configure the view for the selected state
+    // Make color changes
+    let font = UIFont(name: "AvenirNext-Regular", size: 17.0)
+    let white = UIColor.whiteColor()
+    self.nameLabel.textColor = white
+    self.amountLabel.textColor = white
   }
   
 }

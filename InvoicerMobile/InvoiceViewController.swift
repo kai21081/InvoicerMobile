@@ -14,6 +14,7 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   @IBOutlet var tableView: UITableView!
   
   var gradientBackgroundLayer : CAGradientLayer!
+  var firstTimeOnScreen = true
   
   var allInvoices = [Invoice]() {
     didSet {
@@ -41,6 +42,10 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
     super.viewWillAppear(animated)
     
     self.getInvoices()
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    self.firstTimeOnScreen = false
   }
   
   override func viewWillLayoutSubviews() {
@@ -71,10 +76,14 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
 
     // Changes text label and background of section header to match background gradient
     let sectionHeaderView = view as! UITableViewHeaderFooterView
-//    sectionHeaderView.textLabel.textColor = UIColor.whiteColor()
+    
+    let font = UIFont(name: "AvenirNext-Bold", size: 17.0)
+    sectionHeaderView.textLabel.textColor = UIColor.whiteColor()
+    sectionHeaderView.textLabel.font = font
     
     let backgroundView = UIView(frame: sectionHeaderView.frame)
-    let gradientLastColor = self.gradientBackgroundLayer.colors.last as! CGColorRef
+    let gradientLastColor = self.gradientBackgroundLayer.colors.last as! CGColor
+
     backgroundView.backgroundColor = UIColor(CGColor: gradientLastColor)
     
     sectionHeaderView.backgroundView = backgroundView
@@ -116,6 +125,11 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
     cell.nameLabel.text = displayedInvoice.name
     cell.amountLabel.text = displayedInvoice.amount.stringCurrencyValue()
     cell.imageView?.image = UIImage(named: "\(displayedInvoice.paid)")
+    
+    if self.firstTimeOnScreen == true && cell.cellHasShown == false {
+      self.animateCellOnToScreen(cell)
+      cell.cellHasShown = true
+    }
 
     return cell
   }
@@ -173,6 +187,18 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
       }
     }
 
+  }
+  
+  private func animateCellOnToScreen(cellToAnimate: UITableViewCell) {
+    let animationDuration = 1.0
+
+    cellToAnimate.alpha = 0.0
+    cellToAnimate.transform = CGAffineTransformTranslate(cellToAnimate.transform, 0.0, -10.0)
+    
+    UIView.animateWithDuration(animationDuration, animations: { () -> Void in
+      cellToAnimate.alpha = 1.0
+      cellToAnimate.transform = CGAffineTransformIdentity
+    })
   }
   
 }

@@ -13,39 +13,55 @@ class InvoiceDetailViewController: UIViewController {
   var gradientBackgroundLayer : CAGradientLayer!
 
   @IBOutlet var navBar: UINavigationItem!
-  @IBOutlet weak var invoiceDescription: UILabel!
   @IBOutlet weak var emailButton: UIButton!
   @IBOutlet weak var status: UILabel!
   @IBOutlet weak var createdAt: UILabel!
   @IBOutlet weak var amount: UILabel!
+  @IBOutlet var amountTitle: UILabel!
+  @IBOutlet var createdAtTitle: UILabel!
+  @IBOutlet var statusTitle: UILabel!
   
   var invoice : Invoice?
   var invoiceID: String?
   
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    if self.invoice != nil {
-      displayInvoice()
-    }
-    else if self.invoiceID != nil {
-      let invoiceService = InvoiceReService()
-      invoiceService.fetchInvoiceByID(self.invoiceID!, completionHandler: { [weak self] (newInvoice, error) -> () in
-        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-          if error != nil {
-            var errorAlert = UIAlertController(title: "Error", message: "An error occurred: \n\(error!)", preferredStyle: UIAlertControllerStyle.Alert)
-            self!.presentViewController(errorAlert, animated: true, completion: nil)
-          }
-          else if newInvoice != nil && self != nil {
-            self!.invoice = newInvoice!
-            self!.displayInvoice()
-          }
-        })
-        })
-    }
-    
-    self.gradientBackgroundLayer = ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size)
-    self.view.layer.insertSublayer(self.gradientBackgroundLayer, atIndex: 0)
+    override func viewDidLoad() {
+        super.viewDidLoad()
+      
+      if self.invoice != nil {
+        displayInvoice()
+      }
+      else if self.invoiceID != nil {
+        let invoiceService = InvoiceReService()
+        invoiceService.fetchInvoiceByID(self.invoiceID!, completionHandler: { [weak self] (newInvoice, error) -> () in
+          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+            if error != nil {
+              var errorAlert = UIAlertController(title: "Error", message: "An error occurred: \n\(error!)", preferredStyle: UIAlertControllerStyle.Alert)
+              self!.presentViewController(errorAlert, animated: true, completion: nil)
+            }
+            else if newInvoice != nil && self != nil {
+              self!.invoice = newInvoice!
+              self!.displayInvoice()
+            }
+          })
+          })
+      }
+
+      let font = UIFont(name: "AvenirNext-Regular", size: 20.0)
+      let whiteColor = UIColor.whiteColor()
+
+      let labels = [status, createdAt, amount, amountTitle, createdAtTitle, statusTitle]
+      for label in labels {
+        label.font = font
+        label.textColor = whiteColor
+      }
+      
+      self.emailButton.tintColor = whiteColor
+      
+      self.gradientBackgroundLayer = ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size)
+      
+      self.view.layer.insertSublayer(self.gradientBackgroundLayer, atIndex: 0)
+
+
   }
   
   override func viewWillLayoutSubviews() {
@@ -55,7 +71,6 @@ class InvoiceDetailViewController: UIViewController {
   }
   
   func displayInvoice() {
-    self.invoiceDescription.text = invoice!.name
     self.navBar.title = invoice!.name
     self.amount.text = invoice!.amount.stringCurrencyValue()
     
