@@ -48,7 +48,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
     }
     
-    
     println("tokenString: \(tokenString)")
     AppUserDefaultsService.sharedService.pushNotificationToken = tokenString
     InvoiceReService.postAPNSToken(tokenString)
