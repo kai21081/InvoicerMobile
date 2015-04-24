@@ -13,8 +13,6 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   
   @IBOutlet var tableView: UITableView!
   
-  let invoiceService = InvoiceReService()
-
   var gradientBackgroundLayer : CAGradientLayer!
   
   var allInvoices = [Invoice]() {
@@ -30,26 +28,19 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   override func viewDidLoad() {
     super.viewDidLoad()
     
-//    self.gradientBackgroundLayer = ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size)
-    self.gradientBackgroundLayer = ViewGradients.pinkAwesomeGradientLayerOfSize(self.view.layer.frame.size)
+    self.gradientBackgroundLayer = ViewGradients.greenGradientLayerOfSize(self.view.layer.frame.size)
     
     self.view.layer.insertSublayer(self.gradientBackgroundLayer, atIndex: 0)
     
     self.tableView.delegate = self
     self.tableView.dataSource = self
-    
-    if let stripeUserID = AppUserDefaultsService.sharedService.stripeUserID {
-      
-      self.invoiceService.fetchInvoicesForCompany(stripeUserID, completionHandler: { (returnedInvoices) -> Void in
-        
-        if returnedInvoices != nil {
-          self.allInvoices = returnedInvoices!
-        }
-      })
-      
-    }
-    
   
+  }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    
+    self.getInvoices()
   }
   
   override func viewWillLayoutSubviews() {
@@ -80,7 +71,7 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
 
     // Changes text label and background of section header to match background gradient
     let sectionHeaderView = view as! UITableViewHeaderFooterView
-    sectionHeaderView.textLabel.textColor = UIColor.whiteColor()
+//    sectionHeaderView.textLabel.textColor = UIColor.whiteColor()
     
     let backgroundView = UIView(frame: sectionHeaderView.frame)
     let gradientLastColor = self.gradientBackgroundLayer.colors.last as! CGColorRef
@@ -156,6 +147,18 @@ class InvoiceViewController: UIViewController, UITableViewDataSource, UITableVie
   
   //MARK:
   //MARK: Private methods
+  
+  private func getInvoices() {
+    if let stripeUserID = AppUserDefaultsService.sharedService.stripeUserID {
+      InvoiceReService.fetchInvoicesForCompany(stripeUserID, completionHandler: { (returnedInvoices) -> Void in
+        
+        if returnedInvoices != nil {
+          self.allInvoices = returnedInvoices!
+        }
+      })
+      
+    }
+  }
   
   private func sortInvoices(invoicesToSort: [Invoice]) {
     

@@ -88,9 +88,10 @@ class InvoiceReService {
   
   
   
-  func fetchInvoicesForCompany(companyID : String, completionHandler: ([Invoice]?)->Void) {
-    //    let query = "?KEYS=VALUES"
-    //    let url = NSURL(string: localHost + query)
+  class func fetchInvoicesForCompany(companyID : String, completionHandler: ([Invoice]?)->Void) {
+    
+    let localHostString = "http://127.0.0.1:3000/"
+    let invoiceReApiPrefixString = "https://www.invoice.re/api/v1/"
     
     let companyInvoiceURL = NSURL(string: invoiceReApiPrefixString + "invoices")
     
