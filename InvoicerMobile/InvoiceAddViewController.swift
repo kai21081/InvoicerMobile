@@ -20,8 +20,16 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   @IBOutlet weak var recipientEmailField: UITextField!
   @IBOutlet weak var amountField: UITextField!
   
+  @IBOutlet var invoiceNameTitle: UILabel!
+  @IBOutlet var invoiceRecipientEmailTitle: UILabel!
+  @IBOutlet var invoiceAmountTitle: UILabel!
+  @IBOutlet var invoiceDescriptionTitle: UILabel!
+  @IBOutlet var invoiceDollarSign: UILabel!
+  
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
     self.nameField.delegate = self
     self.amountField.delegate = self
     self.descriptionField.delegate = self
@@ -29,8 +37,24 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
     
     self.backgroundGradientLayer = ViewGradients.purpleGradientLayerOfSize(self.view.layer.frame.size)
     self.view.layer.insertSublayer(self.backgroundGradientLayer, atIndex: 0)
-    let token = AppUserDefaultsService.sharedService.stripeToken
-    println(token)
+
+    let labelFont = UIFont(name: "AvenirNext-Medium", size: 20.0)
+    let labelColor = UIColor.whiteColor()
+    let labels = [invoiceNameTitle, invoiceRecipientEmailTitle, invoiceAmountTitle, invoiceDescriptionTitle, invoiceDollarSign]
+    for label in labels {
+      label.font = labelFont
+      label.textColor = labelColor
+    }
+    
+    let textFieldBackgroundColor = UIColor(CGColor: self.backgroundGradientLayer.colors.last! as! CGColor)
+    let textFieldFont = UIFont(name: "AvenirNext-Regular", size: 20.0)
+    let textFields = [nameField, descriptionField, recipientEmailField, amountField]
+    for textField in textFields {
+      textField.font = textFieldFont
+      textField.textColor = labelColor
+      textField.backgroundColor = textFieldBackgroundColor
+    }
+    
   }
   
   override func viewWillLayoutSubviews() {
@@ -98,12 +122,12 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
   private func enterSendingMode() {
     let barSpinner = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.Gray)
     barSpinner.color = UIColor.blueColor()
-//    barSpinner.frame = CGRect(x: 0, y: 0, width: 50, height: 50)
+    barSpinner.startAnimating()
     self.navigationItem.rightBarButtonItem = UIBarButtonItem(customView: barSpinner)
   }
   
   private func exitSendingMode() {
-    self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Done, target: self, action: "createInvoicePressed:")
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Save, target: self, action: "createInvoicePressed:")
   }
     
 

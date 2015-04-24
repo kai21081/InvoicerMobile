@@ -199,9 +199,9 @@
 			isa = PBXGroup;
 			children = (
 				4F95F7C41AE57A90002FA8A7 /* Main.storyboard */,
-				4F95F7ED1AE57C14002FA8A7 /* InvoiceCell.swift */,
 				4F95F7C71AE57A90002FA8A7 /* Images.xcassets */,
 				4F95F7C91AE57A90002FA8A7 /* LaunchScreen.xib */,
+				4F95F7ED1AE57C14002FA8A7 /* InvoiceCell.swift */,
 				AD0E80401AE6F3CC000A193F /* ViewGradients.swift */,
 			);
 			name = View;
