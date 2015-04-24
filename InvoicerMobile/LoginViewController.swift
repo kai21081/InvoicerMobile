@@ -14,6 +14,9 @@ class LoginViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view.
+    
+    let gradientBackground = ViewGradients.oceanBlueGradientLayerOfSize(self.view.layer.frame.size)
+    self.view.layer.insertSublayer(gradientBackground, atIndex: 0)
   }
   
   

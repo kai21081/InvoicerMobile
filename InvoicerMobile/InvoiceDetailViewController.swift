@@ -13,19 +13,30 @@ class InvoiceDetailViewController: UIViewController {
   var gradientBackgroundLayer : CAGradientLayer!
 
   @IBOutlet var navBar: UINavigationItem!
-  @IBOutlet weak var invoiceDescription: UILabel!
   @IBOutlet weak var emailButton: UIButton!
   @IBOutlet weak var status: UILabel!
   @IBOutlet weak var createdAt: UILabel!
   @IBOutlet weak var amount: UILabel!
+  @IBOutlet var amountTitle: UILabel!
+  @IBOutlet var createdAtTitle: UILabel!
+  @IBOutlet var statusTitle: UILabel!
   
   var invoice : Invoice!
   
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-      self.invoiceDescription.text = invoice.name
 
+      let font = UIFont(name: "AvenirNext-Regular", size: 20.0)
+      let whiteColor = UIColor.whiteColor()
+
+      let labels = [status, createdAt, amount, amountTitle, createdAtTitle, statusTitle]
+      for label in labels {
+        label.font = font
+        label.textColor = whiteColor
+      }
+      
+      self.emailButton.tintColor = whiteColor
+            
       self.navBar.title = invoice.name
       
       self.amount.text = invoice.amount.stringCurrencyValue()
