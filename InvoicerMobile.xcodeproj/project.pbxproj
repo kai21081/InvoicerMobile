@@ -7,6 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4F05748F1AE9F99800ADC04B /* PKPayment+STPTestKeys.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574801AE9F99800ADC04B /* PKPayment+STPTestKeys.m */; };
+		4F0574901AE9F99800ADC04B /* STPTestAddressStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574821AE9F99800ADC04B /* STPTestAddressStore.m */; };
+		4F0574911AE9F99800ADC04B /* STPTestCardStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574841AE9F99800ADC04B /* STPTestCardStore.m */; };
+		4F0574921AE9F99800ADC04B /* STPTestDataTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574871AE9F99800ADC04B /* STPTestDataTableViewController.m */; };
+		4F0574931AE9F99800ADC04B /* STPTestPaymentAuthorizationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574891AE9F99800ADC04B /* STPTestPaymentAuthorizationViewController.m */; };
+		4F0574941AE9F99800ADC04B /* STPTestPaymentSummaryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F05748B1AE9F99800ADC04B /* STPTestPaymentSummaryViewController.m */; };
+		4F0574951AE9F99800ADC04B /* STPTestPaymentSummaryViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4F05748C1AE9F99800ADC04B /* STPTestPaymentSummaryViewController.xib */; };
+		4F0574961AE9F99800ADC04B /* STPTestShippingMethodStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F05748E1AE9F99800ADC04B /* STPTestShippingMethodStore.m */; };
+		4F0574AB1AE9F9B200ADC04B /* PTKView.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574971AE9F9B200ADC04B /* PTKView.m */; };
+		4F0574AC1AE9F9B200ADC04B /* PTKAddressZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574991AE9F9B200ADC04B /* PTKAddressZip.m */; };
+		4F0574AD1AE9F9B200ADC04B /* PTKCard.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F05749B1AE9F9B200ADC04B /* PTKCard.m */; };
+		4F0574AE1AE9F9B200ADC04B /* PTKCardCVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F05749D1AE9F9B200ADC04B /* PTKCardCVC.m */; };
+		4F0574AF1AE9F9B200ADC04B /* PTKCardExpiry.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F05749F1AE9F9B200ADC04B /* PTKCardExpiry.m */; };
+		4F0574B01AE9F9B200ADC04B /* PTKCardNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574A11AE9F9B200ADC04B /* PTKCardNumber.m */; };
+		4F0574B11AE9F9B200ADC04B /* PTKComponent.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574A41AE9F9B200ADC04B /* PTKComponent.m */; };
+		4F0574B21AE9F9B200ADC04B /* PTKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574A61AE9F9B200ADC04B /* PTKTextField.m */; };
+		4F0574B31AE9F9B200ADC04B /* PTKUSAddressZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574A81AE9F9B200ADC04B /* PTKUSAddressZip.m */; };
+		4F0574B81AE9F9D200ADC04B /* InvoicerMobile.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 4F0574B61AE9F9D200ADC04B /* InvoicerMobile.entitlements */; };
+		4F0574BB1AE9FA1000ADC04B /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0574BA1AE9FA1000ADC04B /* Stripe.framework */; };
+		4F0574C11AEA046600ADC04B /* Cards in Resources */ = {isa = PBXBuildFile; fileRef = 4F0574BD1AEA046600ADC04B /* Cards */; };
+		4F0574C21AEA046600ADC04B /* gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0574BE1AEA046600ADC04B /* gradient@2x.png */; };
+		4F0574C31AEA046600ADC04B /* textfield.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0574BF1AEA046600ADC04B /* textfield.png */; };
+		4F0574C41AEA046600ADC04B /* textfield@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0574C01AEA046600ADC04B /* textfield@2x.png */; };
 		4F5F4BC01AE6CC6D005A1287 /* EmailService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F5F4BBF1AE6CC6D005A1287 /* EmailService.swift */; };
 		4F95F7C11AE57A90002FA8A7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F95F7C01AE57A90002FA8A7 /* AppDelegate.swift */; };
 		4F95F7C61AE57A90002FA8A7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F95F7C41AE57A90002FA8A7 /* Main.storyboard */; };
@@ -50,6 +73,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4F05747F1AE9F99800ADC04B /* PKPayment+STPTestKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PKPayment+STPTestKeys.h"; path = "ApplePayStubs-master/Classes/PKPayment+STPTestKeys.h"; sourceTree = "<group>"; };
+		4F0574801AE9F99800ADC04B /* PKPayment+STPTestKeys.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "PKPayment+STPTestKeys.m"; path = "ApplePayStubs-master/Classes/PKPayment+STPTestKeys.m"; sourceTree = "<group>"; };
+		4F0574811AE9F99800ADC04B /* STPTestAddressStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPTestAddressStore.h; path = "ApplePayStubs-master/Classes/STPTestAddressStore.h"; sourceTree = "<group>"; };
+		4F0574821AE9F99800ADC04B /* STPTestAddressStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPTestAddressStore.m; path = "ApplePayStubs-master/Classes/STPTestAddressStore.m"; sourceTree = "<group>"; };
+		4F0574831AE9F99800ADC04B /* STPTestCardStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPTestCardStore.h; path = "ApplePayStubs-master/Classes/STPTestCardStore.h"; sourceTree = "<group>"; };
+		4F0574841AE9F99800ADC04B /* STPTestCardStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPTestCardStore.m; path = "ApplePayStubs-master/Classes/STPTestCardStore.m"; sourceTree = "<group>"; };
+		4F0574851AE9F99800ADC04B /* STPTestDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPTestDataStore.h; path = "ApplePayStubs-master/Classes/STPTestDataStore.h"; sourceTree = "<group>"; };
+		4F0574861AE9F99800ADC04B /* STPTestDataTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPTestDataTableViewController.h; path = "ApplePayStubs-master/Classes/STPTestDataTableViewController.h"; sourceTree = "<group>"; };
+		4F0574871AE9F99800ADC04B /* STPTestDataTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPTestDataTableViewController.m; path = "ApplePayStubs-master/Classes/STPTestDataTableViewController.m"; sourceTree = "<group>"; };
+		4F0574881AE9F99800ADC04B /* STPTestPaymentAuthorizationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPTestPaymentAuthorizationViewController.h; path = "ApplePayStubs-master/Classes/STPTestPaymentAuthorizationViewController.h"; sourceTree = "<group>"; };
+		4F0574891AE9F99800ADC04B /* STPTestPaymentAuthorizationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPTestPaymentAuthorizationViewController.m; path = "ApplePayStubs-master/Classes/STPTestPaymentAuthorizationViewController.m"; sourceTree = "<group>"; };
+		4F05748A1AE9F99800ADC04B /* STPTestPaymentSummaryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPTestPaymentSummaryViewController.h; path = "ApplePayStubs-master/Classes/STPTestPaymentSummaryViewController.h"; sourceTree = "<group>"; };
+		4F05748B1AE9F99800ADC04B /* STPTestPaymentSummaryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPTestPaymentSummaryViewController.m; path = "ApplePayStubs-master/Classes/STPTestPaymentSummaryViewController.m"; sourceTree = "<group>"; };
+		4F05748C1AE9F99800ADC04B /* STPTestPaymentSummaryViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = STPTestPaymentSummaryViewController.xib; path = "ApplePayStubs-master/Classes/STPTestPaymentSummaryViewController.xib"; sourceTree = "<group>"; };
+		4F05748D1AE9F99800ADC04B /* STPTestShippingMethodStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STPTestShippingMethodStore.h; path = "ApplePayStubs-master/Classes/STPTestShippingMethodStore.h"; sourceTree = "<group>"; };
+		4F05748E1AE9F99800ADC04B /* STPTestShippingMethodStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STPTestShippingMethodStore.m; path = "ApplePayStubs-master/Classes/STPTestShippingMethodStore.m"; sourceTree = "<group>"; };
+		4F0574971AE9F9B200ADC04B /* PTKView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKView.m; path = "PaymentKit-master/PaymentKit/PTKView.m"; sourceTree = "<group>"; };
+		4F0574981AE9F9B200ADC04B /* PTKAddressZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKAddressZip.h; path = "PaymentKit-master/PaymentKit/PTKAddressZip.h"; sourceTree = "<group>"; };
+		4F0574991AE9F9B200ADC04B /* PTKAddressZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKAddressZip.m; path = "PaymentKit-master/PaymentKit/PTKAddressZip.m"; sourceTree = "<group>"; };
+		4F05749A1AE9F9B200ADC04B /* PTKCard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKCard.h; path = "PaymentKit-master/PaymentKit/PTKCard.h"; sourceTree = "<group>"; };
+		4F05749B1AE9F9B200ADC04B /* PTKCard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKCard.m; path = "PaymentKit-master/PaymentKit/PTKCard.m"; sourceTree = "<group>"; };
+		4F05749C1AE9F9B200ADC04B /* PTKCardCVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKCardCVC.h; path = "PaymentKit-master/PaymentKit/PTKCardCVC.h"; sourceTree = "<group>"; };
+		4F05749D1AE9F9B200ADC04B /* PTKCardCVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKCardCVC.m; path = "PaymentKit-master/PaymentKit/PTKCardCVC.m"; sourceTree = "<group>"; };
+		4F05749E1AE9F9B200ADC04B /* PTKCardExpiry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKCardExpiry.h; path = "PaymentKit-master/PaymentKit/PTKCardExpiry.h"; sourceTree = "<group>"; };
+		4F05749F1AE9F9B200ADC04B /* PTKCardExpiry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKCardExpiry.m; path = "PaymentKit-master/PaymentKit/PTKCardExpiry.m"; sourceTree = "<group>"; };
+		4F0574A01AE9F9B200ADC04B /* PTKCardNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKCardNumber.h; path = "PaymentKit-master/PaymentKit/PTKCardNumber.h"; sourceTree = "<group>"; };
+		4F0574A11AE9F9B200ADC04B /* PTKCardNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKCardNumber.m; path = "PaymentKit-master/PaymentKit/PTKCardNumber.m"; sourceTree = "<group>"; };
+		4F0574A21AE9F9B200ADC04B /* PTKCardType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKCardType.h; path = "PaymentKit-master/PaymentKit/PTKCardType.h"; sourceTree = "<group>"; };
+		4F0574A31AE9F9B200ADC04B /* PTKComponent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKComponent.h; path = "PaymentKit-master/PaymentKit/PTKComponent.h"; sourceTree = "<group>"; };
+		4F0574A41AE9F9B200ADC04B /* PTKComponent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKComponent.m; path = "PaymentKit-master/PaymentKit/PTKComponent.m"; sourceTree = "<group>"; };
+		4F0574A51AE9F9B200ADC04B /* PTKTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKTextField.h; path = "PaymentKit-master/PaymentKit/PTKTextField.h"; sourceTree = "<group>"; };
+		4F0574A61AE9F9B200ADC04B /* PTKTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKTextField.m; path = "PaymentKit-master/PaymentKit/PTKTextField.m"; sourceTree = "<group>"; };
+		4F0574A71AE9F9B200ADC04B /* PTKUSAddressZip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKUSAddressZip.h; path = "PaymentKit-master/PaymentKit/PTKUSAddressZip.h"; sourceTree = "<group>"; };
+		4F0574A81AE9F9B200ADC04B /* PTKUSAddressZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKUSAddressZip.m; path = "PaymentKit-master/PaymentKit/PTKUSAddressZip.m"; sourceTree = "<group>"; };
+		4F0574A91AE9F9B200ADC04B /* PTKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKView.h; path = "PaymentKit-master/PaymentKit/PTKView.h"; sourceTree = "<group>"; };
+		4F0574B61AE9F9D200ADC04B /* InvoicerMobile.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = InvoicerMobile.entitlements; sourceTree = "<group>"; };
+		4F0574BA1AE9FA1000ADC04B /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "stripe-ios-master/build/Debug-iphoneos/Stripe.framework"; sourceTree = "<group>"; };
+		4F0574BC1AE9FB8500ADC04B /* InvoicerMobile-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InvoicerMobile-Bridging-Header.h"; sourceTree = "<group>"; };
+		4F0574BD1AEA046600ADC04B /* Cards */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cards; path = "PaymentKit-master/PaymentKit/Resources/Cards"; sourceTree = "<group>"; };
+		4F0574BE1AEA046600ADC04B /* gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gradient@2x.png"; path = "PaymentKit-master/PaymentKit/Resources/gradient@2x.png"; sourceTree = "<group>"; };
+		4F0574BF1AEA046600ADC04B /* textfield.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = textfield.png; path = "PaymentKit-master/PaymentKit/Resources/textfield.png"; sourceTree = "<group>"; };
+		4F0574C01AEA046600ADC04B /* textfield@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "textfield@2x.png"; path = "PaymentKit-master/PaymentKit/Resources/textfield@2x.png"; sourceTree = "<group>"; };
 		4F5F4BBF1AE6CC6D005A1287 /* EmailService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailService.swift; sourceTree = "<group>"; };
 		4F95F7BB1AE57A90002FA8A7 /* InvoicerMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InvoicerMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4F95F7BF1AE57A90002FA8A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -91,6 +156,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F0574BB1AE9FA1000ADC04B /* Stripe.framework in Frameworks */,
 				4F95F8001AE58924002FA8A7 /* Foundation.framework in Frameworks */,
 				4F95F7FF1AE5891E002FA8A7 /* PassKit.framework in Frameworks */,
 				4F95F7FE1AE58916002FA8A7 /* Security.framework in Frameworks */,
@@ -107,6 +173,55 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F05747D1AE9F96400ADC04B /* PaymentKit */ = {
+			isa = PBXGroup;
+			children = (
+				4F0574971AE9F9B200ADC04B /* PTKView.m */,
+				4F0574981AE9F9B200ADC04B /* PTKAddressZip.h */,
+				4F0574991AE9F9B200ADC04B /* PTKAddressZip.m */,
+				4F05749A1AE9F9B200ADC04B /* PTKCard.h */,
+				4F05749B1AE9F9B200ADC04B /* PTKCard.m */,
+				4F05749C1AE9F9B200ADC04B /* PTKCardCVC.h */,
+				4F05749D1AE9F9B200ADC04B /* PTKCardCVC.m */,
+				4F05749E1AE9F9B200ADC04B /* PTKCardExpiry.h */,
+				4F05749F1AE9F9B200ADC04B /* PTKCardExpiry.m */,
+				4F0574A01AE9F9B200ADC04B /* PTKCardNumber.h */,
+				4F0574A11AE9F9B200ADC04B /* PTKCardNumber.m */,
+				4F0574A21AE9F9B200ADC04B /* PTKCardType.h */,
+				4F0574A31AE9F9B200ADC04B /* PTKComponent.h */,
+				4F0574A41AE9F9B200ADC04B /* PTKComponent.m */,
+				4F0574A51AE9F9B200ADC04B /* PTKTextField.h */,
+				4F0574A61AE9F9B200ADC04B /* PTKTextField.m */,
+				4F0574A71AE9F9B200ADC04B /* PTKUSAddressZip.h */,
+				4F0574A81AE9F9B200ADC04B /* PTKUSAddressZip.m */,
+				4F0574A91AE9F9B200ADC04B /* PTKView.h */,
+			);
+			name = PaymentKit;
+			sourceTree = "<group>";
+		};
+		4F05747E1AE9F96F00ADC04B /* ApplePayStub */ = {
+			isa = PBXGroup;
+			children = (
+				4F05747F1AE9F99800ADC04B /* PKPayment+STPTestKeys.h */,
+				4F0574801AE9F99800ADC04B /* PKPayment+STPTestKeys.m */,
+				4F0574811AE9F99800ADC04B /* STPTestAddressStore.h */,
+				4F0574821AE9F99800ADC04B /* STPTestAddressStore.m */,
+				4F0574831AE9F99800ADC04B /* STPTestCardStore.h */,
+				4F0574841AE9F99800ADC04B /* STPTestCardStore.m */,
+				4F0574851AE9F99800ADC04B /* STPTestDataStore.h */,
+				4F0574861AE9F99800ADC04B /* STPTestDataTableViewController.h */,
+				4F0574871AE9F99800ADC04B /* STPTestDataTableViewController.m */,
+				4F0574881AE9F99800ADC04B /* STPTestPaymentAuthorizationViewController.h */,
+				4F0574891AE9F99800ADC04B /* STPTestPaymentAuthorizationViewController.m */,
+				4F05748A1AE9F99800ADC04B /* STPTestPaymentSummaryViewController.h */,
+				4F05748B1AE9F99800ADC04B /* STPTestPaymentSummaryViewController.m */,
+				4F05748C1AE9F99800ADC04B /* STPTestPaymentSummaryViewController.xib */,
+				4F05748D1AE9F99800ADC04B /* STPTestShippingMethodStore.h */,
+				4F05748E1AE9F99800ADC04B /* STPTestShippingMethodStore.m */,
+			);
+			name = ApplePayStub;
+			sourceTree = "<group>";
+		};
 		4F95F7B21AE57A8F002FA8A7 = {
 			isa = PBXGroup;
 			children = (
@@ -131,10 +246,14 @@
 			children = (
 				4F95F7C01AE57A90002FA8A7 /* AppDelegate.swift */,
 				AD0389E81AE984BA0093562B /* AppUserDefaultsService.swift */,
+				4F0574BC1AE9FB8500ADC04B /* InvoicerMobile-Bridging-Header.h */,
+				4F0574B61AE9F9D200ADC04B /* InvoicerMobile.entitlements */,
 				AD0E80461AE80AE8000A193F /* Extensions */,
 				4F95F7E21AE57ADA002FA8A7 /* View */,
 				4F95F7E11AE57AD2002FA8A7 /* Controller */,
 				4F95F7E01AE57AC9002FA8A7 /* Model */,
+				4F05747E1AE9F96F00ADC04B /* ApplePayStub */,
+				4F05747D1AE9F96400ADC04B /* PaymentKit */,
 				4F95F7BE1AE57A90002FA8A7 /* Supporting Files */,
 			);
 			path = InvoicerMobile;
@@ -198,6 +317,10 @@
 		4F95F7E21AE57ADA002FA8A7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4F0574BD1AEA046600ADC04B /* Cards */,
+				4F0574BE1AEA046600ADC04B /* gradient@2x.png */,
+				4F0574BF1AEA046600ADC04B /* textfield.png */,
+				4F0574C01AEA046600ADC04B /* textfield@2x.png */,
 				4F95F7C41AE57A90002FA8A7 /* Main.storyboard */,
 				4F95F7C71AE57A90002FA8A7 /* Images.xcassets */,
 				4F95F7C91AE57A90002FA8A7 /* LaunchScreen.xib */,
@@ -210,6 +333,7 @@
 		4F95F7F51AE58868002FA8A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4F0574BA1AE9FA1000ADC04B /* Stripe.framework */,
 				4F95F8011AE58B87002FA8A7 /* stripe-ios-master */,
 				4F95F7FC1AE588D5002FA8A7 /* Security.framework */,
 				4F95F7FA1AE588C8002FA8A7 /* PassKit.framework */,
@@ -277,7 +401,12 @@
 				TargetAttributes = {
 					4F95F7BA1AE57A90002FA8A7 = {
 						CreatedOnToolsVersion = 6.3;
-						DevelopmentTeam = WHUH8MR63N;
+						DevelopmentTeam = ZSG9QM6L5W;
+						SystemCapabilities = {
+							com.apple.OMC = {
+								enabled = 0;
+							};
+						};
 					};
 					4F95F7CF1AE57A90002FA8A7 = {
 						CreatedOnToolsVersion = 6.3;
@@ -309,8 +438,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F0574C21AEA046600ADC04B /* gradient@2x.png in Resources */,
+				4F0574C11AEA046600ADC04B /* Cards in Resources */,
+				4F0574C41AEA046600ADC04B /* textfield@2x.png in Resources */,
+				4F0574B81AE9F9D200ADC04B /* InvoicerMobile.entitlements in Resources */,
 				4F95F7C61AE57A90002FA8A7 /* Main.storyboard in Resources */,
+				4F0574C31AEA046600ADC04B /* textfield.png in Resources */,
 				4F95F8021AE58B87002FA8A7 /* stripe-ios-master in Resources */,
+				4F0574951AE9F99800ADC04B /* STPTestPaymentSummaryViewController.xib in Resources */,
 				CEDBA5021AE81BA70009BBBC /* logo.png in Resources */,
 				4F95F7CB1AE57A90002FA8A7 /* LaunchScreen.xib in Resources */,
 				4F95F7C81AE57A90002FA8A7 /* Images.xcassets in Resources */,
@@ -334,23 +469,39 @@
 			files = (
 				AD0E80431AE70C1F000A193F /* UIColorExtension.swift in Sources */,
 				4F95F7E41AE57B1F002FA8A7 /* LoginViewController.swift in Sources */,
+				4F0574B21AE9F9B200ADC04B /* PTKTextField.m in Sources */,
 				4F95F7F21AE58015002FA8A7 /* PayViewController.swift in Sources */,
 				AD0E80451AE80AD6000A193F /* NSNumberExtension.swift in Sources */,
+				4F0574AE1AE9F9B200ADC04B /* PTKCardCVC.m in Sources */,
+				4F0574941AE9F99800ADC04B /* STPTestPaymentSummaryViewController.m in Sources */,
 				ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */,
 				4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */,
+				4F0574961AE9F99800ADC04B /* STPTestShippingMethodStore.m in Sources */,
+				4F0574B01AE9F9B200ADC04B /* PTKCardNumber.m in Sources */,
 				4F95F7E61AE57B2F002FA8A7 /* InvoiceViewController.swift in Sources */,
+				4F0574B31AE9F9B200ADC04B /* PTKUSAddressZip.m in Sources */,
+				4F0574911AE9F99800ADC04B /* STPTestCardStore.m in Sources */,
+				4F0574AB1AE9F9B200ADC04B /* PTKView.m in Sources */,
+				4F0574B11AE9F9B200ADC04B /* PTKComponent.m in Sources */,
 				4F95F7F01AE57C24002FA8A7 /* Invoice.swift in Sources */,
 				4F95F7E81AE57BBA002FA8A7 /* InvoiceDetailViewController.swift in Sources */,
 				CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */,
+				4F0574901AE9F99800ADC04B /* STPTestAddressStore.m in Sources */,
+				4F0574AC1AE9F9B200ADC04B /* PTKAddressZip.m in Sources */,
 				AD0389E91AE984BA0093562B /* AppUserDefaultsService.swift in Sources */,
 				4F95F7EA1AE57BCB002FA8A7 /* InvoiceAddViewController.swift in Sources */,
 				AD0E80411AE6F3CC000A193F /* ViewGradients.swift in Sources */,
+				4F0574AF1AE9F9B200ADC04B /* PTKCardExpiry.m in Sources */,
+				4F05748F1AE9F99800ADC04B /* PKPayment+STPTestKeys.m in Sources */,
+				4F0574931AE9F99800ADC04B /* STPTestPaymentAuthorizationViewController.m in Sources */,
 				CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */,
 				AD09FC881AE6CAB20073CD71 /* WebViewController.swift in Sources */,
 				AD0389EB1AE98C3D0093562B /* Constants.swift in Sources */,
 				4F95F7EC1AE57BF0002FA8A7 /* OAuthService.swift in Sources */,
+				4F0574AD1AE9F9B200ADC04B /* PTKCard.m in Sources */,
 				4F5F4BC01AE6CC6D005A1287 /* EmailService.swift in Sources */,
 				AD09FC8A1AE6CE7E0073CD71 /* StripeKeys.swift in Sources */,
+				4F0574921AE9F99800ADC04B /* STPTestDataTableViewController.m in Sources */,
 				4F95F7C11AE57A90002FA8A7 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,8 +561,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Craig Chaillie (936A98ZD9C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Craig Chaillie (936A98ZD9C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Kim (GWK6C3VHZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jung Kim (GWK6C3VHZ4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -456,8 +607,8 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Craig Chaillie (936A98ZD9C)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Craig Chaillie (936A98ZD9C)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Jung Kim (GWK6C3VHZ4)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jung Kim (GWK6C3VHZ4)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -482,12 +633,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InvoicerMobile/InvoicerMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InvoicerMobile/stripe-ios-master/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = InvoicerMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "InvoicerMobile/InvoicerMobile-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -495,12 +653,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = InvoicerMobile/InvoicerMobile.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEFINES_MODULE = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/InvoicerMobile/stripe-ios-master/build/Debug-iphoneos",
+				);
 				INFOPLIST_FILE = InvoicerMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "InvoicerMobile/InvoicerMobile-Bridging-Header.h";
 			};
 			name = Release;
 		};
