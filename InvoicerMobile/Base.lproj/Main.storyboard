@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JYn-aN-ycN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JYn-aN-ycN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -105,7 +105,7 @@
                                         <connections>
                                             <outlet property="amountLabel" destination="Si2-au-vm8" id="1z2-7p-fQ1"/>
                                             <outlet property="nameLabel" destination="3nF-FZ-Knt" id="u8v-sR-i4D"/>
-                                            <segue destination="Wcq-nx-L31" kind="show" identifier="ShowInvoiceDetail" id="eez-CG-jpa"/>
+                                            <segue destination="Wcq-nx-L31" kind="show" id="lkU-ZP-esn"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -212,6 +212,7 @@
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Invoice" id="Sqz-cB-zMV"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="amount" destination="PZG-Lb-YxT" id="xSV-Q1-XC9"/>
                         <outlet property="amountTitle" destination="TAB-Sk-Ors" id="N3U-6o-fMb"/>
@@ -225,7 +226,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nic-ZY-NS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1650" y="-379"/>
+            <point key="canvasLocation" x="1668" y="-379"/>
         </scene>
         <!--Make Invoice-->
         <scene sceneID="Vxt-ID-oct">
@@ -465,6 +466,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v4e-Jq-bFr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="929" y="397"/>
+        </scene>
+        <!--Pay View Controller-->
+        <scene sceneID="riW-Cf-ibq">
+            <objects>
+                <viewController storyboardIdentifier="PayViewController" id="RPC-1r-iBn" customClass="PayViewController" customModule="InvoicerMobile" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vJa-Z4-v2M"/>
+                        <viewControllerLayoutGuide type="bottom" id="Leq-OL-qB9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="MHp-98-qJw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1iM-rR-dmr">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="vh0-ra-gJd"/>
+                                    <barButtonItem title="Apple Pay" id="v1h-Cy-FXy">
+                                        <connections>
+                                            <action selector="applePayButtonPressed:" destination="RPC-1r-iBn" id="bS9-vx-7Rb"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="xQS-l0-uLZ"/>
+                                    <barButtonItem title="Card Pay" id="XIo-gX-pyG">
+                                        <connections>
+                                            <action selector="cardPayButtonPressed:" destination="RPC-1r-iBn" id="og6-XT-2OV"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NaK-sE-jQk"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1iM-rR-dmr" firstAttribute="leading" secondItem="MHp-98-qJw" secondAttribute="leadingMargin" constant="-16" id="9fn-7i-iQS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1iM-rR-dmr" secondAttribute="trailing" constant="-16" id="QyP-P7-OMs"/>
+                            <constraint firstItem="Leq-OL-qB9" firstAttribute="top" secondItem="1iM-rR-dmr" secondAttribute="bottom" id="YM3-su-Cn5"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bEo-JH-23g" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="389" y="1071"/>
         </scene>
     </scenes>
 </document>
