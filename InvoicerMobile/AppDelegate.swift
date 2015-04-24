@@ -40,10 +40,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   }
   
   func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-    if let token = NSString(data: deviceToken, encoding: NSASCIIStringEncoding) {
-      AppUserDefaultsService.sharedService.pushNotificationToken = token as String
-      InvoiceReService.postAPNSToken(token as String)
+    // following algorithm taken from Sascha's answer at  http://stackoverflow.com/questions/9372815/how-can-i-convert-my-device-token-nsdata-into-an-nsstring
+  
+    let tokenChars = UnsafePointer<CChar>(deviceToken.bytes)
+    var tokenString = ""
+    for var i = 0; i < deviceToken.length; i++ {
+      tokenString += String(format: "%02.2hhx", arguments: [tokenChars[i]])
     }
+    
+    
+    println("tokenString: \(tokenString)")
+    AppUserDefaultsService.sharedService.pushNotificationToken = tokenString
+    InvoiceReService.postAPNSToken(tokenString)
+    
   }
   
   func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
