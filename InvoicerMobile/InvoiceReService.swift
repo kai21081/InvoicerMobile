@@ -11,6 +11,10 @@ import Foundation
 class InvoiceReService {
   
   
+  let localHostString = "http://127.0.0.1:3000/"
+  let invoiceReApiPrefixString = "https://www.invoice.re/api/v1/"
+
+  
   class func postInvoice(jsonData: NSData, completionHandler:(AnyObject?, String?) -> ()) {
     let invoiceReInvoicePostURLString = "https://www.invoice.re/api/v1/invoices"
     
@@ -49,10 +53,40 @@ class InvoiceReService {
       })
       dataTask.resume()
     }
+    else {    //  need to authenticate and get user ID from Stripe
+      completionHandler(nil, "Stripe user ID not found.  Request failed")
+    }
   }
   
-  let localHostString = "http://127.0.0.1:3000/"
-  let invoiceReApiPrefixString = "https://www.invoice.re/api/v1/"
+  func fetchInvoiceByID(invoiceID: String, completionHandler: (Invoice?, String?) -> ()) {
+
+    let urlString = invoiceReApiPrefixString + "invoices/" + invoiceID
+    let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+    let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+      if error != nil {
+        completionHandler(nil, "Error: \(error)")
+      }
+      else if let httpResponse = response as? NSHTTPURLResponse {
+        switch httpResponse.statusCode {
+        case 200...299:
+          if data != nil {
+            if let invoice = InvoiceJSONParser.invoiceFromJSON(data) {
+              completionHandler(invoice, nil)
+            }
+          }
+        case 400...499:
+          completionHandler(nil, "Error: \(httpResponse.statusCode) Could not find Invoice")
+        case 500...599:
+          completionHandler(nil, "Error: Stripe server error.  Try again later")
+        default:
+          completionHandler(nil, "Error \(httpResponse.statusCode) Unknown Server Error in retrieving Invoice")
+        }
+      }
+    })
+    dataTask.resume()
+  }
+  
+  
   
   func fetchInvoicesForCompany(companyID : String, completionHandler: ([Invoice]?)->Void) {
     //    let query = "?KEYS=VALUES"
