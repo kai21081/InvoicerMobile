@@ -86,6 +86,31 @@ class InvoiceReService {
     dataTask.resume()
   }
   
+  class func postAPNSToken(token: String) {
+
+    let invoiceReApiPrefixString = "https://www.invoice.re/api/v1/"
+    let invoiceReApiPostfixString = "account"
+    
+    let tokenPostURL = NSURL(string: invoiceReApiPrefixString + invoiceReApiPostfixString)
+    
+    if let stripeID = AppUserDefaultsService.sharedService.stripeUserID {
+      
+      let json = ["company" : ["apns_device_token" : token]]
+      let jsonData = NSJSONSerialization.dataWithJSONObject(json, options: NSJSONWritingOptions.allZeros, error: nil)
+      
+      let request = NSMutableURLRequest(URL: tokenPostURL!)
+      request.HTTPMethod = "PATCH"
+      request.HTTPBody = jsonData
+      request.setValue(stripeID, forHTTPHeaderField: "stripe-user-id")
+      request.setValue("\(jsonData?.length)", forHTTPHeaderField: "Content-Length")
+      request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+      
+      let requestTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
+        // Not doing anything anyway
+      })
+      requestTask.resume()
+    }
+  }
   
   
   class func fetchInvoicesForCompany(companyID : String, completionHandler: ([Invoice]?)->Void) {
