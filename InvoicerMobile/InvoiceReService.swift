@@ -111,24 +111,7 @@ class InvoiceReService {
       requestTask.resume()
     }
   }
-  
-  class func requestEmailToBeSent(invoiceID: String, completionHandler:(Bool) ->()) {
-    let urlString = "https://www.invoice.re/api/v1/invoices/" + invoiceID + "/send_invoice"
-    var emailRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
-    emailRequest.HTTPMethod = "POST"
-    let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(emailRequest, completionHandler: { (data, response, error) -> Void in
-      if let httpResponse = response as? NSHTTPURLResponse {
-        println("\(httpResponse.statusCode)")
-        if httpResponse.statusCode == 200  {
-          completionHandler(true)
-        } else {
-          completionHandler(false)
-        }
-      }
-    })
-    dataTask.resume()
-  }
-  
+
 
   class func fetchInvoicesForCompany(companyID : String, completionHandler: ([Invoice]?)->Void) {
     

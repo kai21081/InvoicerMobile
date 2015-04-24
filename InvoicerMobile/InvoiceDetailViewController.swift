@@ -84,7 +84,7 @@ class InvoiceDetailViewController: UIViewController {
 
   @IBAction func emailButtonPressed(sender: AnyObject) {
     if let currentInvoice = self.invoice {
-      InvoiceReService.requestEmailToBeSent(currentInvoice.id, completionHandler: { (wasSuccess) -> () in
+      EmailService.requestEmailFromInvoiceRe(currentInvoice.id, completionHandler: { (wasSuccess) -> () in
         if wasSuccess {
           println("Sent")
         } else {

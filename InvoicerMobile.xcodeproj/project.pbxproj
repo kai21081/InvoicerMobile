@@ -59,6 +59,7 @@
 		CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */; };
 		CED007851AEAC24F00E1489B /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED007801AEABEC900E1489B /* Stripe.framework */; };
 		CED007861AEAC24F00E1489B /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CED007801AEABEC900E1489B /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		CED007891AEAD1B900E1489B /* URLParseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED007881AEAD1B900E1489B /* URLParseService.swift */; };
 		CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */; };
 		CEDBA5021AE81BA70009BBBC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDBA5011AE81BA70009BBBC /* logo.png */; };
 /* End PBXBuildFile section */
@@ -162,6 +163,7 @@
 		ADA5800C1AE5C3EB0034D871 /* server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = server.js; sourceTree = "<group>"; };
 		CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceReService.swift; sourceTree = "<group>"; };
 		CED007801AEABEC900E1489B /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "../../../../Library/Developer/Xcode/DerivedData/InvoicerMobile-ctpcjtdciopcqsdekpbrkjldgurd/Build/Products/Debug-iphoneos/Stripe.framework"; sourceTree = "<group>"; };
+		CED007881AEAD1B900E1489B /* URLParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParseService.swift; sourceTree = "<group>"; };
 		CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveTextFieldViewController.swift; sourceTree = "<group>"; };
 		CEDBA5011AE81BA70009BBBC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -309,6 +311,7 @@
 				4F95F7EB1AE57BF0002FA8A7 /* OAuthService.swift */,
 				ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */,
 				CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */,
+				CED007881AEAD1B900E1489B /* URLParseService.swift */,
 				AD09FC891AE6CE7E0073CD71 /* StripeKeys.swift */,
 				AD0389EA1AE98C3D0093562B /* Constants.swift */,
 			);
@@ -490,6 +493,7 @@
 				4F95F7F21AE58015002FA8A7 /* PayViewController.swift in Sources */,
 				AD0E80451AE80AD6000A193F /* NSNumberExtension.swift in Sources */,
 				4F0574AE1AE9F9B200ADC04B /* PTKCardCVC.m in Sources */,
+				CED007891AEAD1B900E1489B /* URLParseService.swift in Sources */,
 				4F0574941AE9F99800ADC04B /* STPTestPaymentSummaryViewController.m in Sources */,
 				ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */,
 				4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */,
