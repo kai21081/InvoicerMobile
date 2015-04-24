@@ -25,7 +25,6 @@
 		4F0574B21AE9F9B200ADC04B /* PTKTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574A61AE9F9B200ADC04B /* PTKTextField.m */; };
 		4F0574B31AE9F9B200ADC04B /* PTKUSAddressZip.m in Sources */ = {isa = PBXBuildFile; fileRef = 4F0574A81AE9F9B200ADC04B /* PTKUSAddressZip.m */; };
 		4F0574B81AE9F9D200ADC04B /* InvoicerMobile.entitlements in Resources */ = {isa = PBXBuildFile; fileRef = 4F0574B61AE9F9D200ADC04B /* InvoicerMobile.entitlements */; };
-		4F0574BB1AE9FA1000ADC04B /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F0574BA1AE9FA1000ADC04B /* Stripe.framework */; };
 		4F0574C11AEA046600ADC04B /* Cards in Resources */ = {isa = PBXBuildFile; fileRef = 4F0574BD1AEA046600ADC04B /* Cards */; };
 		4F0574C21AEA046600ADC04B /* gradient@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0574BE1AEA046600ADC04B /* gradient@2x.png */; };
 		4F0574C31AEA046600ADC04B /* textfield.png in Resources */ = {isa = PBXBuildFile; fileRef = 4F0574BF1AEA046600ADC04B /* textfield.png */; };
@@ -58,6 +57,8 @@
 		ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */; };
 		ADA5800D1AE5C3EB0034D871 /* server.js in Resources */ = {isa = PBXBuildFile; fileRef = ADA5800C1AE5C3EB0034D871 /* server.js */; };
 		CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */; };
+		CED007851AEAC24F00E1489B /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED007801AEABEC900E1489B /* Stripe.framework */; };
+		CED007861AEAC24F00E1489B /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CED007801AEABEC900E1489B /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */; };
 		CEDBA5021AE81BA70009BBBC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDBA5011AE81BA70009BBBC /* logo.png */; };
 /* End PBXBuildFile section */
@@ -71,6 +72,20 @@
 			remoteInfo = InvoicerMobile;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CED007871AEAC24F00E1489B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				CED007861AEAC24F00E1489B /* Stripe.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4F05747F1AE9F99800ADC04B /* PKPayment+STPTestKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PKPayment+STPTestKeys.h"; path = "ApplePayStubs-master/Classes/PKPayment+STPTestKeys.h"; sourceTree = "<group>"; };
@@ -109,7 +124,6 @@
 		4F0574A81AE9F9B200ADC04B /* PTKUSAddressZip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PTKUSAddressZip.m; path = "PaymentKit-master/PaymentKit/PTKUSAddressZip.m"; sourceTree = "<group>"; };
 		4F0574A91AE9F9B200ADC04B /* PTKView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PTKView.h; path = "PaymentKit-master/PaymentKit/PTKView.h"; sourceTree = "<group>"; };
 		4F0574B61AE9F9D200ADC04B /* InvoicerMobile.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = InvoicerMobile.entitlements; sourceTree = "<group>"; };
-		4F0574BA1AE9FA1000ADC04B /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "stripe-ios-master/build/Debug-iphoneos/Stripe.framework"; sourceTree = "<group>"; };
 		4F0574BC1AE9FB8500ADC04B /* InvoicerMobile-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "InvoicerMobile-Bridging-Header.h"; sourceTree = "<group>"; };
 		4F0574BD1AEA046600ADC04B /* Cards */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Cards; path = "PaymentKit-master/PaymentKit/Resources/Cards"; sourceTree = "<group>"; };
 		4F0574BE1AEA046600ADC04B /* gradient@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "gradient@2x.png"; path = "PaymentKit-master/PaymentKit/Resources/gradient@2x.png"; sourceTree = "<group>"; };
@@ -147,6 +161,7 @@
 		ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceJSONParser.swift; sourceTree = "<group>"; };
 		ADA5800C1AE5C3EB0034D871 /* server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = server.js; sourceTree = "<group>"; };
 		CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceReService.swift; sourceTree = "<group>"; };
+		CED007801AEABEC900E1489B /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "../../../../Library/Developer/Xcode/DerivedData/InvoicerMobile-ctpcjtdciopcqsdekpbrkjldgurd/Build/Products/Debug-iphoneos/Stripe.framework"; sourceTree = "<group>"; };
 		CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveTextFieldViewController.swift; sourceTree = "<group>"; };
 		CEDBA5011AE81BA70009BBBC /* logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logo.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -156,10 +171,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4F0574BB1AE9FA1000ADC04B /* Stripe.framework in Frameworks */,
 				4F95F8001AE58924002FA8A7 /* Foundation.framework in Frameworks */,
 				4F95F7FF1AE5891E002FA8A7 /* PassKit.framework in Frameworks */,
 				4F95F7FE1AE58916002FA8A7 /* Security.framework in Frameworks */,
+				CED007851AEAC24F00E1489B /* Stripe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +348,7 @@
 		4F95F7F51AE58868002FA8A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				4F0574BA1AE9FA1000ADC04B /* Stripe.framework */,
+				CED007801AEABEC900E1489B /* Stripe.framework */,
 				4F95F8011AE58B87002FA8A7 /* stripe-ios-master */,
 				4F95F7FC1AE588D5002FA8A7 /* Security.framework */,
 				4F95F7FA1AE588C8002FA8A7 /* PassKit.framework */,
@@ -362,6 +377,7 @@
 				4F95F7B71AE57A90002FA8A7 /* Sources */,
 				4F95F7B81AE57A90002FA8A7 /* Frameworks */,
 				4F95F7B91AE57A90002FA8A7 /* Resources */,
+				CED007871AEAC24F00E1489B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -404,12 +420,13 @@
 						DevelopmentTeam = WHUH8MR63N;
 						SystemCapabilities = {
 							com.apple.OMC = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
 					4F95F7CF1AE57A90002FA8A7 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = WHUH8MR63N;
 						TestTargetID = 4F95F7BA1AE57A90002FA8A7;
 					};
 				};
@@ -640,6 +657,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InvoicerMobile/stripe-ios-master/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/InvoicerMobile-ctpcjtdciopcqsdekpbrkjldgurd/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = InvoicerMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -660,6 +678,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/InvoicerMobile/stripe-ios-master/build/Debug-iphoneos",
+					"$(USER_LIBRARY_DIR)/Developer/Xcode/DerivedData/InvoicerMobile-ctpcjtdciopcqsdekpbrkjldgurd/Build/Products/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = InvoicerMobile/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -673,6 +692,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -684,6 +705,7 @@
 				INFOPLIST_FILE = InvoicerMobileTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InvoicerMobile.app/InvoicerMobile";
 			};
 			name = Debug;
@@ -692,6 +714,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -699,6 +723,7 @@
 				INFOPLIST_FILE = InvoicerMobileTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InvoicerMobile.app/InvoicerMobile";
 			};
 			name = Release;
