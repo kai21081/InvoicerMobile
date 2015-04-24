@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JYn-aN-ycN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JYn-aN-ycN">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,23 +18,33 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbu-lG-rrB">
-                                <rect key="frame" x="281" y="285" width="38" height="30"/>
-                                <state key="normal" title="Login">
+                                <rect key="frame" x="250" y="285" width="101" height="30"/>
+                                <state key="normal" title="Login to Stripe">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <segue destination="kWk-i0-Te1" kind="presentation" id="wSF-Qs-2Vs"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stripe_logo_white.png" translatesAutoresizingMaskIntoConstraints="NO" id="gB9-pA-3tY">
+                                <rect key="frame" x="155" y="152" width="290" height="117"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="290" id="cF8-Er-G3c"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Xbu-lG-rrB" firstAttribute="top" secondItem="gB9-pA-3tY" secondAttribute="bottom" constant="16" id="6qv-Nf-7ps"/>
+                            <constraint firstItem="gB9-pA-3tY" firstAttribute="top" secondItem="Khf-bo-caj" secondAttribute="bottom" constant="132" id="K6O-1m-iit"/>
                             <constraint firstAttribute="centerX" secondItem="Xbu-lG-rrB" secondAttribute="centerX" id="MDP-wp-tX3"/>
                             <constraint firstAttribute="centerY" secondItem="Xbu-lG-rrB" secondAttribute="centerY" id="eeb-Iz-3dq"/>
+                            <constraint firstItem="gB9-pA-3tY" firstAttribute="centerX" secondItem="Xbu-lG-rrB" secondAttribute="centerX" id="wzx-cM-9xI"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="loginButton" destination="Xbu-lG-rrB" id="xUV-Pq-vaj"/>
+                        <outlet property="logoImageView" destination="gB9-pA-3tY" id="W5G-dV-WHv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMJ-nI-0Bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -510,5 +520,27 @@
             </objects>
             <point key="canvasLocation" x="389" y="1071"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="Lxo-Hm-Evn">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="nEP-8J-hwC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aNJ-rN-P2a"/>
+                        <viewControllerLayoutGuide type="bottom" id="fl1-CM-5Cf"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="3eZ-Mz-PuU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <toolbarItems/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GD5-Wu-eEx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-525" y="-379"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="stripe_logo_white.png" width="2250" height="1042"/>
+    </resources>
 </document>

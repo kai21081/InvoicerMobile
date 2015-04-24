@@ -50,15 +50,16 @@
 		AD0389E91AE984BA0093562B /* AppUserDefaultsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0389E81AE984BA0093562B /* AppUserDefaultsService.swift */; };
 		AD0389EB1AE98C3D0093562B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0389EA1AE98C3D0093562B /* Constants.swift */; };
 		AD09FC881AE6CAB20073CD71 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09FC871AE6CAB20073CD71 /* WebViewController.swift */; };
-		AD09FC8A1AE6CE7E0073CD71 /* StripeKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD09FC891AE6CE7E0073CD71 /* StripeKeys.swift */; };
 		AD0E80411AE6F3CC000A193F /* ViewGradients.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0E80401AE6F3CC000A193F /* ViewGradients.swift */; };
 		AD0E80431AE70C1F000A193F /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0E80421AE70C1F000A193F /* UIColorExtension.swift */; };
 		AD0E80451AE80AD6000A193F /* NSNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0E80441AE80AD6000A193F /* NSNumberExtension.swift */; };
+		AD2CDBA91AEACA77008C528D /* StripeKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD2CDBA81AEACA77008C528D /* StripeKeys.swift */; };
+		AD2CDBAB1AEACCDE008C528D /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD2CDBAA1AEACCDE008C528D /* Stripe.framework */; };
+		AD2CDBAD1AEAD1A3008C528D /* stripe_black_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = AD2CDBAC1AEAD1A3008C528D /* stripe_black_logo.png */; };
 		ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */; };
 		ADA5800D1AE5C3EB0034D871 /* server.js in Resources */ = {isa = PBXBuildFile; fileRef = ADA5800C1AE5C3EB0034D871 /* server.js */; };
+		ADC5D8E71AEAD6A40065B31D /* stripe_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC5D8E61AEAD6A40065B31D /* stripe_logo_white.png */; };
 		CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */; };
-		CED007851AEAC24F00E1489B /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CED007801AEABEC900E1489B /* Stripe.framework */; };
-		CED007861AEAC24F00E1489B /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CED007801AEABEC900E1489B /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CED4DF041AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */; };
 		CEDBA5021AE81BA70009BBBC /* logo.png in Resources */ = {isa = PBXBuildFile; fileRef = CEDBA5011AE81BA70009BBBC /* logo.png */; };
 /* End PBXBuildFile section */
@@ -72,20 +73,6 @@
 			remoteInfo = InvoicerMobile;
 		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		CED007871AEAC24F00E1489B /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				CED007861AEAC24F00E1489B /* Stripe.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		4F05747F1AE9F99800ADC04B /* PKPayment+STPTestKeys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PKPayment+STPTestKeys.h"; path = "ApplePayStubs-master/Classes/PKPayment+STPTestKeys.h"; sourceTree = "<group>"; };
@@ -154,12 +141,15 @@
 		AD0389E81AE984BA0093562B /* AppUserDefaultsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppUserDefaultsService.swift; sourceTree = "<group>"; };
 		AD0389EA1AE98C3D0093562B /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AD09FC871AE6CAB20073CD71 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
-		AD09FC891AE6CE7E0073CD71 /* StripeKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeKeys.swift; sourceTree = "<group>"; };
 		AD0E80401AE6F3CC000A193F /* ViewGradients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewGradients.swift; sourceTree = "<group>"; };
 		AD0E80421AE70C1F000A193F /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		AD0E80441AE80AD6000A193F /* NSNumberExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSNumberExtension.swift; sourceTree = "<group>"; };
+		AD2CDBA81AEACA77008C528D /* StripeKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeKeys.swift; sourceTree = "<group>"; };
+		AD2CDBAA1AEACCDE008C528D /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "stripe-ios-master/build/Debug-iphoneos/Stripe.framework"; sourceTree = "<group>"; };
+		AD2CDBAC1AEAD1A3008C528D /* stripe_black_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripe_black_logo.png; sourceTree = "<group>"; };
 		ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceJSONParser.swift; sourceTree = "<group>"; };
 		ADA5800C1AE5C3EB0034D871 /* server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = server.js; sourceTree = "<group>"; };
+		ADC5D8E61AEAD6A40065B31D /* stripe_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripe_logo_white.png; sourceTree = "<group>"; };
 		CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceReService.swift; sourceTree = "<group>"; };
 		CED007801AEABEC900E1489B /* Stripe.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Stripe.framework; path = "../../../../Library/Developer/Xcode/DerivedData/InvoicerMobile-ctpcjtdciopcqsdekpbrkjldgurd/Build/Products/Debug-iphoneos/Stripe.framework"; sourceTree = "<group>"; };
 		CED4DF031AE6C78600B5CCA1 /* AdaptiveTextFieldViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveTextFieldViewController.swift; sourceTree = "<group>"; };
@@ -171,10 +161,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2CDBAB1AEACCDE008C528D /* Stripe.framework in Frameworks */,
 				4F95F8001AE58924002FA8A7 /* Foundation.framework in Frameworks */,
 				4F95F7FF1AE5891E002FA8A7 /* PassKit.framework in Frameworks */,
 				4F95F7FE1AE58916002FA8A7 /* Security.framework in Frameworks */,
-				CED007851AEAC24F00E1489B /* Stripe.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -309,7 +299,7 @@
 				4F95F7EB1AE57BF0002FA8A7 /* OAuthService.swift */,
 				ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */,
 				CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */,
-				AD09FC891AE6CE7E0073CD71 /* StripeKeys.swift */,
+				AD2CDBA81AEACA77008C528D /* StripeKeys.swift */,
 				AD0389EA1AE98C3D0093562B /* Constants.swift */,
 			);
 			name = Model;
@@ -336,6 +326,8 @@
 				4F0574BE1AEA046600ADC04B /* gradient@2x.png */,
 				4F0574BF1AEA046600ADC04B /* textfield.png */,
 				4F0574C01AEA046600ADC04B /* textfield@2x.png */,
+				AD2CDBAC1AEAD1A3008C528D /* stripe_black_logo.png */,
+				ADC5D8E61AEAD6A40065B31D /* stripe_logo_white.png */,
 				4F95F7C41AE57A90002FA8A7 /* Main.storyboard */,
 				4F95F7C71AE57A90002FA8A7 /* Images.xcassets */,
 				4F95F7C91AE57A90002FA8A7 /* LaunchScreen.xib */,
@@ -348,6 +340,7 @@
 		4F95F7F51AE58868002FA8A7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AD2CDBAA1AEACCDE008C528D /* Stripe.framework */,
 				CED007801AEABEC900E1489B /* Stripe.framework */,
 				4F95F8011AE58B87002FA8A7 /* stripe-ios-master */,
 				4F95F7FC1AE588D5002FA8A7 /* Security.framework */,
@@ -377,7 +370,6 @@
 				4F95F7B71AE57A90002FA8A7 /* Sources */,
 				4F95F7B81AE57A90002FA8A7 /* Frameworks */,
 				4F95F7B91AE57A90002FA8A7 /* Resources */,
-				CED007871AEAC24F00E1489B /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -455,6 +447,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD2CDBAD1AEAD1A3008C528D /* stripe_black_logo.png in Resources */,
 				4F0574C21AEA046600ADC04B /* gradient@2x.png in Resources */,
 				4F0574C11AEA046600ADC04B /* Cards in Resources */,
 				4F0574C41AEA046600ADC04B /* textfield@2x.png in Resources */,
@@ -467,6 +460,7 @@
 				4F95F7CB1AE57A90002FA8A7 /* LaunchScreen.xib in Resources */,
 				4F95F7C81AE57A90002FA8A7 /* Images.xcassets in Resources */,
 				ADA5800D1AE5C3EB0034D871 /* server.js in Resources */,
+				ADC5D8E71AEAD6A40065B31D /* stripe_logo_white.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +488,7 @@
 				ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */,
 				4F95F7EE1AE57C14002FA8A7 /* InvoiceCell.swift in Sources */,
 				4F0574961AE9F99800ADC04B /* STPTestShippingMethodStore.m in Sources */,
+				AD2CDBA91AEACA77008C528D /* StripeKeys.swift in Sources */,
 				4F0574B01AE9F9B200ADC04B /* PTKCardNumber.m in Sources */,
 				4F95F7E61AE57B2F002FA8A7 /* InvoiceViewController.swift in Sources */,
 				4F0574B31AE9F9B200ADC04B /* PTKUSAddressZip.m in Sources */,
@@ -517,7 +512,6 @@
 				4F95F7EC1AE57BF0002FA8A7 /* OAuthService.swift in Sources */,
 				4F0574AD1AE9F9B200ADC04B /* PTKCard.m in Sources */,
 				4F5F4BC01AE6CC6D005A1287 /* EmailService.swift in Sources */,
-				AD09FC8A1AE6CE7E0073CD71 /* StripeKeys.swift in Sources */,
 				4F0574921AE9F99800ADC04B /* STPTestDataTableViewController.m in Sources */,
 				4F95F7C11AE57A90002FA8A7 /* AppDelegate.swift in Sources */,
 			);
