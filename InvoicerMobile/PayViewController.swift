@@ -64,16 +64,17 @@ class PayViewController: UIViewController, PKPaymentAuthorizationViewControllerD
       }else{
         NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
           if let httpResponse = response as? NSHTTPURLResponse{
+            var e = NSError()
             switch httpResponse.statusCode{
             case 200...299:
               println("YESSSSSSSSSSSSSSSSS")
               completion(STPBackendChargeResult.Success, nil)
             case 400...499:
               println("Try Again: 400...499")
-              completion(STPBackendChargeResult.Failure,error)
+              completion(STPBackendChargeResult.Failure,e)
             default:
               println("Try Again")
-              completion(STPBackendChargeResult.Failure,error)
+              completion(STPBackendChargeResult.Failure,e)
             }
           }
         })
@@ -84,7 +85,7 @@ class PayViewController: UIViewController, PKPaymentAuthorizationViewControllerD
   }
 
   
-  func checkoutController(controller: STPCheckoutViewController!, didFinishWithStatus status: STPPaymentStatus, error: NSError!) {
+  func checkoutController(controller: STPCheckoutViewController!, didFinishWithStatus status: STPPaymentStatus, error: NSError) {
     switch (status) {
     case STPPaymentStatus.Success:
       self.paymentSucceeded()
