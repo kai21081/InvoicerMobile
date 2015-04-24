@@ -46,13 +46,13 @@ class InvoiceAddViewController: AdaptiveTextFieldViewController, UITextFieldDele
       label.textColor = labelColor
     }
     
-    let textFieldBackgroundColor = UIColor(CGColor: self.backgroundGradientLayer.colors.last! as! CGColor)
+    let textFieldBackgroundColor = UIColor(CGColor: self.backgroundGradientLayer.colors.first! as! CGColor)
     let textFieldFont = UIFont(name: "AvenirNext-Regular", size: 20.0)
     let textFields = [nameField, descriptionField, recipientEmailField, amountField]
     for textField in textFields {
       textField.font = textFieldFont
       textField.textColor = labelColor
-      textField.backgroundColor = textFieldBackgroundColor
+      textField.backgroundColor = UIColor.invoicerPurpleColor()
     }
     
   }
