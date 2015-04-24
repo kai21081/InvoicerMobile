@@ -10,6 +10,19 @@ import UIKit
 
 extension UIColor {
   
+  class func invoicerPurpleColor() -> UIColor {
+    let alphaMaxValue :CGFloat = 255.0
+    
+    let uiColor = UIColor(
+      red: 221 / alphaMaxValue,
+      green: 153 / alphaMaxValue,
+      blue: 255 / alphaMaxValue,
+      alpha: 1.0
+    )
+    
+    return uiColor
+  }
+  
   // Can't get RANGE to work in Swift
   
 //  class func colorWithHexString(hexString: String) -> UIColor? {

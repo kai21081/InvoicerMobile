@@ -33,6 +33,9 @@
                             <constraint firstAttribute="centerY" secondItem="Xbu-lG-rrB" secondAttribute="centerY" id="eeb-Iz-3dq"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="loginButton" destination="Xbu-lG-rrB" id="xUV-Pq-vaj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMJ-nI-0Bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -211,10 +214,13 @@
                     <navigationItem key="navigationItem" title="Invoice" id="Sqz-cB-zMV"/>
                     <connections>
                         <outlet property="amount" destination="PZG-Lb-YxT" id="xSV-Q1-XC9"/>
+                        <outlet property="amountTitle" destination="TAB-Sk-Ors" id="N3U-6o-fMb"/>
                         <outlet property="createdAt" destination="OjP-zR-rtK" id="okW-bd-A6d"/>
+                        <outlet property="createdAtTitle" destination="qek-fr-fOw" id="60D-6g-rcA"/>
                         <outlet property="emailButton" destination="9bP-SA-mj1" id="ztP-y3-jtK"/>
                         <outlet property="navBar" destination="Sqz-cB-zMV" id="lap-8h-N3m"/>
                         <outlet property="status" destination="VWN-iv-1ig" id="tMO-1J-ud1"/>
+                        <outlet property="statusTitle" destination="pv5-wp-FOS" id="m0H-kc-wTQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nic-ZY-NS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -399,7 +405,7 @@
                                 <action selector="leavePage:" destination="W9j-YG-2f2" id="s70-cZ-uYs"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="tbU-ca-ycK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tbU-ca-ycK">
                             <connections>
                                 <action selector="createInvoicePressed:" destination="W9j-YG-2f2" id="OPg-Oa-0Zt"/>
                             </connections>
@@ -408,6 +414,11 @@
                     <connections>
                         <outlet property="amountField" destination="Qsn-vV-e69" id="55H-f2-fMB"/>
                         <outlet property="descriptionField" destination="3eE-Wg-lMv" id="ala-Dd-EYq"/>
+                        <outlet property="invoiceAmountTitle" destination="oO2-de-IGa" id="zLO-mX-hkC"/>
+                        <outlet property="invoiceDescriptionTitle" destination="4Wc-Of-Grw" id="3n3-Yy-HW4"/>
+                        <outlet property="invoiceDollarSign" destination="GqF-3v-iFk" id="j2a-C6-Ech"/>
+                        <outlet property="invoiceNameTitle" destination="Kpk-Q8-Rzo" id="xpB-dt-ybe"/>
+                        <outlet property="invoiceRecipientEmailTitle" destination="Dx8-gK-SzI" id="yTg-PS-s6u"/>
                         <outlet property="nameField" destination="Lci-6D-iQ3" id="A22-y3-ig3"/>
                         <outlet property="recipientEmailField" destination="HT7-iT-ML3" id="jtS-FM-4Wt"/>
                     </connections>

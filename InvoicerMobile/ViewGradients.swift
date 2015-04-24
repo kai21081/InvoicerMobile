@@ -85,7 +85,7 @@ class ViewGradients {
       red: 26 / alphaMaxValue,
       green: 214 / alphaMaxValue,
       blue: 253 / alphaMaxValue,
-      alpha: 1
+      alpha: 1.0
     )
     
     let uiColor2 = UIColor(
@@ -106,7 +106,7 @@ class ViewGradients {
       red: 150 / alphaMaxValue,
       green: 68 / alphaMaxValue,
       blue: 252 / alphaMaxValue,
-      alpha: 1
+      alpha: 1.0
     )
     
     let uiColor2 = UIColor(
@@ -128,7 +128,7 @@ class ViewGradients {
       red: 239 / alphaMaxValue,
       green: 77 / alphaMaxValue,
       blue: 182 / alphaMaxValue,
-      alpha: 1
+      alpha: 1.0
     )
     
     let uiColor2 = UIColor(
