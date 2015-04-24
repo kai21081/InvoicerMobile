@@ -71,10 +71,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
       //rootViewController = self.window?.rootViewController as? LoginViewController,
+    if let invoiceID = URLParseService.parseURLForInvoiceID(url){
+    let invoiceService = InvoiceReService()
+    invoiceService.fetchInvoiceByID(invoiceID, completionHandler: { [weak self] (newInvoice, error) -> () in
+      NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
       let storyboard = self.window?.rootViewController!.storyboard
-      let payVC = storyboard!.instantiateViewControllerWithIdentifier("PayViewController") as! PayViewController
-      window?.rootViewController = payVC
-
+        if error != nil {
+//          var errorAlert = UIAlertController(title: "Error", message: "An error occurred: \n\(error!)", preferredStyle: UIAlertControllerStyle.Alert)
+//          self!.presentViewController(errorAlert, animated: true, completion: nil)
+        }
+        else if newInvoice != nil{
+          if let invoice = newInvoice as! Invoice{
+            if invoice.paid {
+              let invoiceVC = storyboard.instantiateViewControllerWithIdentifier("InvoiceDetailViewController") as! InvoiceDetailViewController
+              invoiceVC.invoice = invoice
+              self.window?.rootViewController = invoiceVC
+            }else{
+              let payVC = storyboard!.instantiateViewControllerWithIdentifier("PayViewController") as! PayViewController
+              payVC.invoice = invoice
+              self.window?.rootViewController = payVC
+            }
+          }
+        }
+      })
+      })
+    }
     println(url)
     return true
   }
