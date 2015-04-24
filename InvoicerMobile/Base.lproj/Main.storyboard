@@ -17,9 +17,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbu-lG-rrB">
-                                <rect key="frame" x="250" y="285" width="101" height="30"/>
-                                <state key="normal" title="Login to Stripe">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xbu-lG-rrB">
+                                <rect key="frame" x="277" y="285" width="46" height="30"/>
+                                <state key="normal" title="Login">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -28,14 +28,7 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="centerX" secondItem="Xbu-lG-rrB" secondAttribute="centerX" id="00x-SD-S4g"/>
-                            <constraint firstAttribute="centerY" secondItem="Xbu-lG-rrB" secondAttribute="centerY" id="eVp-w4-khN"/>
-                        </constraints>
                     </view>
-                    <connections>
-                        <outlet property="loginButton" destination="Xbu-lG-rrB" id="bQY-uE-6Ip"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fMJ-nI-0Bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -83,13 +76,13 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nF-FZ-Knt">
-                                                    <rect key="frame" x="8" y="8" width="133" height="33"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="24"/>
+                                                    <rect key="frame" x="8" y="8" width="127" height="29"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Si2-au-vm8">
-                                                    <rect key="frame" x="8" y="49" width="110" height="24"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="17"/>
+                                                    <rect key="frame" x="8" y="45" width="107" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -146,38 +139,44 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2dZ-vm-qQa">
+                                <rect key="frame" x="16" y="72" width="46" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TAB-Sk-Ors">
-                                <rect key="frame" x="16" y="90" width="65" height="21"/>
+                                <rect key="frame" x="16" y="101" width="65" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amount: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PZG-Lb-YxT">
-                                <rect key="frame" x="514" y="90" width="70" height="21"/>
+                                <rect key="frame" x="514" y="101" width="70" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created On:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qek-fr-fOw">
-                                <rect key="frame" x="16" y="119" width="94" height="21"/>
+                                <rect key="frame" x="16" y="130" width="94" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OjP-zR-rtK">
-                                <rect key="frame" x="513" y="119" width="71" height="21"/>
+                                <rect key="frame" x="513" y="130" width="71" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pv5-wp-FOS">
-                                <rect key="frame" x="16" y="148" width="55" height="21"/>
+                                <rect key="frame" x="16" y="159" width="55" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Paid:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWN-iv-1ig">
-                                <rect key="frame" x="544" y="148" width="40" height="21"/>
+                                <rect key="frame" x="544" y="159" width="40" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -196,9 +195,13 @@
                         <constraints>
                             <constraint firstItem="6l5-CR-NCk" firstAttribute="top" secondItem="9bP-SA-mj1" secondAttribute="bottom" constant="20" id="0d9-sC-fZY"/>
                             <constraint firstItem="PZG-Lb-YxT" firstAttribute="trailing" secondItem="1yc-rH-7j4" secondAttribute="trailingMargin" id="3RY-Uf-vgS"/>
-                            <constraint firstItem="TAB-Sk-Ors" firstAttribute="top" secondItem="Qa6-GQ-sHc" secondAttribute="bottom" constant="26" id="Eu1-cG-cA3"/>
+                            <constraint firstItem="2dZ-vm-qQa" firstAttribute="leading" secondItem="pv5-wp-FOS" secondAttribute="leading" id="5W4-1E-coP"/>
+                            <constraint firstItem="2dZ-vm-qQa" firstAttribute="leading" secondItem="qek-fr-fOw" secondAttribute="leading" id="CAW-Wd-Qjg"/>
+                            <constraint firstItem="2dZ-vm-qQa" firstAttribute="leading" secondItem="TAB-Sk-Ors" secondAttribute="leading" id="Pjs-xV-7JW"/>
+                            <constraint firstItem="2dZ-vm-qQa" firstAttribute="leading" secondItem="1yc-rH-7j4" secondAttribute="leadingMargin" id="UMz-1R-xDN"/>
                             <constraint firstItem="qek-fr-fOw" firstAttribute="top" secondItem="TAB-Sk-Ors" secondAttribute="bottom" constant="8" id="XFV-T1-ks3"/>
                             <constraint firstItem="qek-fr-fOw" firstAttribute="leading" secondItem="1yc-rH-7j4" secondAttribute="leadingMargin" id="fmf-a5-Row"/>
+                            <constraint firstItem="TAB-Sk-Ors" firstAttribute="top" secondItem="2dZ-vm-qQa" secondAttribute="bottom" constant="8" id="gte-hm-T7M"/>
                             <constraint firstItem="OjP-zR-rtK" firstAttribute="top" secondItem="PZG-Lb-YxT" secondAttribute="bottom" constant="8" id="iFV-5F-yAM"/>
                             <constraint firstItem="pv5-wp-FOS" firstAttribute="top" secondItem="qek-fr-fOw" secondAttribute="bottom" constant="8" id="kHw-c3-JLy"/>
                             <constraint firstItem="pv5-wp-FOS" firstAttribute="leading" secondItem="1yc-rH-7j4" secondAttribute="leadingMargin" id="lav-hV-wH2"/>
@@ -206,6 +209,7 @@
                             <constraint firstItem="VWN-iv-1ig" firstAttribute="top" secondItem="OjP-zR-rtK" secondAttribute="bottom" constant="8" id="oCk-q0-OTF"/>
                             <constraint firstAttribute="centerX" secondItem="9bP-SA-mj1" secondAttribute="centerX" id="oMy-CT-QUr"/>
                             <constraint firstItem="TAB-Sk-Ors" firstAttribute="leading" secondItem="1yc-rH-7j4" secondAttribute="leadingMargin" id="ued-WY-DED"/>
+                            <constraint firstItem="2dZ-vm-qQa" firstAttribute="top" secondItem="Qa6-GQ-sHc" secondAttribute="bottom" constant="8" id="wGb-t8-yC1"/>
                             <constraint firstItem="TAB-Sk-Ors" firstAttribute="top" secondItem="PZG-Lb-YxT" secondAttribute="top" id="x8V-Fx-N4G"/>
                             <constraint firstItem="VWN-iv-1ig" firstAttribute="trailing" secondItem="PZG-Lb-YxT" secondAttribute="trailing" id="zXz-ib-u5o"/>
                         </constraints>
@@ -214,13 +218,11 @@
                     <navigationItem key="navigationItem" title="Invoice" id="Sqz-cB-zMV"/>
                     <connections>
                         <outlet property="amount" destination="PZG-Lb-YxT" id="xSV-Q1-XC9"/>
-                        <outlet property="amountTitle" destination="TAB-Sk-Ors" id="gzA-ez-lcd"/>
                         <outlet property="createdAt" destination="OjP-zR-rtK" id="okW-bd-A6d"/>
-                        <outlet property="createdAtTitle" destination="qek-fr-fOw" id="Oaj-xa-pYp"/>
                         <outlet property="emailButton" destination="9bP-SA-mj1" id="ztP-y3-jtK"/>
+                        <outlet property="invoiceDescription" destination="2dZ-vm-qQa" id="6by-NJ-LLr"/>
                         <outlet property="navBar" destination="Sqz-cB-zMV" id="lap-8h-N3m"/>
                         <outlet property="status" destination="VWN-iv-1ig" id="tMO-1J-ud1"/>
-                        <outlet property="statusTitle" destination="pv5-wp-FOS" id="Pab-p0-YRB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nic-ZY-NS5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -405,7 +407,7 @@
                                 <action selector="leavePage:" destination="W9j-YG-2f2" id="s70-cZ-uYs"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="tbU-ca-ycK">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="tbU-ca-ycK">
                             <connections>
                                 <action selector="createInvoicePressed:" destination="W9j-YG-2f2" id="OPg-Oa-0Zt"/>
                             </connections>
@@ -414,11 +416,6 @@
                     <connections>
                         <outlet property="amountField" destination="Qsn-vV-e69" id="55H-f2-fMB"/>
                         <outlet property="descriptionField" destination="3eE-Wg-lMv" id="ala-Dd-EYq"/>
-                        <outlet property="invoiceAmountTitle" destination="oO2-de-IGa" id="0OH-vJ-uVN"/>
-                        <outlet property="invoiceDescriptionTitle" destination="4Wc-Of-Grw" id="L7h-wy-8g6"/>
-                        <outlet property="invoiceDollarSign" destination="GqF-3v-iFk" id="fss-OQ-30q"/>
-                        <outlet property="invoiceNameTitle" destination="Kpk-Q8-Rzo" id="tR5-yc-ACT"/>
-                        <outlet property="invoiceRecipientEmailTitle" destination="Dx8-gK-SzI" id="DbV-fh-Isv"/>
                         <outlet property="nameField" destination="Lci-6D-iQ3" id="A22-y3-ig3"/>
                         <outlet property="recipientEmailField" destination="HT7-iT-ML3" id="jtS-FM-4Wt"/>
                     </connections>
