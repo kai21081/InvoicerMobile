@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
   func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    
+    Stripe.setDefaultPublishableKey(kStripePublishableKey)
     //Push Notification Registration
     let types: UIUserNotificationType = UIUserNotificationType.Badge |
       UIUserNotificationType.Sound | UIUserNotificationType.Alert
@@ -59,6 +59,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
       invoiceVC.invoiceID = invoiceID
       rootViewController.pushViewController(invoiceVC, animated: true)
     }
+  }
+  
+  func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject?) -> Bool {
+      //rootViewController = self.window?.rootViewController as? LoginViewController,
+      let storyboard = self.window?.rootViewController!.storyboard
+      let payVC = storyboard!.instantiateViewControllerWithIdentifier("PayViewController") as! PayViewController
+      window?.rootViewController = payVC
+
+    println(url)
+    return true
   }
   
   func applicationWillResignActive(application: UIApplication) {
