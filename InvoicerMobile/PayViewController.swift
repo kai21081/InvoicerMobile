@@ -10,9 +10,16 @@ import UIKit
 
 class PayViewController: UIViewController, PKPaymentAuthorizationViewControllerDelegate, STPCheckoutViewControllerDelegate {
 
+  @IBOutlet weak var invoiceAmt: UILabel!
+  @IBOutlet weak var invoiceCreateAt: UILabel!
   var invoice : Invoice!
     override func viewDidLoad() {
         super.viewDidLoad()
+      
+      invoiceAmt.text = invoice.amount.stringCurrencyValue()
+      var dateFormat = NSDateFormatter()
+      dateFormat.dateFormat = "MM/dd/yyyy"
+      invoiceCreateAt.text = dateFormat.stringFromDate(invoice.createdAt)
 
         // Do any additional setup after loading the view.
     }
@@ -21,8 +28,8 @@ class PayViewController: UIViewController, PKPaymentAuthorizationViewControllerD
   @IBAction func applePayButtonPressed(sender: AnyObject) {
     
     var request = Stripe.paymentRequestWithMerchantIdentifier("merchant.com.invoicereMobile")
-    let label = "Test Description"
-    let amount = NSDecimalNumber(string: "10.00")
+    let label = self.invoice.name
+    let amount = NSDecimalNumber(string: self.invoice.amount.stringCurrencyValue())
     request.paymentSummaryItems = [PKPaymentSummaryItem(label: label, amount: amount)]
     
     if Stripe.canSubmitPaymentRequest(request){
@@ -38,8 +45,8 @@ class PayViewController: UIViewController, PKPaymentAuthorizationViewControllerD
     
     var options = STPCheckoutOptions()
     options.publishableKey = STPAPIClient.sharedClient().publishableKey
-    options.purchaseDescription = "Cool Shirt";
-    options.purchaseAmount = 1000; // this is in cents
+    options.purchaseDescription = self.invoice.name;
+    options.purchaseAmount = UInt(self.invoice.amount.intValue) * 100; // this is in cents
     options.logoColor = UIColor.purpleColor();
     var checkoutViewController = STPCheckoutViewController(options: options)
     checkoutViewController.checkoutDelegate = self;
