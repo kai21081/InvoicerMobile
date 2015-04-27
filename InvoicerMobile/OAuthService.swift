@@ -53,12 +53,8 @@ class OAuthService {
                 token = jsonDictionary["access_token"] as? String,
                 userId = jsonDictionary["stripe_user_id"] as? String 
               {
-                
-                println("ID: \(userId)")
-                
                 AppUserDefaultsService.sharedService.stripeToken = token
                 AppUserDefaultsService.sharedService.stripeUserID = userId
-                
                 completionHandler(true, nil)
               }
             }
