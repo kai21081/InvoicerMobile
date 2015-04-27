@@ -62,6 +62,7 @@ class InvoiceReService {
 
     let urlString = invoiceReApiPrefixString + "invoices/" + invoiceID
     let request = NSMutableURLRequest(URL: NSURL(string: urlString)!)
+    println("\(request.URL)")
     let dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
       if error != nil {
         completionHandler(nil, "Error: \(error)")
@@ -77,7 +78,7 @@ class InvoiceReService {
         case 400...499:
           completionHandler(nil, "Error: \(httpResponse.statusCode) Could not find Invoice")
         case 500...599:
-          completionHandler(nil, "Error: Stripe server error.  Try again later")
+          completionHandler(nil, "Error: \(httpResponse.statusCode) Internal server error. Please try again later")
         default:
           completionHandler(nil, "Error \(httpResponse.statusCode) Unknown Server Error in retrieving Invoice")
         }
