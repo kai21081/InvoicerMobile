@@ -24,54 +24,54 @@ class InvoiceDetailViewController: UIViewController {
   var invoice : Invoice?
   var invoiceID: String?
   
-    override func viewDidLoad() {
-        super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
+    
+    
+    self.invoice = nil
+    self.invoiceID = "13"
+    
+    if self.invoice != nil {
       
-      if self.invoice != nil {
-        println("got invoice")
-        displayInvoice()
-      }
-      else if self.invoiceID != nil {
-        println("got invoice ID")
-        let invoiceService = InvoiceReService()
-        invoiceService.fetchInvoiceByID(self.invoiceID!, completionHandler: { [weak self] (newInvoice, error) -> () in
-          NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
-            if error != nil {
-              var errorAlert = UIAlertController(title: "Error", message: "An error occurred: \n\(error!)", preferredStyle: UIAlertControllerStyle.Alert)
-              self!.presentViewController(errorAlert, animated: true, completion: nil)
-            }
-            else if newInvoice != nil && self != nil {
-              self!.invoice = newInvoice!
-              self!.displayInvoice()
-            }
-          })
-          })
-      }   else {
-        println ("got nothin")
-      }
-
-
-      let font = UIFont(name: "AvenirNext-Regular", size: 20.0)
-      let whiteColor = UIColor.whiteColor()
-
-      let labels = [status, createdAt, amount, amountTitle, createdAtTitle, statusTitle]
-      for label in labels {
-        label.font = font
-        label.textColor = whiteColor
-      }
+      println("invoiceID: \(self.invoice!.id)")
       
-      self.emailButton.tintColor = whiteColor
-      
-      self.gradientBackgroundLayer = ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size)
-      
-      self.view.layer.insertSublayer(self.gradientBackgroundLayer, atIndex: 0)
-
-
+      displayInvoice()
+    }
+    else if self.invoiceID != nil {
+      let invoiceService = InvoiceReService()
+      invoiceService.fetchInvoiceByID(self.invoiceID!, completionHandler: { [weak self] (newInvoice, error) -> () in
+        NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+          if error != nil {
+            var errorAlert = UIAlertController(title: "Error", message: "An error occurred: \n\(error!)", preferredStyle: UIAlertControllerStyle.Alert)
+            let confirmAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+            errorAlert.addAction(confirmAction)
+            self!.presentViewController(errorAlert, animated: true, completion: nil)
+          }
+          else if newInvoice != nil && self != nil {
+            self!.invoice = newInvoice!
+            self!.displayInvoice()
+          }
+        })
+        })
+    }
+    
+    let font = UIFont(name: "AvenirNext-Regular", size: 20.0)
+    let whiteColor = UIColor.whiteColor()
+    
+    let labels = [status, createdAt, amount, amountTitle, createdAtTitle, statusTitle]
+    for label in labels {
+      label.font = font
+      label.textColor = whiteColor
+    }
+    
+    self.emailButton.tintColor = whiteColor
+    self.gradientBackgroundLayer = ViewGradients.blueGradientLayerOfSize(self.view.layer.frame.size)
+    self.view.layer.insertSublayer(self.gradientBackgroundLayer, atIndex: 0)
   }
+  
   
   override func viewWillLayoutSubviews() {
     super.viewWillLayoutSubviews()
-    
     self.gradientBackgroundLayer.frame = self.view.frame
   }
   
@@ -92,7 +92,14 @@ class InvoiceDetailViewController: UIViewController {
   }
 
   @IBAction func emailButtonPressed(sender: AnyObject) {
-    
+    if let currentInvoice = self.invoice {
+      EmailService.requestEmailFromInvoiceRe(currentInvoice.id, completionHandler: { (wasSuccess) -> () in
+        if wasSuccess {
+          println("Sent")
+        } else {
+          println("Not Sent")
+        }
+      })
+    }
   }
-
 }

@@ -38,13 +38,7 @@ class WebViewController: UIViewController, WKNavigationDelegate {
             NSOperationQueue.mainQueue().addOperationWithBlock({ [weak self] () -> Void in
               if wasSuccessful && self != nil {
                 self!.transitionToInvoiceViewController()
-              } else {
-                
-                
-                // implement something to display error
-                
-                println(error)
-              }
+              } 
             })
           })
         }
