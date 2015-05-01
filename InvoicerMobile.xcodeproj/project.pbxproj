@@ -58,6 +58,7 @@
 		AD94D2891AF40221007CCD0B /* StripeKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD94D2881AF40221007CCD0B /* StripeKeys.swift */; };
 		ADA5800B1AE5A7F60034D871 /* InvoiceJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */; };
 		ADA5800D1AE5C3EB0034D871 /* server.js in Resources */ = {isa = PBXBuildFile; fileRef = ADA5800C1AE5C3EB0034D871 /* server.js */; };
+		ADC5D8E71AEAD6A40065B31D /* stripe_logo_white.png in Resources */ = {isa = PBXBuildFile; fileRef = ADC5D8E61AEAD6A40065B31D /* stripe_logo_white.png */; };
 		CEC2B01E1AF3FDA700E95AF7 /* Stripe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CEC2B01D1AF3FDA600E95AF7 /* Stripe.framework */; };
 		CEC2B01F1AF3FDA700E95AF7 /* Stripe.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = CEC2B01D1AF3FDA600E95AF7 /* Stripe.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		CEC84DE51AE6F47800408D44 /* InvoiceReService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */; };
@@ -167,6 +168,7 @@
 		AD94D2881AF40221007CCD0B /* StripeKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StripeKeys.swift; sourceTree = "<group>"; };
 		ADA5800A1AE5A7F60034D871 /* InvoiceJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceJSONParser.swift; sourceTree = "<group>"; };
 		ADA5800C1AE5C3EB0034D871 /* server.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = server.js; sourceTree = "<group>"; };
+		ADC5D8E61AEAD6A40065B31D /* stripe_logo_white.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stripe_logo_white.png; sourceTree = "<group>"; };
 		CEC2B01D1AF3FDA600E95AF7 /* Stripe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Stripe.framework; path = "/Users/user/Library/Developer/Xcode/DerivedData/InvoicerMobile-ctpcjtdciopcqsdekpbrkjldgurd/Build/Products/Debug-iphoneos/Stripe.framework"; sourceTree = "<absolute>"; };
 		CEC84DE41AE6F47800408D44 /* InvoiceReService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InvoiceReService.swift; sourceTree = "<group>"; };
 		CED007881AEAD1B900E1489B /* URLParseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParseService.swift; sourceTree = "<group>"; };
