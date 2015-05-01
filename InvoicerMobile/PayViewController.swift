@@ -60,8 +60,8 @@ class PayViewController: UIViewController, PKPaymentAuthorizationViewControllerD
   
   func createBackendChargeWithTokenForCard(token : STPToken, completion : STPTokenSubmissionHandler){
     //Debug - generating fake invoice
-    var invoice = Invoice(id: "0101010101", name: "Code Fellows Deposit", amount: NSNumber(float: 1000.00), createdAt: NSDate(), paid: false)
-    var url = NSURL(string: "https://www.invoice.re/api/v1/invoices/"+"\(invoice.id)"+"/payment?stripeToken="+"\(token.tokenId)")
+//    var invoice = Invoice(id: "0101010101", name: "Code Fellows Deposit", amount: NSNumber(float: 1000.00), createdAt: NSDate(), paid: false)
+    var url = NSURL(string: "https://www.invoice.re/api/v1/invoices/"+"\(self.invoice.id)"+"/payment?stripeToken="+"\(token.tokenId)")
     var request = NSMutableURLRequest(URL: url!)
     request.HTTPMethod = "POST"
     
@@ -137,8 +137,8 @@ class PayViewController: UIViewController, PKPaymentAuthorizationViewControllerD
   func createBackendChargeWithToken(token : STPToken, completion:(PKPaymentAuthorizationStatus) -> (Void)) {
     
     //Debug - generating fake invoice
-    var invoice = Invoice(id: "0101010101", name: "Code Fellows Deposit", amount: NSNumber(float: 1000.00), createdAt: NSDate(), paid: false)
-    var url = NSURL(string: "https://www.invoice.re/api/v1/invoices/"+"\(invoice.id)"+"/payment?stripeToken="+"\(token.tokenId)")
+//    var invoice = Invoice(id: "0101010101", name: "Code Fellows Deposit", amount: NSNumber(float: 1000.00), createdAt: NSDate(), paid: false)
+    var url = NSURL(string: "https://www.invoice.re/api/v1/invoices/"+"\(self.invoice.id)"+"/payment?stripeToken="+"\(token.tokenId)")
     var request = NSMutableURLRequest(URL: url!)
     request.HTTPMethod = "POST"
     
