@@ -11,7 +11,7 @@ import Foundation
 class EmailService {
   
   class func requestEmailFromInvoiceRe(invoiceID: String, completionHandler:(Bool) ->()) {
-    if let stripeID = NSUserDefaults.standardUserDefaults().objectForKey(kUserDefaultsStripeUserIdKey) as? String {
+    if let stripeID = AppUserDefaultsService.sharedService.stripeUserID {
       let urlString = "https://www.invoice.re/api/v1/invoices/" + invoiceID + "/send_invoice"
       var emailRequest = NSMutableURLRequest(URL: NSURL(string: urlString)!)
       emailRequest.HTTPMethod = "POST"
