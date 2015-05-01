@@ -13,7 +13,7 @@ class LoginViewController: UIViewController {
   @IBOutlet var loginButton: UIButton!
   @IBOutlet var logoImageView: UIImageView!
   
-  let floatingAnimationDuration : NSTimeInterval = 1.3
+  let floatingAnimationDuration : NSTimeInterval = 2.0
   let dropHeight : CGFloat = 10.0
   
   override func viewDidLoad() {
