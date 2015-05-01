@@ -61,9 +61,22 @@ class PayViewController: UIViewController, PKPaymentAuthorizationViewControllerD
   func createBackendChargeWithTokenForCard(token : STPToken, completion : STPTokenSubmissionHandler){
     //Debug - generating fake invoice
 //    var invoice = Invoice(id: "0101010101", name: "Code Fellows Deposit", amount: NSNumber(float: 1000.00), createdAt: NSDate(), paid: false)
-    var url = NSURL(string: "https://www.invoice.re/api/v1/invoices/"+"\(self.invoice.id)"+"/payment?stripeToken="+"\(token.tokenId)")
+    var url = NSURL(string: "https://www.invoice.re/api/v1/invoices/"+"\(self.invoice.id)"+"/payment") //?stripeToken="+"\(token.tokenId)")
     var request = NSMutableURLRequest(URL: url!)
     request.HTTPMethod = "POST"
+    let tokenJson = self.tokenToJSON("\(token.tokenId)")
+    
+    
+    request.HTTPBody = tokenJson
+    request.setValue("application/json", forHTTPHeaderField: "Accept")
+    
+    // request.setValue(token, forHTTPHeaderField: "stripe-access-token")
+    request.setValue("\(tokenJson.length)", forHTTPHeaderField: "Content-Length")
+    request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+    
+    
+   // request.setValue("\(token.tokenId)", forHTTPHeaderField: "stripeToken")
     
     var dataTask = NSURLSession.sharedSession().dataTaskWithRequest(request, completionHandler: { (data, response, error) -> Void in
       if error != nil{
@@ -77,10 +90,10 @@ class PayViewController: UIViewController, PKPaymentAuthorizationViewControllerD
               println("YESSSSSSSSSSSSSSSSS")
               completion(STPBackendChargeResult.Success, nil)
             case 400...499:
-              println("Try Again: 400...499")
+              println("Try Again: \(httpResponse.statusCode)")
               completion(STPBackendChargeResult.Failure,e)
             default:
-              println("Try Again")
+              println("Try Again: Error \(httpResponse.statusCode)")
               completion(STPBackendChargeResult.Failure,e)
             }
           }
@@ -169,5 +182,15 @@ class PayViewController: UIViewController, PKPaymentAuthorizationViewControllerD
   func paymentAuthorizationViewControllerDidFinish(controller: PKPaymentAuthorizationViewController!) {
     self.dismissViewControllerAnimated(true, completion: nil)
   }
+  
+  
+  func tokenToJSON(token: String) -> NSData {
+    var error: NSError?
+    var tokenInfo = [String: String]()
+    tokenInfo["stripeToken"] = token
+    var data = NSJSONSerialization.dataWithJSONObject(tokenInfo, options: nil, error: &error)
+    return data!
+  }
+  
 
 }

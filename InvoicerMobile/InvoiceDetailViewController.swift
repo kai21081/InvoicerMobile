@@ -27,14 +27,8 @@ class InvoiceDetailViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
-    
-    self.invoice = nil
-    self.invoiceID = "13"
-    
     if self.invoice != nil {
-      
       println("invoiceID: \(self.invoice!.id)")
-      
       displayInvoice()
     }
     else if self.invoiceID != nil {
